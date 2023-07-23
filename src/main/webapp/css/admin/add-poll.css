@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    width: 60%;
+    margin: 0 auto;
+    background: rgba(37, 154, 59, 0.351);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label,
+select,
+input,
+button {
+    font-size: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer-options input {
+    flex: 1;
+}
+
+.add-option-button {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+
+.add-option-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+#questions-container > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    padding: 20px;
+    gap: 10px;
+
+}

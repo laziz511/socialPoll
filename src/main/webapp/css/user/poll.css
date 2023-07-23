@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #262627;
+  font-family: apercu-pro, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+a {
+  background: #00000000;
+  color: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  text-rendering: optimizeSpeed;
+  margin: 0 0 20px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.navbar {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 80px;
+}
+
+
+
+.navbar-container {
+  max-width: 1370px;
+  margin: auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  height: inherit;
+  align-items: center;
+}
+
+
+.poll-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.container {
+  margin-top: 100px;
+  width: 600px;
+  padding: 40px;
+  background: rgba(37, 154, 59, 0.351); 
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .poll-section {
+    padding: 0;
+  }
+
+  .container {
+    background-color: #ffffff;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+.topic {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.poll-form {
+  border-radius: 20px;
+  padding: 50px;
+  display: grid;
+  align-content: space-between;
+  gap: 40px;
+}
+
+@media (max-width: 800px) {
+  .poll-form {
+    padding: 0;
+  }
+}
+
+.question-card {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+@media (max-width: 550px) {
+  .question-card h2 {
+    font-size: 15px;
+  }
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.answers {
+  list-style-type: none;
+}
+
+.answers li {
+  margin-bottom: 10px;
+  font-size: 5px;
+}
+
+.answers input[type="radio"] {
+  margin-right: 10px;
+}
+
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.custom-checkbox-container input[type="radio"] {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #64987e;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.custom-checkbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #64987e;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-checkbox-container input[type="radio"]:checked+.custom-checkbox::before {
+  opacity: 1;
+}
+
+.checkbox-text {
+  font-size: 16px;
+  color: #333333;
+}
+
+.custom-checkbox-container:hover .custom-checkbox {
+  border-color: #4eaf8e;
+}
+
+.custom-checkbox-container:hover .checkbox-text {
+  color: #4eaf8e;
+}
+
+.custom-checkbox-container input[type="radio"]:focus+.custom-checkbox {
+  outline: none;
+  border-color: #4eaf8e;
+  box-shadow: 0 0 5px rgba(78, 175, 142, 0.5);
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+@media (max-width: 450px) {
+  .button-container {
+    padding: 10px;
+  }
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: rgba(44, 39, 39, 0.877);
+}
+
+.submit-button:disabled {
+  background-color: #272928;
+  cursor: not-allowed;
+}
+
+.additional-buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.additional-buttons > a {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.additional-buttons button:hover {
+  background-color: rgba(44, 39, 39, 0.877);
+}
+
+@media (max-width: 600px) {
+
+  .additional-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* footer start */
+.footer-section {
+  background: #272928;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #FFFFFF;
+}
+
+@media (min-width: 1024px) {
+  .footer-section {
+    border-top: none;
+  }
+}
