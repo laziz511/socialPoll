@@ -65,4 +65,15 @@ public class Topic implements Identifiable, Serializable {
     }
 
     // equals, hashCode, and toString methods
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "id=" + id +
+                ", topicName='" + topicName + '\'' +
+                ", description='" + description + '\'' +
+                ", numPolls=" + numPolls +
+                ", numParticipants=" + numParticipants +
+                '}';
+    }
 }

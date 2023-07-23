@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <html lang="en">
 
 <head>
@@ -79,14 +80,14 @@
             <div class="container">
                 <h2 class="text-box">Poll Topics</h2>
                 <div class="cards">
-                    <c:forEach var="topic" items="${pollTopics}">
+                <c:forEach var="topic" items="${requestScope.pollTopics}" varStatus="loop">
                         <div class="card">
-                            <h2 class="topic">${topic.name}</h2>
-                            <p class="description">${topic.description}</p>
+                            <h2 class="topic">${loop.topicName}</h2>
+                            <p class="description">${loop.description}</p>
                             <div class="info">
                                 <div class="info-text">
-                                    <p class="survey-count">Polls: <span>${topic.polls.size()}</span></p>
-                                    <p class="participant-count">Participants: <span>${topic.totalParticipants}</span></p>
+                                    <p class="survey-count">Polls: <span>${loop.numPolls}</span></p>
+                                    <p class="participant-count">Participants: <span>${topic.numParticipants}</span></p>
                                 </div>
                                 <div class="info-button">
                                     <div>

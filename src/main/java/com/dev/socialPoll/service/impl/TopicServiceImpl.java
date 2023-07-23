@@ -18,9 +18,9 @@ public class TopicServiceImpl implements TopicService {
     @Override
     public List<Topic> retrieveTopics() throws ServiceException {
         try {
+            logger.info("retrieveTopics is working");
             TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
-            List<Topic> result = null;
-            result = topicDao.findAll();
+            List<Topic> result = topicDao.findAll();
             return result;
         } catch (DaoException e) {
             logger.error("Unable to retrieve topics!");
