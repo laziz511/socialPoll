@@ -1,6 +1,10 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 
 <html lang="en">
 
@@ -24,10 +28,10 @@
             </div>
 
             <div class="navbar-menu">
-                <button class="navbar-menu-element">Home</button>
-                <button class="navbar-menu-element">My Submissions</button>
-                <button class="navbar-menu-element">Home</button>
-                <button class="navbar-menu-element">About us</button>
+                <a href="home" class="navbar-menu-element">Home</a>
+                <a href="admin-dashboard" class="navbar-menu-element"> My polls</a>
+                <a href="#" class="navbar-menu-element">My Submissions</a>
+                <a href="log-in" class="navbar-menu-element">Log in</a>
             </div>
 
         </div>
@@ -74,34 +78,35 @@
         </section>
 
 
-        <!-- Survey topics start -->
- <section>
-        <div class="poll-section">
-            <div class="container">
-                <h2 class="text-box">Poll Topics</h2>
-                <div class="cards">
-                <c:forEach var="topic" items="${requestScope.pollTopics}" varStatus="loop">
-                        <div class="card">
-                            <h2 class="topic">${loop.topicName}</h2>
-                            <p class="description">${loop.description}</p>
-                            <div class="info">
-                                <div class="info-text">
-                                    <p class="survey-count">Polls: <span>${loop.numPolls}</span></p>
-                                    <p class="participant-count">Participants: <span>${topic.numParticipants}</span></p>
-                                </div>
-                                <div class="info-button">
-                                    <div>
-                                        <a href="polls.jsp?topicId=${topic.id}" class="button">See Polls</a>
+         <!-- Survey topics start -->
+                <section>
+                    <div class="poll-section">
+                        <div class="container">
+                            <h2 class="text-box">Poll Topics</h2>
+                            <div class="cards">
+                                <c:forEach items="${requestScope.pollTopics}" var="topic">
+                                    <div class="card">
+                                        <h2 class="topic">${topic.topicName}</h2>
+                                        <p class="description">${topic.description}</p>
+                                        <div class="info">
+                                            <div class="info-text">
+                                                <p class="survey-count">Polls: <span>${topic.numPolls}</span></p>
+                                                <p class="participant-count">Participants: <span>${topic.numParticipants}</span></p>
+                                            </div>
+                                            <div class="info-button">
+                                                <div>
+                                                    <a href="polls.jsp?topicId=${topic.id}" class="button">See Polls</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
-                    </c:forEach>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!-- Survey topics end -->
+                    </div>
+                </section>
+                <!-- Survey topics end -->
+
 
         <section>
             <div class="balanced-section center2 background">

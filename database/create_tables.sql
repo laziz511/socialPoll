@@ -62,5 +62,5 @@ CREATE TABLE IF NOT EXISTS poll_responses (
     poll_id             INT NOT NULL REFERENCES polls(poll_id),
     question_id         INT NOT NULL REFERENCES questions(question_id),
     option_id           INT NOT NULL REFERENCES options(option_id),
-    user_id             INT NOT NULL REFERENCES users(user_id),
+    user_id             INT NOT NULL REFERENCES users(user_id)
 );

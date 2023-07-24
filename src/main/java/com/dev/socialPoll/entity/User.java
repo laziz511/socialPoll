@@ -8,14 +8,14 @@ public class User implements Identifiable, Serializable {
     private String firstName;
     private String lastName;
     private LocalDate birthday;
-    private Gender gender;
+    private String gender;
     private String email;
     private String password;
     private UserRole role;
 
     public User() {}
 
-    public User(long id, String firstName, String lastName, LocalDate birthday, Gender gender, String email, String password, UserRole role) {
+    public User(long id, String firstName, String lastName, LocalDate birthday, String gender, String email, String password, UserRole role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,7 +26,7 @@ public class User implements Identifiable, Serializable {
         this.role = role;
     }
 
-    public User(String firstName, String lastName, LocalDate birthday, Gender gender, String email, String password, UserRole role) {
+    public User(String firstName, String lastName, LocalDate birthday, String gender, String email, String password, UserRole role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;
@@ -40,7 +40,7 @@ public class User implements Identifiable, Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = LocalDate.parse(birthday);
-        this.gender = Gender.valueOf(gender);
+        this.gender = gender;
         this.email = email;
         this.password = password;
     }
@@ -80,11 +80,12 @@ public class User implements Identifiable, Serializable {
         this.birthday = birthday;
     }
 
-    public Gender getGender() {
+    public String getGender() {
+
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

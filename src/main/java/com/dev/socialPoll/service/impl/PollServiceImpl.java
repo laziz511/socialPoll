@@ -1,10 +1,7 @@
 package com.dev.socialPoll.service.impl;
 
-import com.dev.socialPoll.dao.DaoFactory;
-import com.dev.socialPoll.dao.PollDao;
-import com.dev.socialPoll.dao.TopicDao;
-import com.dev.socialPoll.entity.Poll;
-import com.dev.socialPoll.entity.Topic;
+import com.dev.socialPoll.dao.*;
+import com.dev.socialPoll.entity.*;
 import com.dev.socialPoll.exception.DaoException;
 import com.dev.socialPoll.exception.ServiceException;
 import com.dev.socialPoll.service.PollService;
@@ -48,7 +45,7 @@ public class PollServiceImpl implements PollService {
     @Override
     public boolean addNewPoll(long topicId, String pollName, String description, Map<String, List<String>> questionOptionsMap)
             throws ServiceException {
-        if ( pollName == null || description == null || questionOptionsMap == null) {
+        if (pollName == null || description == null || questionOptionsMap == null) {
             return false;
         }
 
@@ -57,11 +54,44 @@ public class PollServiceImpl implements PollService {
             return false;
         }
 
+        // Create and save the Poll object
         PollDao pollDao = DaoFactory.getInstance().getPollDao();
         Poll poll = new Poll();
+        poll.setTopicId(topicId);
+        poll.setPollName(pollName);
+        poll.setDescription(description);
+        poll.setStatus(PollStatus.NEW);
 
+        try {
+            long pollId = pollDao.save(poll);
+
+            // Create and save the Questions and AnswerOptions
+            QuestionDao questionDao = DaoFactory.getInstance().getQuestionDao();
+            OptionDao answerOptionDao = DaoFactory.getInstance().getOptionDao();
+
+            for (Map.Entry<String, List<String>> entry : questionOptionsMap.entrySet()) {
+                String questionText = entry.getKey();
+                List<String> answerOptions = entry.getValue();
+
+                Question question = new Question();
+                question.setPollId(pollId);
+                question.setQuestionText(questionText);
+                long questionId = questionDao.save(question);
+
+                for (String answerOptionText : answerOptions) {
+                    Option answerOption = new Option();
+                    answerOption.setQuestionId(questionId);
+                    answerOption.setOptionText(answerOptionText);
+                    answerOptionDao.save(answerOption);
+                }
+            }
+        } catch (DaoException e) {
+            logger.error("Error occurred while adding a new poll.");
+            throw new ServiceException(e.getMessage(), e);
+        }
         return true;
     }
+
 
     @Override
     public boolean updatePollInformation(long pollId, String pollName, String description) throws ServiceException {

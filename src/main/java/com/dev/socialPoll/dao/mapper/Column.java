@@ -38,5 +38,4 @@ public final class Column {
     public static final String POLL_RESPONSE_QUESTION_ID = "question_id";
     public static final String POLL_RESPONSE_OPTION_ID = "option_id";
     public static final String POLL_RESPONSE_USER_ID = "user_id";
-    public static final String POLL_RESPONSE_TIME = "response_time";
 }

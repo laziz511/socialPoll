@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean register(String firstName, String lastName, LocalDate birthday, Gender gender,
+    public boolean register(String firstName, String lastName, LocalDate birthday, String gender,
                             String email, String password, UserRole role) throws ServiceException {
         try {
             User user = new User(firstName, lastName, birthday, gender, email, password, role);

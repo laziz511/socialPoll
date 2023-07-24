@@ -19,7 +19,7 @@ public class UserRowMapper implements RowMapper<User> {
         user.setLastName(resultSet.getString(Column.USER_LAST_NAME));
         user.setBirthday(resultSet.getDate(Column.USER_BIRTHDAY).toLocalDate());
         String gender = resultSet.getString(Column.USER_GENDER);
-        user.setGender(Gender.valueOf(gender));
+        user.setGender(Column.USER_GENDER);
         user.setEmail(resultSet.getString(Column.USER_EMAIL));
         user.setPassword(resultSet.getString(Column.USER_PASSWORD));
         String role = resultSet.getString(Column.USER_ROLE);

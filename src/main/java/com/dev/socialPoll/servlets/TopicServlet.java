@@ -31,6 +31,7 @@ public class TopicServlet extends HttpServlet {
             List<Topic> pollTopics = topicService.retrieveTopics();
 
             logger.info("pollTopics : " + pollTopics);
+
             // Store the list of poll topics in a request attribute
             request.setAttribute("pollTopics", pollTopics);
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link href="../../css/admin/add-poll.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/admin/add-poll.css" rel="stylesheet" type="text/css" media="all" />
 
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 </head>
@@ -16,7 +16,8 @@
     <section>
         <div class="form-container">
             <h2>Create Polls</h2>
-            <form id="poll-form">
+            <form id="poll-form" action="add-poll" method="post">
+
                 <label for="poll-topic">Poll Topic:</label>
                 <select id="poll-topic" required>
                     <option value="" disabled selected>Select a topic</option>
@@ -26,6 +27,14 @@
                     <option value="politics">Politics</option>
                     <!-- Add more topics as needed -->
                 </select>
+
+
+                <label for="poll-name">Poll Name:</label>
+                <input type="text" id="poll-name" required>
+
+                <label for="poll-description">Poll Description:</label>
+                <input type="text" id="poll-description" required>
+
 
                 <div id="questions-container">
                     <!-- Questions will be dynamically added here -->
@@ -38,7 +47,7 @@
     </section>
     <!-- //Poll Management Section -->
 
-    <script src="../../script/admin/add-poll.js"> </script>
+    <script src="script/admin/add-poll.js"> </script>
 </body>
 
 </html>
