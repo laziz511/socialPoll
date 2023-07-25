@@ -20,11 +20,20 @@
 
   <dependencies>
 
-<!--    <dependency>-->
-<!--      <groupId>com.google.code.gson</groupId>-->
-<!--      <artifactId>gson</artifactId>-->
-<!--      <version>2.10.1</version>-->
-<!--    </dependency>-->
+<!--      &lt;!&ndash; https://mvnrepository.com/artifact/org.mockito/mockito-all &ndash;&gt;-->
+<!--      <dependency>-->
+<!--          <groupId>org.mockito</groupId>-->
+<!--          <artifactId>mockito-all</artifactId>-->
+<!--          <version>1.10.19</version>-->
+<!--          <scope>test</scope>-->
+<!--      </dependency>-->
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+      <version>4.11.0</version> <!-- Replace with the latest version -->
+      <scope>test</scope>
+    </dependency>
 
 
     <!-- Servlet API -->
@@ -78,12 +87,7 @@
       <version>5.10.0-M1</version>
       <scope>test</scope>
     </dependency>
-      <dependency>
-          <groupId>org.mockito</groupId>
-          <artifactId>mockito-all</artifactId>
-          <version>3.4.0</version>
-          <scope>test</scope>
-      </dependency>
+
 
   </dependencies>
 

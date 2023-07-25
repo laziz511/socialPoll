@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="results page displayed, missing exact percentages">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/UserDaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/listener/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/service/impl/TopicServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/service/impl/UserServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/service/validator/impl/PollValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/connection/database.properties" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds test, works main parts, manage-poll incomplete!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/TopicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/TopicDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/TopicDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/TopicDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/PollResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/PollResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/listeners/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/listeners/AppInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/connection/ConnectionPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/connection/ConnectionPoolTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +74,7 @@
       <recent name="com.dev.socialPoll.dao.connection" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PollValidatorTest">
+  <component name="RunManager" selected="JUnit.All in SocialPoll">
     <configuration name="All in SocialPoll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SocialPoll" />
       <option name="PACKAGE_NAME" value="" />
@@ -150,17 +129,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TopicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com.dev.socialPoll in SocialPoll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SocialPoll" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dev.socialPoll.service.impl.*" />
+          <option name="PATTERN" value="com.dev.socialPoll.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.dev.socialPoll.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.dev.socialPoll.service.impl.TopicServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.dev.socialPoll" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PollValidatorTest" />
         <item itemvalue="JUnit.All in SocialPoll" />
+        <item itemvalue="JUnit.com.dev.socialPoll in SocialPoll" />
+        <item itemvalue="JUnit.PollValidatorTest" />
         <item itemvalue="JUnit.TopicServiceImplTest" />
         <item itemvalue="JUnit.TopicServiceImplTest.testRetrieveTopicById_ShouldReturnTopic" />
-        <item itemvalue="JUnit.TopicServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690294323841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adds test, works main parts, manage-poll incomplete!">
+      <created>1690303895336</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690303895336</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +254,7 @@
     <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
     <MESSAGE value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
     <MESSAGE value="results page displayed, missing exact percentages" />
-    <option name="LAST_COMMIT_MESSAGE" value="results page displayed, missing exact percentages" />
+    <MESSAGE value="adds test, works main parts, manage-poll incomplete!" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds test, works main parts, manage-poll incomplete!" />
   </component>
 </project>
