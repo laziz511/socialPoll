@@ -16,24 +16,25 @@
     <section>
         <div class="form-container">
             <h2>Create Polls</h2>
+
             <form id="poll-form" action="add-poll" method="post">
 
                 <label for="poll-topic">Poll Topic:</label>
-                <select id="poll-topic" required>
+                <select id="poll-topic" name="topicId" required>
                     <option value="" disabled selected>Select a topic</option>
-                    <option value="family"> Family</option>
-                    <option value="environment">Environment</option>
-                    <option value="gender equality">Gender Equality</option>
-                    <option value="politics">Politics</option>
+                    <option value="1">Family</option>
+                    <option value="2">Environment</option>
+                    <option value="3">Gender Equality</option>
+                    <option value="4">Politics</option>
                     <!-- Add more topics as needed -->
                 </select>
 
-
                 <label for="poll-name">Poll Name:</label>
-                <input type="text" id="poll-name" required>
+                <input type="text" name="pollName" id="poll-name" required>
 
                 <label for="poll-description">Poll Description:</label>
-                <input type="text" id="poll-description" required>
+                <input type="text" name="pollDescription" id="poll-description" required>
+
 
 
                 <div id="questions-container">
@@ -41,8 +42,14 @@
                 </div>
 
                 <button type="button" onclick="addQuestion()">Add Question</button>
-                <button type="submit">Create Poll</button>
+                <button type="submit" class="submit">Create Poll</button>
+
+                <input type="hidden" id="questionCount" name="questionCount" value="0">
+                <input type="hidden" id="optionCount" name="optionCount" value="0">
+
             </form>
+
+
         </div>
     </section>
     <!-- //Poll Management Section -->

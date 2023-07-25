@@ -1,12 +1,3 @@
--- Drop the database if it exists (optional, use this only if you want to recreate the database)
-DROP DATABASE IF EXISTS socialPoll;
-
--- Create the database
-CREATE DATABASE socialPoll;
-
-
--- Create the Gender ENUM type
-CREATE TYPE Gender AS ENUM ('MALE', 'FEMALE', 'OTHER');
 
 
 -- Table for storing topics
@@ -50,7 +41,7 @@ CREATE TABLE IF NOT EXISTS users (
     first_name         VARCHAR(100) NOT NULL,
     last_name          VARCHAR(100) NOT NULL,
     birthday           DATE NOT NULL,
-    gender             Gender NOT NULL,
+    gender             VARCHAR(10) NOT NULL,
     email              VARCHAR(100) NOT NULL UNIQUE,
     password           VARCHAR(100) NOT NULL,
     role               VARCHAR(10) NOT NULL CHECK (role IN ('ADMIN', 'USER', 'GUEST'))

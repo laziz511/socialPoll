@@ -1,6 +1,7 @@
 let questionCounter = 0;
 
 function addQuestion() {
+    console.log("addQuestion is working");
     if (questionCounter >= 20) {
         alert("You can create up to 20 questions.");
         return;
@@ -54,6 +55,7 @@ function addQuestion() {
 }
 
 function addOption(answerOptions) {
+    console.log("addOption is working");
     if (answerOptions.children.length >= 5) {
         alert("You can add up to 5 answer options.");
         return;
@@ -70,10 +72,30 @@ function addOption(answerOptions) {
 const pollForm = document.getElementById("poll-form");
 pollForm.addEventListener("submit", createPoll);
 
+// Update the createPoll function to populate the hidden input fields with question and option counts
 function createPoll(event) {
+    console.log("createPoll is working");
     event.preventDefault();
 
-    // Gather the poll data and submit it to the server or store in the database
+    // Gather the poll data and submit it to the server or store it in the database
     // You can access the data using form elements and their values
-    console.log("Poll data submitted:", pollForm);
+    const pollForm = event.target;
+    const questionCountInput = pollForm.querySelector("#questionCount");
+    const optionCountInput = pollForm.querySelector("#optionCount");
+    const questionsContainer = document.getElementById("questions-container");
+
+    // Set the question and option counts in the hidden input fields
+    questionCountInput.value = questionCounter;
+
+    // Calculate the total option count
+    let totalOptionCount = 0;
+    const questionDivs = questionsContainer.querySelectorAll(".question");
+    questionDivs.forEach((questionDiv) => {
+        const options = questionDiv.querySelectorAll(".answer-options input");
+        totalOptionCount += options.length;
+    });
+    optionCountInput.value = totalOptionCount;
+
+    // Submit the form
+    pollForm.submit();
 }

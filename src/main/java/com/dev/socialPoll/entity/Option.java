@@ -53,4 +53,14 @@ public class Option implements Identifiable, Serializable {
     }
 
     // equals, hashCode, and toString methods
+
+    @Override
+    public String toString() {
+        return "Option{" +
+                "id=" + id +
+                ", questionId=" + questionId +
+                ", optionText='" + optionText + '\'' +
+                ", numParticipants=" + numParticipants +
+                '}';
+    }
 }

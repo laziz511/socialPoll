@@ -1,6 +1,5 @@
 package com.dev.socialPoll.service.impl;
 
-import com.dev.socialPoll.entity.Gender;
 import com.dev.socialPoll.entity.User;
 import com.dev.socialPoll.entity.UserRole;
 import com.dev.socialPoll.exception.ServiceException;

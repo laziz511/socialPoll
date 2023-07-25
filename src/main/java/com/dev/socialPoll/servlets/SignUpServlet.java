@@ -41,13 +41,7 @@ public class SignUpServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-        UserRole userRole;
-        if (email.equals("lazizo2004@gmail.com") && password.equals("admin")) {
-            userRole = UserRole.valueOf("ADMIN");
-        } else {
-            userRole = UserRole.valueOf("USER");
-        }
+        UserRole userRole = UserRole.valueOf("USER");
 
         logger.info(firstName, lastName, birthday, gender, email, password, userRole);
 

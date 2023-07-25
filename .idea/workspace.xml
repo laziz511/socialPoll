@@ -4,29 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="gets topics from DB successfully, but cannot show in jsp">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AdminDashboardServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds SignUpServlet, LogInServlet,AdminDashboardServlet.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/image1.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/image2.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/fill_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/fill_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/Column.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/impl/UserRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/impl/UserRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Poll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Poll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/TopicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/TopicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/auth/log-in.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/auth/log-in.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/auth/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/auth/sign-up.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/surveys.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/poll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/surveys.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Hp/Desktop/EPAM Project/SocialPoll/src/main/webapp/WEB-INF/lib&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Hp/Desktop/EPAM Project/SocialPoll/src/main/webapp/images&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.43103448&quot;,
@@ -82,6 +85,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hp\Desktop\EPAM Project\SocialPoll\src\main\webapp\images" />
       <recent name="C:\Users\Hp\Desktop\EPAM Project\SocialPoll\src\main\webapp\WEB-INF\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -162,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690122398204</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adds SignUpServlet, LogInServlet,AdminDashboardServlet.">
+      <created>1690193432022</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690193432022</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +191,7 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="add frontend" />
     <MESSAGE value="gets topics from DB successfully, but cannot show in jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="gets topics from DB successfully, but cannot show in jsp" />
+    <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
+    <option name="LAST_COMMIT_MESSAGE" value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
   </component>
 </project>

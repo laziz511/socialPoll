@@ -1,10 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+
 <!DOCTYPE html>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
 
 <html lang="en">
 
@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/user/home.css">
-    <link rel="stylesheet" media="all" type="text/css" href="https://www.typeform.com/fonts/font-subset.css"
+
         fetchpriority="low" />
 </head>
 
@@ -46,10 +46,11 @@
         <div class="landing-page-section">
             <div class="landing-page background">
                 <section class="introduction-section">
-                    <h1 class="title">Easy survey maker: ask with style</h1>
+                    <h1 class="title">My Voice: Empowering Social Polls</h1>
                     <div class="description">
-                        <p>Typeforms are more engaging, so you get more responses: 95%
-                            of our users get more data, more easily after switching to Typeform.</p>
+                        <p>Don't stay indifferent – let your opinions shape the future.
+                        Take part in our engaging social polls and make a difference in your community.
+                         Unleash the power of your voice today! </p>
                     </div>
 
                 </section>
@@ -61,67 +62,75 @@
         <section>
             <div class="balanced-section center1 background">
                 <div class="image-container">
-                    <img src="https://images.ctfassets.net/co0pvta7hzrh/1I2vFuMaY9YAlILzOsKaeU/995863a599e70869fe56a687f9b16619/fdeecc1e-logic-jumps_10s00oo000000000000028__1_.png?fm=webp&amp;q=75"
+                    <img src="images/image1.JPG"
                         class="image-align" />
                 </div>
 
                 <div class="heading-container">
-                    <h2 class="text-box">Quality, actionable data</h2>
+                    <h2 class="text-box">Personalized Insights, Better Data</h2>
                 </div>
 
                 <div class="para-box">
-                    <p>Typeform responds to previous answers to show only the most relevant questions. A
-                        better experience for respondents = better data for you, presented in clear
-                        reports and metrics.</p>
+                    <p>My Voice' delivers tailored questions for a better respondent experience.
+                    Get quality data, clear reports, and valuable insights for impactful decisions in your society.</p>
                 </div>
             </div>
         </section>
 
 
-         <!-- Survey topics start -->
-                <section>
-                    <div class="poll-section">
-                        <div class="container">
-                            <h2 class="text-box">Poll Topics</h2>
-                            <div class="cards">
-                                <c:forEach items="${requestScope.pollTopics}" var="topic">
-                                    <div class="card">
-                                        <h2 class="topic">${topic.topicName}</h2>
-                                        <p class="description">${topic.description}</p>
-                                        <div class="info">
-                                            <div class="info-text">
+        <!-- Survey topics start -->
+        <section>
+            <div class="topic-section">
+                    <c:if test="${not empty requestScope.pollTopics}">
+                    <h2 class="text-box">Poll Topics</h2>
+                    </c:if>
+
+                    <div class="cards">
+                        <c:if test="${not empty requestScope.pollTopics}">
+                            <c:forEach items="${requestScope.pollTopics}" var="topic">
+                                <div class="card">
+                                    <h2 class="topic">${topic.topicName}</h2>
+                                    <p class="description">${topic.description}</p>
+                                    <div class="info">
+                                        <div class="info-text">
+                                            <c:if test="${not empty topic.numPolls}">
                                                 <p class="survey-count">Polls: <span>${topic.numPolls}</span></p>
+                                            </c:if>
+                                            <c:if test="${not empty topic.numParticipants}">
                                                 <p class="participant-count">Participants: <span>${topic.numParticipants}</span></p>
-                                            </div>
-                                            <div class="info-button">
-                                                <div>
-                                                    <a href="polls.jsp?topicId=${topic.id}" class="button">See Polls</a>
-                                                </div>
+                                            </c:if>
+                                        </div>
+                                        <div class="info-button">
+                                            <div>
+                                                <a href="/SocialPoll/polls?topicId=${topic.id}" class="button">See Polls</a>
                                             </div>
                                         </div>
                                     </div>
-                                </c:forEach>
-                            </div>
-                        </div>
+                                </div>
+                            </c:forEach>
+                        </c:if>
                     </div>
-                </section>
-                <!-- Survey topics end -->
+            </div>
+        </section>
+        <!-- Survey topics end -->
+
+
 
 
         <section>
             <div class="balanced-section center2 background">
                 <div class="image-container"><img
-                        src="https://images.ctfassets.net/co0pvta7hzrh/yQdeEnCIVwAoOoDC6wcaa/4bdf10e0cd6de3b4c001505d4ea0482b/Frame_1347.png?fm=webp&amp;q=75"
+                        src="images/image2.JPG"
                         width="1016" height="1052" class="image-align" /></div>
 
                 <div class="heading-container">
-                    <h2 class="text-box">Time-saving simplicity</h2>
+                    <h2 class="text-box">Effortless and Efficient</h2>
                 </div>
 
                 <div class="para-box">
-                    <p> Typeforms are quick and easy to build: set up and share a beautiful survey in
-                        minutes. Use Integrations to automatically send data wherever you want it. Zero
-                        coding or onboarding needed.</p>
+                    <p> My Voice' offers a hassle-free survey creation process,
+                     allowing you to create and share beautiful polls within minutes.
+                    Seamlessly integrate data with ease, no coding or complex onboarding required.</p>
                 </div>
             </div>
         </section>

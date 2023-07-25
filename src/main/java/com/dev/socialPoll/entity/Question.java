@@ -43,4 +43,13 @@ public class Question implements Identifiable, Serializable {
     }
 
     // equals, hashCode, and toString methods
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", pollId=" + pollId +
+                ", questionText='" + questionText + '\'' +
+                '}';
+    }
 }

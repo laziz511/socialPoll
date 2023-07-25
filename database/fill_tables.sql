@@ -1,103 +1,186 @@
 /* Filling in the table "topics" */
-INSERT INTO topics (topic_name, description, num_polls, num_participants)
-VALUES ('Science', 'Discuss various scientific topics.', 2, 150);
+INSERT INTO topics (topic_name, description)
+VALUES
+    ('Family', 'Polls related to family matters and relationships.'),
+    ('Environment', 'Polls related to environmental issues and sustainability.'),
+    ('Gender Equality', 'Polls related to gender equality and womens rights.'),
+    ('Politics', 'Polls related to political topics and government policies.');
 
-INSERT INTO topics (topic_name, description, num_polls, num_participants)
-VALUES ('Technology', 'Explore the latest tech trends.', 3, 200);
-
-INSERT INTO topics (topic_name, description, num_polls, num_participants)
-VALUES ('Sports', 'Share your favorite sports moments.', 1, 100);
 
 
 /* Filling in the table "polls" */
+-- Polls related to 'Family' topic
 INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
-VALUES (1, 'Physics Poll', 'Take this poll on physics topics.', 3, 50, 'NEW');
+VALUES (1, 'Family Poll 1', 'This is the first poll about family.', 0, 0, 'NEW');
 
 INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
-VALUES (1, 'Biology Poll', 'Share your knowledge on biology.', 2, 30, 'NEW');
+VALUES (1, 'Family Poll 2', 'This is the second poll about family.', 0, 0, 'NEW');
+
+-- Polls related to 'Environment' topic
+INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
+VALUES (2, 'Environment Poll 1', 'This is the first poll about the environment.', 0, 0, 'NEW');
 
 INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
-VALUES (2, 'Gadgets Poll', 'Vote for your favorite gadgets.', 4, 80, 'NEW');
+VALUES (2, 'Environment Poll 2', 'This is the second poll about the environment.', 0, 0, 'NEW');
+
+-- Polls related to 'Gender Equality' topic
+INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
+VALUES (3, 'Gender Equality Poll 1', 'This is the first poll about gender equality.', 0, 0, 'NEW');
 
 INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
-VALUES (3, 'Football Poll', 'Pick your favorite football team.', 1, 70, 'NEW');
+VALUES (3, 'Gender Equality Poll 2', 'This is the second poll about gender equality.', 0, 0, 'NEW');
+
+-- Polls related to 'Politics' topic
+INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
+VALUES (4, 'Politics Poll 1', 'This is the first poll about politics.', 0, 0, 'NEW');
+
+INSERT INTO polls (topic_id, poll_name, description, num_questions, num_participants, status)
+VALUES (4, 'Politics Poll 2', 'This is the second poll about politics.', 0, 0, 'NEW');
 
 
 
 /* Filling in the table "questions" */
-INSERT INTO questions (poll_id, question_text)
-VALUES (1, 'What is the speed of light in a vacuum?');
+INSERT INTO questions (poll_id, question_text) VALUES
+    (9, 'How important is family time for you?'),
+    (9, 'Do you think family support is crucial for personal growth?'),
+    (10, 'How do you handle conflicts within your family?'),
+    (10, 'What is your favorite family tradition?'),
+    (11, 'What do you think is the most pressing environmental issue today?'),
+    (11, 'What steps do you take to reduce your environmental footprint?'),
+    (12, 'How concerned are you about climate change?'),
+    (12, 'Have you participated in any environmental conservation activities?'),
+    (13, 'Do you believe gender equality has improved in recent years?'),
+    (13, 'What are some challenges that still exist in achieving gender equality?'),
+    (14, 'How important is promoting gender equality in educational institutions?'),
+    (14, 'Have you witnessed instances of gender discrimination in your workplace?'),
+    (15, 'What are the key factors you consider when voting for a political candidate?'),
+    (15, 'How satisfied are you with the current state of politics in the country?'),
+    (16, 'What is your opinion on the government''s economic policies?'),
+    (16, 'Do you believe the government is doing enough to address social issues?');
 
-INSERT INTO questions (poll_id, question_text)
-VALUES (1, 'What is the formula for calculating force?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (1, 'What is the atomic number of carbon?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (2, 'What is the process of photosynthesis?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (2, 'What are the four primary types of organic compounds?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (3, 'Which smartphone brand do you prefer?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (3, 'What is your favorite laptop brand?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (3, 'Which smartwatch do you like the most?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (3, 'Which gaming console do you use?');
-
-INSERT INTO questions (poll_id, question_text)
-VALUES (4, 'Which football team is your favorite?');
 
 
 
 /* Filling in the table "options" */
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (1, '299,792,458 meters per second', 25);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (1, '300,000,000 meters per second', 15);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (1, '200,000,000 meters per second', 10);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (2, 'F = ma', 18);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (2, 'F = mv', 12);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (3, '6', 20);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (3, '8', 8);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (4, 'Process of converting light into energy', 22);
-
-INSERT INTO options (question_id, option_text, num_participants)
-VALUES (4, 'Process of converting carbon dioxide and water into glucose and oxygen', 28);
+INSERT INTO options (question_id, option_text) VALUES
+    (2, 'Extremely important'),
+    (2, 'Very important'),
+    (2, 'Moderately important'),
+    (3, 'Yes, it is crucial'),
+    (3, 'It can be helpful in some cases'),
+    (3, 'No, it is not essential'),
+    (4, 'Open communication and discussion'),
+    (4, 'Listening and understanding each other'),
+    (4, 'Compromise and finding common ground'),
+    (5, 'Celebrating birthdays and holidays together'),
+    (5, 'Gathering for family meals'),
+    (5, 'Passing down family traditions to younger generations'),
+    (6, 'Climate change'),
+    (6, 'Deforestation'),
+    (6, 'Water pollution'),
+    (7, 'Using energy-efficient appliances'),
+    (7, 'Reducing, reusing, and recycling'),
+    (7, 'Conserving water and electricity'),
+    (8, 'Very concerned'),
+    (8, 'Moderately concerned'),
+    (8, 'Not concerned'),
+    (9, 'Yes, I actively participate'),
+    (9, 'I have participated in the past'),
+    (9, 'No, I have not participated'),
+    (10, 'Yes, it has improved significantly'),
+    (10, 'Yes, but progress is slow'),
+    (10, 'No, it has not improved'),
+    (11, 'Equal pay and opportunities'),
+    (11, 'Gender stereotypes and biases'),
+    (11, 'Access to education and healthcare'),
+    (12, 'Very important'),
+    (12, 'Somewhat important'),
+    (12, 'Not very important'),
+    (13, 'Yes, I have witnessed instances'),
+    (13, 'I have not witnessed any instances'),
+    (13, 'I am not sure'),
+    (14, 'Candidate''s stance on important issues'),
+    (14, 'Candidate''s track record and experience'),
+    (14, 'Candidate''s ability to bring about change'),
+    (15, 'Satisfied'),
+    (15, 'Neutral'),
+    (15, 'Dissatisfied'),
+    (16, 'I agree with them'),
+    (16, 'I disagree with them'),
+    (16, 'I am unsure'),
+    (17, 'Yes, the government is doing enough'),
+    (17, 'No, more needs to be done'),
+    (17, 'I am undecided');
 
 
 
 /* Filling in the table "users" */
 INSERT INTO users (first_name, last_name, birthday, gender, email, password, role)
-VALUES ('Alice', 'Smith', '1990-05-15', 'Female', 'alice.smith@example.com', 'password123', 'USER');
+ VALUES ('Laziz', 'Djuraev', '2003-10-11', 'MALE', 'lazizo2004@gmail.com', 'admin', 'ADMIN');
 
-INSERT INTO users (first_name, last_name, birthday, gender, email, password, role)
-VALUES ('Bob', 'Johnson', '1985-10-25', 'Male', 'bob.johnson@example.com', 'securepass', 'ADMIN');
 
 
 /* Filling in the table "poll_responses" */
-INSERT INTO poll_responses (poll_id, question_id, option_id, user_id, response_time)
-VALUES (1, 1, 1, 1);
+-- Question 1 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (9, 2, 3, 1);
 
-INSERT INTO poll_responses (poll_id, question_id, option_id, user_id, response_time)
-VALUES (1, 2, 4, 2);
+-- Question 2 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (9, 3, 6, 1);
+
+-- Question 3 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (10, 4, 9, 1);
+
+-- Question 4 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (10, 5, 12, 1);
+
+-- Question 5 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (11, 6, 15, 1);
+
+-- Question 6 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (11, 7, 18, 1);
+
+-- Question 7 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (12, 8, 21, 1);
+
+-- Question 8 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (12, 9, 24, 1);
+
+-- Question 9 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (13, 10, 27, 1);
+
+-- Question 10 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (13, 11, 30, 1);
+
+-- Question 11 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (14, 12, 33, 1);
+
+-- Question 12 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (14, 13, 36, 1);
+
+-- Question 13 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (15, 14, 39, 1);
+
+-- Question 14 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (15, 15, 42, 1);
+
+-- Question 15 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (16, 16, 45, 1);
+
+-- Question 16 response
+INSERT INTO poll_responses (poll_id, question_id, option_id, user_id)
+VALUES (16, 17, 48, 1);

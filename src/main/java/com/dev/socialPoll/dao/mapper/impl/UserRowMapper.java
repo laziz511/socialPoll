@@ -2,7 +2,6 @@ package com.dev.socialPoll.dao.mapper.impl;
 
 import com.dev.socialPoll.dao.mapper.Column;
 import com.dev.socialPoll.dao.mapper.RowMapper;
-import com.dev.socialPoll.entity.Gender;
 import com.dev.socialPoll.entity.User;
 import com.dev.socialPoll.entity.UserRole;
 

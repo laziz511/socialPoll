@@ -83,4 +83,17 @@ public class Poll implements Identifiable, Serializable {
     }
 
     // equals, hashCode, and toString methods
+
+    @Override
+    public String toString() {
+        return "Poll{" +
+                "id=" + id +
+                ", topicId=" + topicId +
+                ", pollName='" + pollName + '\'' +
+                ", description='" + description + '\'' +
+                ", numQuestions=" + numQuestions +
+                ", numParticipants=" + numParticipants +
+                ", status=" + status +
+                '}';
+    }
 }
