@@ -36,13 +36,4 @@ public class TopicDaoImpl extends AbstractDao<Topic> implements TopicDao {
         return executeQuery(FIND_ALL_TOPICS_QUERY);
     }
 
-    @Override
-    public int countPollsByTopic(long topicId) throws DaoException {
-        return executeCountQuery(COUNT_POLLS_BY_TOPIC_QUERY, topicId);
-    }
-
-    @Override
-    public int countParticipantsByTopic(long topicId) throws DaoException {
-        return executeCountQuery(COUNT_PARTICIPANTS_BY_TOPIC_QUERY, topicId);
-    }
 }

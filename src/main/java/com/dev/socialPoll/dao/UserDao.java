@@ -14,4 +14,5 @@ public interface UserDao {
 
     Optional<User> findById(long userId);
 
+    void deleteById(long savedUserId)  throws DaoException;
 }

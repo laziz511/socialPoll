@@ -1,8 +1,7 @@
-package com.dev.socialPoll.listeners;
+package com.dev.socialPoll.dao.listener;
 
 import com.dev.socialPoll.dao.connection.ConnectionPool;
 import com.dev.socialPoll.exception.ConnectionException;
-
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;

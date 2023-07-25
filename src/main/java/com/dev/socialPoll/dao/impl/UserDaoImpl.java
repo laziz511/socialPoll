@@ -15,6 +15,7 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
     private static final String FIND_USER_BY_EMAIL_QUERY = "SELECT * FROM " + Table.USERS + " WHERE email=?";
     private static final String FIND_USER_BY_EMAIL_AND_PASSWORD_QUERY = "SELECT * FROM " + Table.USERS + " WHERE email=? AND password=?";
 
+    private static final String DELETE_USER_QUERY = "DELETE FROM " + Table.USERS + " WHERE user_id = ?";
     public UserDaoImpl() {
         super(RowMapperFactory.getInstance().getUserRowMapper(), Table.USERS);
     }
@@ -38,5 +39,10 @@ public class UserDaoImpl extends AbstractDao<User> implements UserDao {
     @Override
     public Optional<User> findById(long userId) {
         return null;
+    }
+
+    @Override
+    public void deleteById(long savedUserId) throws DaoException {
+        executeUpdateQuery(DELETE_USER_QUERY, savedUserId);
     }
 }

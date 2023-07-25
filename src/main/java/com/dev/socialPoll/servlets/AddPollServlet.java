@@ -41,51 +41,39 @@ public class AddPollServlet extends HttpServlet {
 
         logger.info("- - - - - - - - - - - doPost starts  - - - - - - - - - - - - - -  - -");
 
-        // Get the form data from the request
         long topicId = Long.parseLong(request.getParameter("topicId"));
         String pollName = request.getParameter("pollName");
         String pollDescription = request.getParameter("pollDescription");
-
-
-        // Retrieve the question and option counts from hidden input fields
         int questionCount = Integer.parseInt(request.getParameter("questionCount"));
-        int optionCount = Integer.parseInt(request.getParameter("optionCount"));
-
-        logger.info(topicId);
-        logger.info(pollName);
-        logger.info(pollDescription);
-        logger.info(questionCount);
-        logger.info(optionCount);
 
 
-        // Retrieve the questions and their answer options
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
         for (int i = 1; i <= questionCount; i++) {
             String questionKey = "question" + i;
             List<String> options = new ArrayList<>();
-            for (int j = 1; j <= optionCount; j++) {
+            for (int j = 1; j <= 5; j++) {
                 String optionKey = questionKey + "-option" + j;
                 String optionValue = request.getParameter(optionKey);
-                options.add(optionValue);
+                if (optionValue != null) {
+                    options.add(optionValue);
+                }
             }
             questionOptionsMap.put(questionKey, options);
         }
 
+        logger.info("topicId : " + topicId + " pollName: " + pollName + " pollDescription: " + pollDescription);
         logger.info(questionOptionsMap);
 
-        // Process the form data and save it to the database using your service method
         PollService pollService = ServiceFactory.getInstance().getPollService();
 
         try {
             pollService.addNewPoll(topicId, pollName, pollDescription, questionOptionsMap);
         } catch (ServiceException e) {
             logger.error("Error occurred while adding a new poll!", e);
-            // Handle the error and redirect to an error page or display an error message
             response.sendRedirect("error.jsp");
+            return;
         }
-
         logger.info("- - - - - - - - - - - doPost ends  - - - - - - - - - - - - - -  - -");
-        response.sendRedirect("/SocialPoll/home"); // Redirect to a confirmation page or the polls list page
+        response.sendRedirect("/SocialPoll/admin-dashboard");
     }
-
 }

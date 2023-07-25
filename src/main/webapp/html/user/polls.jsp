@@ -26,7 +26,7 @@
             </div>
 
             <div>
-                <a href="" class="survey-button"> Create my poll</a>
+                <a href="/SocialPoll/admin-dashboard" class="survey-button"> Create my poll</a>
             </div>
 
         </div>

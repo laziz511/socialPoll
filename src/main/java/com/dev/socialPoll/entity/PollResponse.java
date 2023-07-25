@@ -62,4 +62,15 @@ public class PollResponse implements Identifiable {
     }
 
     // equals, hashCode, and toString methods
+
+    @Override
+    public String toString() {
+        return "PollResponse{" +
+                "id=" + id +
+                ", pollId=" + pollId +
+                ", questionId=" + questionId +
+                ", optionId=" + optionId +
+                ", userId=" + userId +
+                '}';
+    }
 }
