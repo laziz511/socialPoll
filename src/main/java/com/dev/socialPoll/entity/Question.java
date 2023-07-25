@@ -1,11 +1,14 @@
 package com.dev.socialPoll.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Question implements Identifiable, Serializable {
     private long id;
     private long pollId;
     private String questionText;
+
+    private List<Option> options;
 
     public Question() {}
 
@@ -40,6 +43,14 @@ public class Question implements Identifiable, Serializable {
 
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
+    }
+
+    public List<Option> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<Option> options) {
+        this.options = options;
     }
 
     // equals, hashCode, and toString methods

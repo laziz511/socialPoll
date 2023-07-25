@@ -43,7 +43,6 @@ public class LogInServlet extends HttpServlet {
 
                 response.sendRedirect("/SocialPoll/home");
             } else {
-                // Login failed, set error message and forward to login page
                 request.setAttribute("error", "Credentials are not correct. Try Sign-up!");
                 doGet(request, response);
             }

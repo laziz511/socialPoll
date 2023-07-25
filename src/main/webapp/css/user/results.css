@@ -163,6 +163,15 @@ p {
     margin-bottom: 10px;
 }
 
+.answer-text {
+  font-size: 16px;
+  color: #333333;
+}
+
+.answer-option:hover .answer-text {
+  color: #4eaf8e;
+}
+
 .percentage {
     font-weight: bold;
 }

@@ -4,32 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds SignUpServlet, LogInServlet,AdminDashboardServlet.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/image1.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/image2.JPG" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/fill_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/fill_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/impl/UserRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/mapper/impl/UserRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Gender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Poll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Poll.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/surveys.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/poll.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/surveys.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/poll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/poll.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/user/poll.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690193432022</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete.">
+      <created>1690276383149</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690276383149</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,6 +188,7 @@
     <MESSAGE value="add frontend" />
     <MESSAGE value="gets topics from DB successfully, but cannot show in jsp" />
     <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
-    <option name="LAST_COMMIT_MESSAGE" value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
+    <MESSAGE value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
+    <option name="LAST_COMMIT_MESSAGE" value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
   </component>
 </project>

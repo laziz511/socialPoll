@@ -25,8 +25,6 @@ public class PollsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        logger.info("PollsServlet doPost method is called");
-
         long topicId = Long.parseLong(request.getParameter("topicId"));
         PollService pollService = ServiceFactory.getInstance().getPollService();
         TopicService topicService = ServiceFactory.getInstance().getTopicService();
@@ -35,14 +33,9 @@ public class PollsServlet extends HttpServlet {
             List<Poll> polls = pollService.retrievePollsByTopic(topicId);
             Optional<Topic> topic = topicService.retrieveTopicById(topicId);
 
-
             request.setAttribute("topic", topic.get().getTopicName());
             request.setAttribute("polls", polls);
 
-            logger.info("topic : " + topic.get().getTopicName());
-            logger.info("polls retrieved : " + polls);
-
-            // Forward the request to the index.jsp page
             request.getRequestDispatcher("html/user/polls.jsp").forward(request, response);
         } catch (ServiceException e) {
             logger.info("Error occured while retrieving polls by topicId");

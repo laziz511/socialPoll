@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -35,7 +34,7 @@
     <!-- navbar end -->
 
 
- <!-- surveys section start -->
+    <!-- surveys section start -->
     <section>
         <div class="topic-section">
             <c:if test="${not empty requestScope.polls}">
@@ -43,34 +42,35 @@
             </c:if>
 
             <div class="cards">
-             <c:if test="${not empty requestScope.polls}">
-                <c:forEach items="${requestScope.polls}" var="poll">
-                    <div class="card">
-                        <h3 class="topic">
-                            <i class="fas fa-user-friends icon"></i>
-                            ${poll.pollName}
-                        </h3>
-                        <p class="description">${poll.description}</p>
-                        <div class="info">
-                            <div class="info-text">
-                                <p class="question-count">
-                                    <i class="fas fa-question-circle"></i>
-                                    Number of questions: <span>${poll.numQuestions}</span>
-                                </p>
-                                <p class="participant-count">
-                                    <i class="fas fa-users"></i>
-                                    Participants: <span>${poll.numParticipants}</span>
-                                </p>
-                            </div>
-                            <div class="info-button">
-                                <div>
-                                    <a href="/SocialPoll/take-poll?pollId=${poll.id}" class="survey-button">Take the Poll</a>
+                <c:if test="${not empty requestScope.polls}">
+                    <c:forEach items="${requestScope.polls}" var="poll">
+                        <div class="card">
+                            <h3 class="topic">
+                                <i class="fas fa-user-friends icon"></i>
+                                ${poll.pollName}
+                            </h3>
+                            <p class="description">${poll.description}</p>
+                            <div class="info">
+                                <div class="info-text">
+                                    <p class="question-count">
+                                        <i class="fas fa-question-circle"></i>
+                                        Number of questions: <span>${poll.numQuestions}</span>
+                                    </p>
+                                    <p class="participant-count">
+                                        <i class="fas fa-users"></i>
+                                        Participants: <span>${poll.numParticipants}</span>
+                                    </p>
+                                </div>
+                                <div class="info-button">
+                                    <div>
+                                        <a href="/SocialPoll/take-poll?pollId=${poll.id}" class="survey-button">Take the
+                                            Poll</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </c:forEach>
-                 </c:if>
+                </c:if>
             </div>
 
             <div class="post-text">

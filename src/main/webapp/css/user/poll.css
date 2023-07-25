@@ -72,7 +72,7 @@ p {
   margin-top: 100px;
   width: 600px;
   padding: 40px;
-  background: rgba(37, 154, 59, 0.351); 
+  background: rgba(37, 154, 59, 0.351);
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -230,38 +230,6 @@ p {
   cursor: not-allowed;
 }
 
-.additional-buttons {
-  display: flex;
-  gap: 25px;
-}
-
-.additional-buttons > a {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #000000;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.additional-buttons button:hover {
-  background-color: rgba(44, 39, 39, 0.877);
-}
-
-@media (max-width: 600px) {
-
-  .additional-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.hidden {
-  display: none;
-}
 
 /* footer start */
 .footer-section {

@@ -30,9 +30,6 @@ public class AbstractQueryExecutor<T extends Identifiable> {
         try (PreparedStatement statement = createStatement(query, params);
              ResultSet resultSet = statement.executeQuery()) {
             entities = createEntitiesList(resultSet);
-            logger.info("execute query is working");
-            logger.info("Entities : " + entities);
-            logger.info("execute query is working");
         } catch (SQLException e) {
             logger.error("Unable to execute query", e);
             throw new DaoException(e.getMessage(), e);
@@ -107,7 +104,6 @@ public class AbstractQueryExecutor<T extends Identifiable> {
     }
 
     private List<T> createEntitiesList(ResultSet resultSet) throws DaoException {
-        logger.info("createEntitiesList is working");
         List<T> entities = new ArrayList<>();
         try {
             while (resultSet.next()) {

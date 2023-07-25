@@ -1,6 +1,7 @@
 package com.dev.socialPoll.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Poll implements Identifiable, Serializable {
     private long id;
@@ -10,6 +11,7 @@ public class Poll implements Identifiable, Serializable {
     private int numQuestions;
     private int numParticipants;
     private PollStatus status;
+    private List<Question> questions;
 
     public Poll() {}
 
@@ -80,6 +82,14 @@ public class Poll implements Identifiable, Serializable {
 
     public void setStatus(PollStatus status) {
         this.status = status;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
     }
 
     // equals, hashCode, and toString methods
