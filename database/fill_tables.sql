@@ -118,6 +118,9 @@ INSERT INTO options (question_id, option_text) VALUES
 INSERT INTO users (first_name, last_name, birthday, gender, email, password, role)
  VALUES ('Laziz', 'Djuraev', '2003-10-11', 'MALE', 'lazizo2004@gmail.com', 'admin', 'ADMIN');
 
+INSERT INTO users (first_name, last_name, birthday, gender, email, password, role)
+ VALUES ('Admin', 'Adminov', '2003-10-11', 'MALE', 'admin@gmail.com', 'a', 'ADMIN');
+
 
 
 /* Filling in the table "poll_responses" */

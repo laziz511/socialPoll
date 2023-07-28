@@ -12,23 +12,30 @@
 </head>
 
 <body>
-    <!-- Poll Management Section -->
-    <section>
-        <div class="form-container">
-            <h2>Manage Polls</h2>
-            <form id="manage-poll-form">
-                <div id="questions-container">
-                    <!-- Questions will be dynamically added here -->
-                </div>
+    <!-- Include the header -->
+    <%@ include file="../fragments/header.jsp" %>
 
-                <button type="button" onclick="addQuestion()">Add Question</button>
-                <button type="submit">Save Changes</button>
-            </form>
-        </div>
-    </section>
-    <!-- //Poll Management Section -->
+        <!-- Poll Management Section -->
+        <section>
+            <div class="form-container">
+                <h2>Manage Polls</h2>
+                <form id="manage-poll-form">
+                    <div id="questions-container">
+                        <!-- Questions will be dynamically added here -->
+                    </div>
 
-    <script src="script/admin/manage-poll.js"></script>
+                    <button type="button" onclick="addQuestion()">Add Question</button>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </section>
+        <!-- //Poll Management Section -->
+
+        <!-- footer start -->
+        <%@ include file="../fragments/footer.jsp" %>
+            <!-- footer end -->
+
+            <script src="script/admin/manage-poll.js"></script>
 </body>
 
 </html>

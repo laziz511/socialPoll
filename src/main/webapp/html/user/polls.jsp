@@ -63,8 +63,16 @@
                                 </div>
                                 <div class="info-button">
                                     <div>
-                                        <a href="/SocialPoll/take-poll?pollId=${poll.id}" class="survey-button">Take the
-                                            Poll</a>
+                                        <c:choose>
+                                            <c:when test="${poll.userHasTaken}">
+                                                <!-- Show the button in red with text "Taken" -->
+                                                <a href="#" class="survey-button taken-button"  onclick="return false;" >Taken</a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <!-- Show the button in black with text "Take the Poll" -->
+                                                <a href="/SocialPoll/take-poll?pollId=${poll.id}" class="survey-button">Take the Poll</a>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </div>
                                 </div>
                             </div>

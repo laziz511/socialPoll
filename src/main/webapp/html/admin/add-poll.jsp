@@ -16,49 +16,57 @@
 </head>
 
 <body>
-    <!-- Poll Management Section -->
-    <section>
-        <div class="form-container">
-            <h2>Create Polls</h2>
+    <!-- Include the header -->
+    <%@ include file="../fragments/header.jsp" %>
 
-            <form id="poll-form" action="add-poll" method="post">
+        <!-- Poll Management Section -->
+        <section>
+            <div class="form-container">
+                <h2>Create Polls</h2>
 
-                <label for="poll-topic">Poll Topic:</label>
-                <select id="poll-topic" name="topicId" required>
-                    <option value="" disabled selected>Select a topic</option>
-                    <option value="1">Family</option>
-                    <option value="2">Environment</option>
-                    <option value="3">Gender Equality</option>
-                    <option value="4">Politics</option>
-                    <!-- Add more topics as needed -->
-                </select>
+                <form id="poll-form" action="add-poll" method="post">
 
-                <label for="poll-name">Poll Name:</label>
-                <input type="text" name="pollName" id="poll-name" required>
+                    <label for="poll-topic">Poll Topic:</label>
+                    <select id="poll-topic" name="topicId" required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="1">Family</option>
+                        <option value="2">Environment</option>
+                        <option value="3">Gender Equality</option>
+                        <option value="4">Politics</option>
+                        <!-- Add more topics as needed -->
+                    </select>
 
-                <label for="poll-description">Poll Description:</label>
-                <input type="text" name="pollDescription" id="poll-description" required>
+                    <label for="poll-name">Poll Name:</label>
+                    <input type="text" name="pollName" id="poll-name" required>
 
-
-
-                <div id="questions-container">
-                    <!-- Questions will be dynamically added here -->
-                </div>
-
-                <button type="button" onclick="addQuestion()">Add Question</button>
-                <button type="submit" class="submit">Create Poll</button>
-
-                <input type="hidden" id="questionCount" name="questionCount" value="0">
-                <input type="hidden" id="optionCount" name="optionCount" value="0">
-
-            </form>
+                    <label for="poll-description">Poll Description:</label>
+                    <input type="text" name="pollDescription" id="poll-description" required>
 
 
-        </div>
-    </section>
-    <!-- //Poll Management Section -->
 
-    <script src="script/admin/add-poll.js"> </script>
+                    <div id="questions-container">
+                        <!-- Questions will be dynamically added here -->
+                    </div>
+
+                    <button type="button" onclick="addQuestion()">Add Question</button>
+                    <button type="submit" class="submit">Create Poll</button>
+
+                    <input type="hidden" id="questionCount" name="questionCount" value="0">
+                    <input type="hidden" id="optionCount" name="optionCount" value="0">
+
+                </form>
+
+
+            </div>
+        </section>
+        <!-- //Poll Management Section -->
+
+        <!-- footer start -->
+
+          <jsp:include page="../fragments/footer.jsp"/>
+            <!-- footer end -->
+
+            <script src="script/admin/add-poll.js"> </script>
 </body>
 
 </html>

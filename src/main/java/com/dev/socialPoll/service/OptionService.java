@@ -18,6 +18,5 @@ public interface OptionService {
 
     boolean deleteOption(long optionId) throws ServiceException;
 
-    boolean increaseParticipantsCount(long optionId) throws ServiceException;
-
+    boolean increaseParticipantsCount(long optionId, int numParticipants) throws ServiceException;
 }

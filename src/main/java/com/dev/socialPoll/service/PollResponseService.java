@@ -11,4 +11,7 @@ public interface PollResponseService {
 
     boolean addNewPollResponse(long pollId, long questionId, long optionId, long userId) throws ServiceException;
 
+    boolean hasPollResponse(long userId, long pollId) throws ServiceException;
+
+    List<Long> getPollIdsByUserId(long userId) throws ServiceException;
 }

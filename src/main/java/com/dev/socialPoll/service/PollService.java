@@ -14,11 +14,17 @@ public interface PollService {
 
     Optional<Poll> retrievePollById(long pollId) throws ServiceException;
 
-    boolean addNewPoll(long topicId, String pollName, String description, Map<String, List<String>> questionOptionsMap)
+    boolean addNewPoll(long topicId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap, long creatorId)
             throws ServiceException;
 
     boolean updatePollInformation(long pollId, String pollName, String description) throws ServiceException;
 
     boolean deletePoll(long pollId) throws ServiceException;
+
+    boolean hasPollResponse(long userId, long id);
+
+    boolean incrementNumParticipants(long pollId) throws ServiceException;
+
+    List<Poll> getPollsByCreatorId(long creatorId) throws ServiceException;
 
 }

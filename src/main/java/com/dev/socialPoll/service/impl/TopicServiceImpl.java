@@ -40,4 +40,35 @@ public class TopicServiceImpl implements TopicService {
             throw new ServiceException(e.getMessage(),e);
         }
     }
+
+    @Override
+    public void updateNumPollsForTopic(long topicId) throws ServiceException {
+        try {
+            TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
+
+            Optional<Topic> optionalTopic = topicDao.findById(topicId);
+            if (optionalTopic.isPresent()) {
+                Topic topic = optionalTopic.get();
+
+                int currentNumPolls = topic.getNumPolls();
+                topic.setNumPolls(currentNumPolls + 1);
+
+                topicDao.update(topic);
+            }
+        } catch (DaoException e) {
+            logger.error("Unable to update number of polls for the topic!", e);
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public void incrementNumParticipantsForTopic(long topicId) throws ServiceException {
+        try {
+            TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
+            topicDao.incrementNumParticipants(topicId);
+        } catch (DaoException e) {
+            logger.error("Unable to increment the number of participants for the topic!", e);
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
 }

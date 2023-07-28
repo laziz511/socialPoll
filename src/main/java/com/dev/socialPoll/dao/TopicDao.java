@@ -13,4 +13,7 @@ public interface TopicDao extends Dao<Topic> {
 
     List<Topic> findAll() throws DaoException;
 
+    void update(Topic topic) throws DaoException;
+    void incrementNumParticipants(long topicId) throws DaoException;
+
 }

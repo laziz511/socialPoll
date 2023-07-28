@@ -81,12 +81,20 @@ p {
     border-radius: 10px;
     background: #1A1A19;
     color: #FFFFFF;
-
 }
 
 .survey-button:hover {
     opacity: 0.8;
 }
+
+.taken-button {
+   background: rgb(174, 41, 41);
+}
+
+.taken-button:hover {
+    cursor: not-allowed;
+}
+
 
 
 @media (min-width:720px) {

@@ -26,40 +26,64 @@ public class ResultServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("ResultServlet doGet method is called");
+        logger.info("ParticipateInPollServlet doGet method is called");
 
-        // Assuming you already have "poll" and "questionOptionsMap" attributes in the session scope
-        Optional<Poll> poll = (Optional<Poll>) request.getSession().getAttribute("poll");
-        Map<Question, List<Option>> questionOptionsMap = (Map<Question, List<Option>>) request.getSession().getAttribute("questionOptionsMap");
+        if (request.getSession().getAttribute("user") == null) {
+            request.getRequestDispatcher("/log-in").forward(request, response);
+        }
+
+        PollService pollService = ServiceFactory.getInstance().getPollService();
+        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
+        OptionService optionService = ServiceFactory.getInstance().getOptionService();
+
+        try {
+            long pollId = Long.parseLong(request.getParameter("pollId"));
+            Optional<Poll> poll = pollService.retrievePollById(pollId);
+
+            if (poll.isPresent()) {
+
+                List<Question> questions = questionService.retrieveQuestionsByPoll(pollId);
+                Map<Question, List<Option>> questionOptionsMap = new HashMap<>();
+
+                for (Question question : questions) {
+                    List<Option> options = optionService.retrieveOptionsByQuestion(question.getId());
+                    question.setOptions(options);
+                    questionOptionsMap.put(question, options);
+                }
 
 
-        // Calculate percentages for each option
-        int totalParticipants = calculateTotalParticipants(questionOptionsMap);
+                // Calculate percentages for each option
+     //           int totalParticipants = calculateTotalParticipants(questionOptionsMap);
 
-        for (Map.Entry<Question, List<Option>> entry : questionOptionsMap.entrySet()) {
-            List<Option> options = entry.getValue();
-            long totalVotesForQuestion = options.stream().mapToLong(Option::getNumParticipants).sum();
+                for (Map.Entry<Question, List<Option>> entry : questionOptionsMap.entrySet()) {
+                    List<Option> options = entry.getValue();
+                    long totalVotesForQuestion = options.stream().mapToLong(Option::getNumParticipants).sum();
 
-            for (Option option : options) {
-                long votesForOption = option.getNumParticipants();
-                double percentage = totalVotesForQuestion == 0 ? 0 : (votesForOption * 100.0) / totalVotesForQuestion;
-                option.setNumParticipants((int)percentage);
+                    for (Option option : options) {
+                        long votesForOption = option.getNumParticipants();
+                        double percentage = totalVotesForQuestion == 0 ? 0 : (votesForOption * 100.0) / totalVotesForQuestion;
+                        option.setNumParticipants((int)percentage);
+                    }
+                }
+                logger.info(poll);
+                logger.info(questionOptionsMap);
+
+                // Set the calculated data in request attributes
+    //            request.setAttribute("totalParticipants", totalParticipants);
+                request.setAttribute("questionOptionsMap", questionOptionsMap);
+
+
+                request.getRequestDispatcher("html/user/results.jsp").forward(request, response);
+
+            } else {
+                response.sendRedirect("html/error.jsp");
             }
+        } catch (NumberFormatException e) {
+            logger.info("NumberFormatException occurred while retrieving poll details");
+            response.sendRedirect("index.jsp");
+        } catch (ServiceException e) {
+            logger.info("Error occurred while retrieving poll details");
+            response.sendRedirect("index.jsp");
         }
-
-        // Set the calculated data in request attributes
-        request.setAttribute("totalParticipants", totalParticipants);
-        request.setAttribute("questionOptionsMap", questionOptionsMap);
-
-        // Forward the request to the JSP
-        request.getRequestDispatcher("html/user/results.jsp").forward(request, response);
-    }
-
-    private int calculateTotalParticipants(Map<Question, List<Option>> questionOptionsMap) {
-        int totalParticipants = 0;
-        for (List<Option> options : questionOptionsMap.values()) {
-            totalParticipants += options.stream().mapToInt(Option::getNumParticipants).sum();
-        }
-        return totalParticipants;
     }
 }

@@ -25,11 +25,13 @@ public class ParticipateInPollServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("ParticipateInPollServlet doGet method is called");
 
-        if (request.getSession().getAttribute("user") == null) {
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("user");
+        if (currentUser == null) {
             request.getRequestDispatcher("/log-in").forward(request, response);
         }
+        long userId = currentUser.getId();
 
         PollService pollService = ServiceFactory.getInstance().getPollService();
         QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
@@ -40,9 +42,13 @@ public class ParticipateInPollServlet extends HttpServlet {
             Optional<Poll> poll = pollService.retrievePollById(pollId);
 
             if (poll.isPresent()) {
+                Poll currentPoll = poll.get();
 
                 List<Question> questions = questionService.retrieveQuestionsByPoll(pollId);
                 Map<Question, List<Option>> questionOptionsMap = new HashMap<>();
+
+                boolean userHasTakenPoll = pollService.hasPollResponse(userId, currentPoll.getId());
+                currentPoll.setUserHasTaken(userHasTakenPoll);
 
                 for (Question question : questions) {
                     List<Option> options = optionService.retrieveOptionsByQuestion(question.getId());
@@ -50,9 +56,8 @@ public class ParticipateInPollServlet extends HttpServlet {
                     questionOptionsMap.put(question, options);
                 }
 
-                HttpSession session = request.getSession();
-                session.setAttribute("poll", poll);
-                session.setAttribute("questionOptionsMap", questionOptionsMap);
+                request.setAttribute("poll", currentPoll);
+                request.setAttribute("questionOptionsMap", questionOptionsMap);
 
                 request.getRequestDispatcher("html/user/poll.jsp").forward(request, response);
 
@@ -70,31 +75,61 @@ public class ParticipateInPollServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("doPost of ParticipateInPollServlet is working");
 
+        TopicService topicService = ServiceFactory.getInstance().getTopicService();
         PollService pollService = ServiceFactory.getInstance().getPollService();
         QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
         PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
 
         try {
-            long pollId = Long.parseLong(request.getParameter("pollId"));
-            User user = (User) request.getSession().getAttribute("user");
-            long userId = user.getId();
+            String pollIdParam = request.getParameter("pollId");
 
-            Optional<Poll> poll = pollService.retrievePollById(pollId);
+            // Check if pollIdParam is not null and not empty before parsing it as Long
+            if (pollIdParam != null && !pollIdParam.isEmpty()) {
+                long pollId = Long.parseLong(pollIdParam);
+                User user = (User) request.getSession().getAttribute("user");
+                long userId = user.getId();
 
-            if (poll.isPresent()) {
-                List<Question> questions = questionService.retrieveQuestionsByPoll(pollId);
+                // Check if the user has already taken the poll
+                boolean userHasTakenPoll = pollService.hasPollResponse(userId, pollId);
 
-                for (Question question : questions) {
-                    Long selectedOptionId = Long.parseLong(request.getParameter("q" + question.getId()));
-                    pollResponseService.addNewPollResponse(pollId,question.getId(),selectedOptionId, userId);
+                if (userHasTakenPoll) {
+                    request.getRequestDispatcher("html/user/poll.jsp").forward(request, response);
+                    return;
                 }
 
-                response.sendRedirect("/SocialPoll/results");
+                // Increment num_participants for the poll
+                pollService.incrementNumParticipants(pollId);
+
+                Optional<Poll> poll = pollService.retrievePollById(pollId);
+
+                if (poll.isPresent()) {
+
+                    // Increment num_participants for the poll's topic
+                    long topicId = poll.get().getTopicId();
+                    topicService.incrementNumParticipantsForTopic(topicId);
+
+                    List<Question> questions = questionService.retrieveQuestionsByPoll(pollId);
+
+                    for (Question question : questions) {
+                        String parameterName = "question_" + question.getId();
+                        Long selectedOptionId = Long.parseLong(request.getParameter(parameterName));
+
+                        // Save the poll response for each question
+                        pollResponseService.addNewPollResponse(pollId, question.getId(), selectedOptionId, userId);
+
+                    }
+
+                    response.sendRedirect("/SocialPoll/results?pollId=" + pollId);
+                } else {
+                    response.sendRedirect("html/error.jsp");
+                }
             } else {
-                response.sendRedirect("html/error.jsp");
+                response.sendRedirect("index.jsp");
             }
+        } catch (NumberFormatException e) {
+            logger.info("NumberFormatException occurred while parsing pollId");
+            response.sendRedirect("index.jsp");
         } catch (ServiceException e) {
             logger.info("Error occurred while saving poll responses");
             response.sendRedirect("html/error.jsp");

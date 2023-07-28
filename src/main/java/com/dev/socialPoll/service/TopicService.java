@@ -12,4 +12,8 @@ public interface TopicService {
 
     Optional<Topic> retrieveTopicById(long topicId) throws ServiceException;
 
+    void updateNumPollsForTopic(long topicId) throws ServiceException;
+
+    void incrementNumParticipantsForTopic(long topicId) throws ServiceException;
+
 }

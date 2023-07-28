@@ -2,6 +2,7 @@ package com.dev.socialPoll.servlets;
 
 import com.dev.socialPoll.entity.Poll;
 import com.dev.socialPoll.entity.Topic;
+import com.dev.socialPoll.entity.User;
 import com.dev.socialPoll.exception.ServiceException;
 import com.dev.socialPoll.service.PollService;
 import com.dev.socialPoll.service.ServiceFactory;
@@ -11,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,9 +31,23 @@ public class PollsServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
         TopicService topicService = ServiceFactory.getInstance().getTopicService();
 
+
+        HttpSession session = request.getSession();
+        User currentUser = (User) session.getAttribute("user");
+        if (currentUser == null) {
+            request.getRequestDispatcher("/log-in").forward(request, response);
+        }
+        long userId = currentUser.getId();
+
         try {
             List<Poll> polls = pollService.retrievePollsByTopic(topicId);
             Optional<Topic> topic = topicService.retrieveTopicById(topicId);
+
+            // Iterate through each poll and check if the current user has taken it
+            for (Poll poll : polls) {
+                boolean userHasTakenPoll = pollService.hasPollResponse(userId, poll.getId());
+                poll.setUserHasTaken(userHasTakenPoll);
+            }
 
             request.setAttribute("topic", topic.get().getTopicName());
             request.setAttribute("polls", polls);
@@ -39,7 +55,7 @@ public class PollsServlet extends HttpServlet {
             request.getRequestDispatcher("html/user/polls.jsp").forward(request, response);
         } catch (ServiceException e) {
             logger.info("Error occured while retrieving polls by topicId");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/SocialPoll/home");
         }
     }
 }

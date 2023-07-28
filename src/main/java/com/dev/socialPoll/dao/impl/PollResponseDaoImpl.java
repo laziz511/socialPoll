@@ -15,6 +15,7 @@ public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements Po
             " (poll_id, question_id, option_id, user_id) VALUES (?, ?, ?, ?)";
     private static final String FIND_POLL_RESPONSES_BY_USER_ID_QUERY = "SELECT * FROM " + Table.POLL_RESPONSES + " WHERE user_id=?";
     private static final String CHECK_POLL_RESPONSE_EXISTENCE_QUERY = "SELECT COUNT(*) FROM " + Table.POLL_RESPONSES + " WHERE user_id=? AND poll_id=?";
+    private static final String FIND_POLL_IDS_BY_USER_ID_QUERY = "SELECT DISTINCT poll_id FROM " + Table.POLL_RESPONSES + " WHERE user_id = ?";
 
     public PollResponseDaoImpl() {
         super(RowMapperFactory.getInstance().getPollResponseRowMapper(), Table.POLL_RESPONSES);
@@ -35,5 +36,10 @@ public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements Po
     public boolean isPollResponseExist(long userId, long pollId) throws DaoException {
         int count = executeCountQuery(CHECK_POLL_RESPONSE_EXISTENCE_QUERY, userId, pollId);
         return count > 0;
+    }
+
+    @Override
+    public List<Long> getPollIdsByUserId(long userId) throws DaoException {
+        return executeQueryForList(FIND_POLL_IDS_BY_USER_ID_QUERY, userId);
     }
 }

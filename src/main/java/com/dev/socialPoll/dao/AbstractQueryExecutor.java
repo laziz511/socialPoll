@@ -79,14 +79,17 @@ public class AbstractQueryExecutor<T extends Identifiable> {
         return count;
     }
 
-    protected void executeUpdateQuery(String query, Object... params) throws DaoException {
+    protected int executeUpdateQuery(String query, Object... params) throws DaoException {
+        int rowsAffected = 0;
         try (PreparedStatement statement = createStatement(query, params)) {
-            statement.executeUpdate();
+            rowsAffected = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("Unable to execute update query", e);
             throw new DaoException(e.getMessage(), e);
         }
+        return rowsAffected;
     }
+
 
     private PreparedStatement createStatement(String query, Object... params) throws DaoException {
         try {
@@ -102,6 +105,22 @@ public class AbstractQueryExecutor<T extends Identifiable> {
             throw new DaoException(e.getMessage(), e);
         }
     }
+
+    protected List<Long> executeQueryForList(String query, Object... params) throws DaoException {
+        List<Long> ids = new ArrayList<>();
+        try (PreparedStatement statement = createStatement(query, params);
+             ResultSet resultSet = statement.executeQuery()) {
+            while (resultSet.next()) {
+                long id = resultSet.getLong(1);
+                ids.add(id);
+            }
+        } catch (SQLException e) {
+            logger.error("Unable to execute query", e);
+            throw new DaoException(e.getMessage(), e);
+        }
+        return ids;
+    }
+
 
     private List<T> createEntitiesList(ResultSet resultSet) throws DaoException {
         List<T> entities = new ArrayList<>();

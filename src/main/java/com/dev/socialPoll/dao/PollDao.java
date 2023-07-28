@@ -16,4 +16,9 @@ public interface PollDao {
     int countQuestionsInPoll(long pollId) throws DaoException;
 
     int countParticipantsInPoll(long pollId) throws DaoException;
+
+    boolean incrementNumParticipants(long pollId) throws DaoException;
+
+    List<Poll> getPollsByCreatorId(long creatorId) throws DaoException;
+
 }

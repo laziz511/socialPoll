@@ -4,7 +4,9 @@ import com.dev.socialPoll.dao.*;
 import com.dev.socialPoll.entity.*;
 import com.dev.socialPoll.exception.DaoException;
 import com.dev.socialPoll.exception.ServiceException;
+import com.dev.socialPoll.service.PollResponseService;
 import com.dev.socialPoll.service.PollService;
+import com.dev.socialPoll.service.ServiceFactory;
 import com.dev.socialPoll.service.validator.PollValidator;
 import com.dev.socialPoll.service.validator.impl.PollValidatorImpl;
 import org.apache.logging.log4j.LogManager;
@@ -43,7 +45,7 @@ public class PollServiceImpl implements PollService {
     }
 
     @Override
-    public boolean addNewPoll(long topicId, String pollName, String description, Map<String, List<String>> questionOptionsMap)
+    public boolean addNewPoll(long topicId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap, long creatorId)
             throws ServiceException {
         if (pollName == null || description == null || questionOptionsMap == null) {
             return false;
@@ -61,6 +63,8 @@ public class PollServiceImpl implements PollService {
         poll.setPollName(pollName);
         poll.setDescription(description);
         poll.setStatus(PollStatus.NEW);
+        poll.setNumQuestions(questionCount);
+        poll.setCreatorId(creatorId);
 
         try {
             long pollId = pollDao.save(poll);
@@ -76,12 +80,14 @@ public class PollServiceImpl implements PollService {
                 Question question = new Question();
                 question.setPollId(pollId);
                 question.setQuestionText(questionText);
+
                 long questionId = questionDao.save(question);
 
                 for (String answerOptionText : answerOptions) {
                     Option answerOption = new Option();
                     answerOption.setQuestionId(questionId);
                     answerOption.setOptionText(answerOptionText);
+                    answerOption.setNumParticipants(0); // Set the number of participants to 0 explicitly
                     answerOptionDao.save(answerOption);
                 }
             }
@@ -93,6 +99,7 @@ public class PollServiceImpl implements PollService {
     }
 
 
+
     @Override
     public boolean updatePollInformation(long pollId, String pollName, String description) throws ServiceException {
         return false;
@@ -102,4 +109,38 @@ public class PollServiceImpl implements PollService {
     public boolean deletePoll(long pollId) throws ServiceException {
         return false;
     }
+
+    @Override
+    public boolean hasPollResponse(long userId, long id) {
+        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
+        try {
+            return pollResponseService.hasPollResponse(userId, id);
+        } catch (ServiceException e) {
+            logger.error("Unable to execute hasPollResponse method!");
+        }
+        return false;
+    }
+
+    @Override
+    public boolean incrementNumParticipants(long pollId) throws ServiceException {
+        try {
+            PollDao pollDao = DaoFactory.getInstance().getPollDao();
+            return pollDao.incrementNumParticipants(pollId);
+        } catch (DaoException e) {
+            logger.error("Error occurred while incrementing num_participants for the poll.");
+            throw new ServiceException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public List<Poll> getPollsByCreatorId(long creatorId) throws ServiceException {
+        try {
+            PollDao pollDao = DaoFactory.getInstance().getPollDao();
+            return pollDao.getPollsByCreatorId(creatorId);
+        } catch (Exception e) {
+            logger.error("Error occurred while getting polls by creator email.");
+            throw new ServiceException("Error occurred while retrieving polls by creator email", e);
+        }
+    }
+
 }

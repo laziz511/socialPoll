@@ -43,6 +43,4 @@ public class TopicServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
-    // Add other methods (if needed) for handling POST requests or other functionalities
 }

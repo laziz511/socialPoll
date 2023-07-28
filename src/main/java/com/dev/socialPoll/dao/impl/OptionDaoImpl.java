@@ -7,6 +7,7 @@ import com.dev.socialPoll.dao.mapper.RowMapperFactory;
 import com.dev.socialPoll.entity.Option;
 import com.dev.socialPoll.exception.DaoException;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ public class OptionDaoImpl extends AbstractDao<Option> implements OptionDao {
     private static final String FIND_OPTION_BY_ID_QUERY = "SELECT * FROM " + Table.OPTIONS + " WHERE option_id=?";
     private static final String FIND_OPTIONS_BY_QUESTION_ID_QUERY = "SELECT * FROM " + Table.OPTIONS + " WHERE question_id=?";
 
+    private static final String UPDATE_NUM_PARTICIPANTS_QUERY = "UPDATE " + Table.OPTIONS + " SET num_participants = ? WHERE option_id = ?";
     public OptionDaoImpl() {
         super(RowMapperFactory.getInstance().getOptionRowMapper(), Table.OPTIONS);
     }
@@ -33,5 +35,11 @@ public class OptionDaoImpl extends AbstractDao<Option> implements OptionDao {
     @Override
     public List<Option> findByQuestionId(long questionId) throws DaoException {
         return executeQuery(FIND_OPTIONS_BY_QUESTION_ID_QUERY, questionId);
+    }
+
+
+    @Override
+    public void updateNumParticipants(long optionId, int numParticipants) throws DaoException {
+        executeUpdateQuery(UPDATE_NUM_PARTICIPANTS_QUERY, numParticipants, optionId);
     }
 }

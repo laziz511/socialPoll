@@ -13,9 +13,10 @@ import java.util.Optional;
 public class TopicDaoImpl extends AbstractDao<Topic> implements TopicDao {
     private static final String FIND_ALL_TOPICS_QUERY = "SELECT * FROM " + Table.TOPICS;
     private static final String FIND_TOPIC_BY_ID_QUERY = "SELECT * FROM " + Table.TOPICS + " WHERE topic_id=?";
-    private static final String COUNT_POLLS_BY_TOPIC_QUERY = "SELECT COUNT(*) FROM " + Table.POLLS + " WHERE topic_id=?";
-    private static final String COUNT_PARTICIPANTS_BY_TOPIC_QUERY = "SELECT SUM(num_participants) FROM " + Table.POLLS + " WHERE topic_id=?";
 
+    private static final String UPDATE_TOPIC_QUERY = "UPDATE " + Table.TOPICS + " SET num_polls=? WHERE topic_id=?";
+
+    private static final String UPDATE_NUMBER_OF_PARTICIPANTS_QUERY = "UPDATE " + Table.TOPICS + " SET num_participants = num_participants + 1 WHERE topic_id = ?";
     public TopicDaoImpl() {
         super(RowMapperFactory.getInstance().getTopicRowMapper(), Table.TOPICS);
     }
@@ -36,4 +37,13 @@ public class TopicDaoImpl extends AbstractDao<Topic> implements TopicDao {
         return executeQuery(FIND_ALL_TOPICS_QUERY);
     }
 
+    @Override
+    public void update(Topic topic) throws DaoException {
+        executeUpdateQuery(UPDATE_TOPIC_QUERY, topic.getNumPolls(), topic.getId());
+    }
+
+    @Override
+    public void incrementNumParticipants(long topicId) throws DaoException {
+        executeUpdateQuery(UPDATE_NUMBER_OF_PARTICIPANTS_QUERY, topicId);
+    }
 }

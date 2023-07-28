@@ -13,6 +13,10 @@ public class Poll implements Identifiable, Serializable {
     private PollStatus status;
     private List<Question> questions;
 
+    private boolean userHasTaken;
+
+    private long creatorId;
+
     public Poll() {}
 
     public Poll(long id, long topicId, String pollName, String description, int numQuestions, int numParticipants, PollStatus status) {
@@ -92,7 +96,24 @@ public class Poll implements Identifiable, Serializable {
         this.questions = questions;
     }
 
-    // equals, hashCode, and toString methods
+    public boolean isUserHasTaken() {
+        return userHasTaken;
+    }
+
+    public void setUserHasTaken(boolean userHasTaken) {
+        this.userHasTaken = userHasTaken;
+    }
+
+    public long getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(long creatorId) {
+        this.creatorId = creatorId;
+    }
+
+
+// equals, hashCode, and toString methods
 
     @Override
     public String toString() {
