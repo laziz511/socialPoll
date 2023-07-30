@@ -57,7 +57,6 @@ class PollDaoTest {
 
     @Test
     void testCountQuestionsInPoll() throws DaoException {
-        // Assume that there is a poll with ID 1 in the database
         long pollId = 1;
         int questionCount = pollDao.countQuestionsInPoll(pollId);
         assertTrue(questionCount >= 0);

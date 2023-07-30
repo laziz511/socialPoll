@@ -101,8 +101,59 @@ public class PollServiceImpl implements PollService {
 
 
     @Override
-    public boolean updatePollInformation(long pollId, String pollName, String description) throws ServiceException {
-        return false;
+    public boolean updatePollInformation(long pollId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap) throws ServiceException {
+        if (pollName == null || description == null) {
+            return false;
+        }
+
+        PollValidator pollValidator = PollValidatorImpl.getInstance();
+        if (!pollValidator.checkPollName(pollName) || !pollValidator.checkPollDescription(description)) {
+            return false;
+        }
+
+        try {
+            PollDao pollDao = DaoFactory.getInstance().getPollDao();
+            Optional<Poll> existingPoll = pollDao.findById(pollId);
+
+            if (existingPoll.isPresent()) {
+                Poll poll = existingPoll.get();
+                poll.setPollName(pollName);
+                poll.setDescription(description);
+                poll.setStatus(PollStatus.EDITED);
+                poll.setNumQuestions(questionCount);
+                pollDao.update(poll);
+
+                // Create and save the Questions and AnswerOptions
+                QuestionDao questionDao = DaoFactory.getInstance().getQuestionDao();
+                OptionDao answerOptionDao = DaoFactory.getInstance().getOptionDao();
+
+                for (Map.Entry<String, List<String>> entry : questionOptionsMap.entrySet()) {
+                    String questionText = entry.getKey();
+                    List<String> answerOptions = entry.getValue();
+
+                    Question question = new Question();
+                    question.setPollId(pollId);
+                    question.setQuestionText(questionText);
+
+                    long questionId = questionDao.save(question);
+
+                    for (String answerOptionText : answerOptions) {
+                        Option answerOption = new Option();
+                        answerOption.setQuestionId(questionId);
+                        answerOption.setOptionText(answerOptionText);
+                        answerOptionDao.save(answerOption);
+                    }
+                }
+
+                return true;
+            } else {
+                logger.error("Poll not found while updating poll information.");
+                return false;
+            }
+        } catch (DaoException e) {
+            logger.error("Error occurred while updating poll information.");
+            throw new ServiceException(e.getMessage(), e);
+        }
     }
 
     @Override

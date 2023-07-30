@@ -17,7 +17,7 @@ public interface PollService {
     boolean addNewPoll(long topicId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap, long creatorId)
             throws ServiceException;
 
-    boolean updatePollInformation(long pollId, String pollName, String description) throws ServiceException;
+    boolean updatePollInformation(long pollId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap) throws ServiceException;
 
     boolean deletePoll(long pollId) throws ServiceException;
 

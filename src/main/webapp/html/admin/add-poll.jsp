@@ -61,10 +61,6 @@
         </section>
         <!-- //Poll Management Section -->
 
-        <!-- footer start -->
-
-          <jsp:include page="../fragments/footer.jsp"/>
-            <!-- footer end -->
 
             <script src="script/admin/add-poll.js"> </script>
 </body>

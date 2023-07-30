@@ -18,10 +18,8 @@ public class PollDaoImpl extends AbstractDao<Poll> implements PollDao {
     private static final String COUNT_QUESTIONS_IN_POLL_QUERY = "SELECT COUNT(*) FROM " + Table.QUESTIONS + " WHERE poll_id=?";
     private static final String COUNT_PARTICIPANTS_IN_POLL_QUERY = "SELECT num_participants FROM " + Table.POLLS + " WHERE poll_id=?";
     private static final String INCREMENT_QUERY = "UPDATE " + Table.POLLS + " SET num_participants = num_participants + 1 WHERE poll_id=?";
-
     private static final String FIND_POLLS_BY_CREATOR_ID_QUERY = "SELECT * FROM " + Table.POLLS + " WHERE creator_id=?";
-
-
+    private static final String UPDATE_POLL_QUERY = "UPDATE " + Table.POLLS + " SET poll_name=?, description=?, status=?, num_questions=num_questions+? WHERE poll_id=?";
     public PollDaoImpl() {
         super(RowMapperFactory.getInstance().getPollRowMapper(), Table.POLLS);
     }
@@ -61,5 +59,12 @@ public class PollDaoImpl extends AbstractDao<Poll> implements PollDao {
     @Override
     public List<Poll> getPollsByCreatorId(long creatorId) throws DaoException {
         return executeQuery(FIND_POLLS_BY_CREATOR_ID_QUERY, creatorId);
+    }
+
+    @Override
+    public boolean update(Poll poll) throws DaoException {
+        int updatedRows = executeUpdateQuery(UPDATE_POLL_QUERY, poll.getPollName(),
+                poll.getDescription(), poll.getStatus().name(), poll.getNumQuestions(), poll.getId());
+        return updatedRows >= 0;
     }
 }

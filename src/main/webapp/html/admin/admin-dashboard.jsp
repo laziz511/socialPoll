@@ -16,10 +16,11 @@
         <div class="landing-page-section">
             <div class="landing-page background">
                 <section class="introduction-section">
-                    <h1 class="title">Easy survey maker: ask with style</h1>
+                    <h1 class="title">My Voice: Empowering Social Polls</h1>
                     <div class="description">
-                        <p>Typeforms are more engaging, so you get more responses: 95%
-                            of our users get more data, more easily after switching to Typeform.</p>
+                        <p>Don't stay indifferent - let your opinions shape the future.
+                             Take part in our engaging social polls and make a difference in your
+                             community. Unleash the power of your voice today!</p>
                     </div>
                     <div class="main-section">
                         <a href="add-poll" class="survey-button">create polls</a>

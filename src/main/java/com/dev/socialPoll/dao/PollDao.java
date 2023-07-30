@@ -21,4 +21,6 @@ public interface PollDao {
 
     List<Poll> getPollsByCreatorId(long creatorId) throws DaoException;
 
+    boolean update(Poll poll) throws DaoException;
+
 }
