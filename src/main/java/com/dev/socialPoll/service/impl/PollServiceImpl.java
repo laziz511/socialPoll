@@ -157,11 +157,6 @@ public class PollServiceImpl implements PollService {
     }
 
     @Override
-    public boolean deletePoll(long pollId) throws ServiceException {
-        return false;
-    }
-
-    @Override
     public boolean hasPollResponse(long userId, long id) throws ServiceException{
         PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
         try {

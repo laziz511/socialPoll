@@ -39,30 +39,4 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException("Error occurred during user registration.", e);
         }
     }
-
-    @Override
-    public Optional<User> retrieveUserById(long userId) throws ServiceException {
-        try {
-            Optional<User> user = userDao.findById(userId);
-            return user;
-        } catch (Exception e) {
-            throw new ServiceException("Error occurred while retrieving user by ID.", e);
-        }
-    }
-
-    @Override
-    public boolean increaseParticipantsCount(long userId) throws ServiceException {
-        return false;
-    }
-
-    @Override
-    public boolean register(String firstName, String lastName, String birthday, String gender, String email, String password) throws ServiceException {
-        try {
-            User user = new User(firstName, lastName, birthday, gender, email, password);
-            userDao.save(user);
-            return true;
-        } catch (Exception e) {
-            throw new ServiceException("Error occurred during user registration.", e);
-        }
-    }
 }

@@ -48,12 +48,18 @@ public class SignUpServlet extends HttpServlet {
         UserService userService = ServiceFactory.getInstance().getUserService();
         try {
             userService.register(firstName,lastName,birthday, gender, email, password, userRole);
-            Optional<User> user = userService.login(email, password);
+            Optional<User> userOptional = userService.login(email, password);
 
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            if (userOptional.isPresent()) {
+                // Sign Up successful
+                HttpSession session = request.getSession();
+                User user = userOptional.orElseGet(() -> new User());
+                session.setAttribute("user", user);
 
-            response.sendRedirect("index.jsp");
+                response.sendRedirect("/SocialPoll/home");
+            } else {
+                response.sendRedirect("/SocialPoll/error");
+            }
         } catch (ServiceException e) {
             logger.error("error occured while registering the user!");
             response.sendRedirect("/SocialPoll/error");

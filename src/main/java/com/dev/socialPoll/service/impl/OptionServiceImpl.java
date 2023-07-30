@@ -27,37 +27,6 @@ public class OptionServiceImpl implements OptionService {
             throw new ServiceException(e.getMessage(), e);
         }
     }
-
-    @Override
-    public Optional<Option> retrieveOptionById(long optionId) throws ServiceException {
-        OptionDao optionDao = DaoFactory.getInstance().getOptionDao();
-        try {
-            return optionDao.findById(optionId);
-        } catch (DaoException e) {
-            logger.error("Unable to retrieve options by question id!");
-            throw new ServiceException(e.getMessage(), e);
-        }
-    }
-
-    @Override
-    public boolean addNewOption(long questionId, String optionText) throws ServiceException {
-        try {
-            OptionDao optionDao = DaoFactory.getInstance().getOptionDao();
-            Option newOption = new Option(0, questionId, optionText, 0);
-
-            optionDao.save(newOption);
-            return true;
-        } catch (DaoException e) {
-            logger.error("Unable to add a new option!");
-            throw new ServiceException(e.getMessage(), e);
-        }
-    }
-
-    @Override
-    public boolean updateOptionInformation(long optionId, String optionText) throws ServiceException {
-        return false;
-    }
-
     @Override
     public boolean deleteOption(long optionId) throws ServiceException {
         try {

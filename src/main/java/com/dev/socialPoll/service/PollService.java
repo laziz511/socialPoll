@@ -19,8 +19,6 @@ public interface PollService {
 
     boolean updatePollInformation(long pollId, String pollName, String description, int questionCount, Map<String, List<String>> questionOptionsMap) throws ServiceException;
 
-    boolean deletePoll(long pollId) throws ServiceException;
-
     boolean hasPollResponse(long userId, long id) throws ServiceException;
 
     boolean incrementNumParticipants(long pollId) throws ServiceException;

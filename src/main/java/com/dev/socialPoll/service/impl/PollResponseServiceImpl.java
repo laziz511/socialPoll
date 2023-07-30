@@ -15,17 +15,6 @@ public class PollResponseServiceImpl implements PollResponseService {
     private static final Logger logger = LogManager.getLogger();
 
     @Override
-    public List<PollResponse> retrievePollResponsesByUser(long userId) throws ServiceException {
-        try {
-            PollResponseDao pollResponseDao = DaoFactory.getInstance().getPollResponseDao();
-            return pollResponseDao.findByUserId(userId);
-        } catch (DaoException e) {
-            logger.error("Unable to retrieve poll responses by user id!");
-            throw new ServiceException(e.getMessage(), e);
-        }
-    }
-
-    @Override
     public boolean addNewPollResponse(long pollId, long questionId, long optionId, long userId) throws ServiceException {
         try {
             PollResponseDao pollResponseDao = DaoFactory.getInstance().getPollResponseDao();

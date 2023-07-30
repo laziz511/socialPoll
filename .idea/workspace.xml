@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds error page">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="modifies servlets to reflect error page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/OptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/OptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/OptionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/OptionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fragments/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/user-polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/user-polls.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690719665219</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="modifies servlets to reflect error page">
+      <created>1690720062079</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690720062079</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,6 +388,7 @@
     <MESSAGE value="fixes HTML and CSS positioning" />
     <MESSAGE value="fixes the change of num_questions in polls" />
     <MESSAGE value="adds error page" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds error page" />
+    <MESSAGE value="modifies servlets to reflect error page" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifies servlets to reflect error page" />
   </component>
 </project>
