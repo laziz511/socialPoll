@@ -64,10 +64,10 @@ public class OptionServiceImpl implements OptionService {
     }
 
     @Override
-    public boolean increaseParticipantsCount(long optionId, int numParticipants) throws ServiceException {
+    public boolean increaseParticipantsCount(long optionId) throws ServiceException {
         try {
             OptionDao optionDao = DaoFactory.getInstance().getOptionDao();
-            optionDao.updateNumParticipants(optionId, numParticipants);
+            optionDao.updateNumParticipants(optionId);
             return true;
             } catch (DaoException e) {
             logger.error("Unable to add a new option!");

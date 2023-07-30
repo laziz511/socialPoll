@@ -5,10 +5,7 @@ import com.dev.socialPoll.entity.Poll;
 import com.dev.socialPoll.entity.Question;
 import com.dev.socialPoll.entity.User;
 import com.dev.socialPoll.exception.ServiceException;
-import com.dev.socialPoll.service.OptionService;
-import com.dev.socialPoll.service.PollService;
-import com.dev.socialPoll.service.QuestionService;
-import com.dev.socialPoll.service.ServiceFactory;
+import com.dev.socialPoll.service.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,6 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 @WebServlet("/manage-poll")
@@ -27,6 +25,14 @@ public class ManagePollServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            response.sendRedirect("log-in");
+            return;
+        }
+
         try {
             long pollId = Long.parseLong(request.getParameter("pollId"));
 
@@ -64,6 +70,7 @@ public class ManagePollServlet extends HttpServlet {
         }
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         logger.info("doPost of ManagePollServlet is working");
@@ -80,12 +87,14 @@ public class ManagePollServlet extends HttpServlet {
         String pollName = request.getParameter("pollName");
         String description = request.getParameter("description");
         PollService pollService = ServiceFactory.getInstance().getPollService();
-
-  //      logger.info("removedQuestions : " + request.getParameter("removedQuestions"));
-
         int questionCount = Integer.parseInt(request.getParameter("questionCount"));
-        logger.info("questionCount : " + questionCount);
 
+        String removedQuestionsString = request.getParameter("removedQuestions");
+        List<Long> removedQuestions = Arrays.stream(removedQuestionsString.split(","))
+                .map(Long::parseLong)
+                .collect(Collectors.toList());
+
+        logger.info("Removed question IDs: " + removedQuestions);
 
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
         for (int i = 1; i <= questionCount; i++) {
@@ -103,22 +112,46 @@ public class ManagePollServlet extends HttpServlet {
                 questionOptionsMap.put(questionText, options);
             }
         }
-        logger.info("questionOptionsMap : " + questionOptionsMap);
+        logger.info("questionOptionsMap: " + questionOptionsMap);
 
+        // Remove poll responses, options, and questions from the database for each removed question ID
+        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
+        OptionService optionService = ServiceFactory.getInstance().getOptionService();
+        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
 
+        for (Long removedQuestionId : removedQuestions) {
+            try {
+                // Remove poll responses for the question
+                pollResponseService.deleteResponsesByQuestion(removedQuestionId);
+
+//                // Retrieve options for the question and remove them
+//                List<Option> options = optionService.retrieveOptionsByQuestion(removedQuestionId);
+//                for (Option option : options) {
+//                    optionService.deleteOption(option.getId());
+//                }
+//
+//                // Finally, remove the question itself
+//                questionService.deleteQuestion(removedQuestionId);
+            } catch (ServiceException e) {
+                logger.error("Error occurred while removing question with ID: " + removedQuestionId, e);
+                response.sendRedirect("error.jsp");
+                return;
+            }
+        }
+
+        // Update the poll information for the remaining questions
         try {
             boolean success = pollService.updatePollInformation(pollId, pollName, description, questionCount, questionOptionsMap);
             if (!success) {
                 response.sendRedirect("error.jsp");
                 return;
             }
-
         } catch (ServiceException e) {
             logger.error("Error occurred while updating the poll!", e);
             response.sendRedirect("error.jsp");
+            return;
         }
 
         response.sendRedirect("/SocialPoll/admin-dashboard");
     }
-
 }

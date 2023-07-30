@@ -14,4 +14,7 @@ public interface PollResponseService {
     boolean hasPollResponse(long userId, long pollId) throws ServiceException;
 
     List<Long> getPollIdsByUserId(long userId) throws ServiceException;
+
+    void deleteResponsesByQuestion(Long removedQuestionId) throws ServiceException;
+
 }

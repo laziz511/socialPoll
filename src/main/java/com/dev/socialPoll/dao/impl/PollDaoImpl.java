@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class PollDaoImpl extends AbstractDao<Poll> implements PollDao {
+
     private static final String SAVE_POLL_QUERY = "INSERT INTO " + Table.POLLS +
             " (topic_id, poll_name, description, num_questions, num_participants, status, creator_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String FIND_POLL_BY_ID_QUERY = "SELECT * FROM " + Table.POLLS + " WHERE poll_id=?";

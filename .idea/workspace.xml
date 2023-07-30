@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="bug fixes">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="fixes poll management">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/OptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/OptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollResponseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollResponseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/OptionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/OptionDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollResponseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollResponseDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/OptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/OptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/OptionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/OptionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ParticipateInPollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690553059739</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixes poll management">
+      <created>1690701384301</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1690701384301</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,6 +341,7 @@
     <MESSAGE value="skeleton is ready" />
     <MESSAGE value="ready" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="fixes poll management" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes poll management" />
   </component>
 </project>

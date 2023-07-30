@@ -32,7 +32,7 @@
                 <!-- Display the questions and options for editing -->
                 <div id="questions-container">
                     <c:forEach items="${poll.questions}" var="question" varStatus="counter">
-                        <div class="question-container">
+                        <div class="question-container"  id="question-${question.id}">
                             <h3>Question ${counter.count}:</h3>
                             <input type="text" name="question_${question.id}" value="${question.questionText}" required readonly>
 

@@ -80,6 +80,7 @@ public class ParticipateInPollServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
         QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
         PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
+        OptionService optionService = ServiceFactory.getInstance().getOptionService();
 
         try {
             String pollIdParam = request.getParameter("pollId");
@@ -115,6 +116,7 @@ public class ParticipateInPollServlet extends HttpServlet {
                         String parameterName = "question_" + question.getId();
                         Long selectedOptionId = Long.parseLong(request.getParameter(parameterName));
 
+                        optionService.increaseParticipantsCount(selectedOptionId);
                         // Save the poll response for each question
                         pollResponseService.addNewPollResponse(pollId, question.getId(), selectedOptionId, userId);
 

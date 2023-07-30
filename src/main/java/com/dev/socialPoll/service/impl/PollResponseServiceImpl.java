@@ -28,7 +28,6 @@ public class PollResponseServiceImpl implements PollResponseService {
     @Override
     public boolean addNewPollResponse(long pollId, long questionId, long optionId, long userId) throws ServiceException {
         try {
-            logger.info("this is inside a addNewPollResponse PollResponseServiceImpl");
             PollResponseDao pollResponseDao = DaoFactory.getInstance().getPollResponseDao();
             PollResponse newResponse = new PollResponse(0, pollId, questionId, optionId, userId);
             pollResponseDao.save(newResponse);
@@ -61,4 +60,18 @@ public class PollResponseServiceImpl implements PollResponseService {
         }
     }
 
+    @Override
+    public void deleteResponsesByQuestion(Long removedQuestionId) throws ServiceException {
+        try {
+            PollResponseDao pollResponseDao = DaoFactory.getInstance().getPollResponseDao();
+            List<PollResponse> pollResponses = pollResponseDao.findByQuestionId(removedQuestionId);
+
+            for (PollResponse pollResponse : pollResponses) {
+                pollResponseDao.delete(pollResponse.getId());
+            }
+        } catch (DaoException e) {
+            logger.error("Unable to delete poll responses for question with ID: " + removedQuestionId, e);
+            throw new ServiceException("Failed to delete poll responses for question with ID: " + removedQuestionId, e);
+        }
+    }
 }

@@ -51,10 +51,6 @@ public class ResultServlet extends HttpServlet {
                     questionOptionsMap.put(question, options);
                 }
 
-
-                // Calculate percentages for each option
-     //           int totalParticipants = calculateTotalParticipants(questionOptionsMap);
-
                 for (Map.Entry<Question, List<Option>> entry : questionOptionsMap.entrySet()) {
                     List<Option> options = entry.getValue();
                     long totalVotesForQuestion = options.stream().mapToLong(Option::getNumParticipants).sum();
@@ -62,17 +58,14 @@ public class ResultServlet extends HttpServlet {
                     for (Option option : options) {
                         long votesForOption = option.getNumParticipants();
                         double percentage = totalVotesForQuestion == 0 ? 0 : (votesForOption * 100.0) / totalVotesForQuestion;
-                        option.setNumParticipants((int)percentage);
+                        option.setNumParticipants((int) Math.round(percentage)); // Use Math.round() to get the nearest integer percentage
                     }
                 }
+
                 logger.info(poll);
                 logger.info(questionOptionsMap);
 
-                // Set the calculated data in request attributes
-    //            request.setAttribute("totalParticipants", totalParticipants);
                 request.setAttribute("questionOptionsMap", questionOptionsMap);
-
-
                 request.getRequestDispatcher("html/user/results.jsp").forward(request, response);
 
             } else {

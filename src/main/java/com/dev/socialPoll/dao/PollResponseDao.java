@@ -14,4 +14,7 @@ public interface PollResponseDao {
     boolean isPollResponseExist(long userId, long pollId) throws DaoException;
 
     List<Long> getPollIdsByUserId(long userId) throws DaoException;
+
+    List<PollResponse> findByQuestionId(long questionId) throws DaoException;
+    void delete(long id) throws DaoException;
 }

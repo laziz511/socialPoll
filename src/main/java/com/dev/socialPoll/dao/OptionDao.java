@@ -13,5 +13,5 @@ public interface OptionDao {
 
     List<Option> findByQuestionId(long questionId) throws DaoException;
 
-    void updateNumParticipants(long optionId, int numParticipants) throws DaoException;
+    void updateNumParticipants(long optionId) throws DaoException;
 }
