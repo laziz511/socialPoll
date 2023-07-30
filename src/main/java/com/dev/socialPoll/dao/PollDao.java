@@ -23,4 +23,6 @@ public interface PollDao {
 
     boolean update(Poll poll) throws DaoException;
 
+    boolean decreaseNumberOfQuestions(long pollId, int decreaseNum) throws DaoException;
+
 }

@@ -95,6 +95,13 @@ public class ManagePollServlet extends HttpServlet {
                 .collect(Collectors.toList());
 
         logger.info("Removed question IDs: " + removedQuestions);
+        try {
+            pollService.decreaseNumQuestions(pollId, removedQuestions.size());
+        } catch (ServiceException e) {
+            logger.error("Error occurred while decresing number of questions in the poll!", e);
+            response.sendRedirect("error.jsp");
+            return;
+        }
 
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
         for (int i = 1; i <= questionCount; i++) {

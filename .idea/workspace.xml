@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="fixes removing questions &amp; options from DB">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="fixes HTML and CSS positioning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/admin/admin-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin/admin-dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/auth/log-in.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/auth/log-in.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/auth/sign-up.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/auth/sign-up.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fragments/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/fragments/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/fragments/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/fragments/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/poll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/poll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/polls.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/add-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin-polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/auth/log-in.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/auth/log-in.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/auth/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/auth/sign-up.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/fragments/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/fragments/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/results.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/user-polls.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/user-polls.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690713661403</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixes HTML and CSS positioning">
+      <created>1690717457927</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690717457927</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,6 +356,7 @@
     <MESSAGE value="fixes poll management" />
     <MESSAGE value="fixes poll submission" />
     <MESSAGE value="fixes removing questions &amp; options from DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes removing questions &amp; options from DB" />
+    <MESSAGE value="fixes HTML and CSS positioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes HTML and CSS positioning" />
   </component>
 </project>

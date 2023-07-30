@@ -21,9 +21,11 @@ public interface PollService {
 
     boolean deletePoll(long pollId) throws ServiceException;
 
-    boolean hasPollResponse(long userId, long id);
+    boolean hasPollResponse(long userId, long id) throws ServiceException;
 
     boolean incrementNumParticipants(long pollId) throws ServiceException;
+
+    boolean decreaseNumQuestions(long pollId, int decreaseNum)throws ServiceException;
 
     List<Poll> getPollsByCreatorId(long creatorId) throws ServiceException;
 

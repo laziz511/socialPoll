@@ -162,7 +162,7 @@ public class PollServiceImpl implements PollService {
     }
 
     @Override
-    public boolean hasPollResponse(long userId, long id) {
+    public boolean hasPollResponse(long userId, long id) throws ServiceException{
         PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
         try {
             return pollResponseService.hasPollResponse(userId, id);
@@ -184,11 +184,22 @@ public class PollServiceImpl implements PollService {
     }
 
     @Override
+    public boolean decreaseNumQuestions(long pollId, int decreaseNum) throws ServiceException {
+        try {
+            PollDao pollDao = DaoFactory.getInstance().getPollDao();
+            return pollDao.decreaseNumberOfQuestions(pollId, decreaseNum);
+        } catch (DaoException e) {
+            logger.error("Error occurred while decreasing number of questions in the poll.");
+            throw new ServiceException("Error occurred while retrieving polls by creator email", e);
+        }
+    }
+
+    @Override
     public List<Poll> getPollsByCreatorId(long creatorId) throws ServiceException {
         try {
             PollDao pollDao = DaoFactory.getInstance().getPollDao();
             return pollDao.getPollsByCreatorId(creatorId);
-        } catch (Exception e) {
+        } catch (DaoException e) {
             logger.error("Error occurred while getting polls by creator email.");
             throw new ServiceException("Error occurred while retrieving polls by creator email", e);
         }
