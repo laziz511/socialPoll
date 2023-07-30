@@ -73,10 +73,10 @@ public class ResultServlet extends HttpServlet {
             }
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while retrieving poll details");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/SocialPoll/error");
         } catch (ServiceException e) {
             logger.info("Error occurred while retrieving poll details");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }

@@ -33,7 +33,7 @@ public class AddPollServlet extends HttpServlet {
         if (user != null && user.getRole() == UserRole.ADMIN) {
             request.getRequestDispatcher("html/admin/add-poll.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("/SocialPoll/error").forward(request, response);
         }
     }
 

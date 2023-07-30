@@ -56,8 +56,7 @@ public class SignUpServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         } catch (ServiceException e) {
             logger.error("error occured while registering the user!");
-            request.setAttribute("error", "This email is already registered. Please try another");
-            doGet(request, response);
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }

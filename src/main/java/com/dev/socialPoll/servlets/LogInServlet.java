@@ -48,8 +48,7 @@ public class LogInServlet extends HttpServlet {
             }
         } catch (ServiceException e) {
             logger.error("Error occurred while log in!", e);
-        //    doGet(request, response);
-            throw new ServletException(e.getMessage(), e);
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }

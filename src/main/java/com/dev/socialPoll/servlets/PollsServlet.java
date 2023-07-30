@@ -55,7 +55,7 @@ public class PollsServlet extends HttpServlet {
             request.getRequestDispatcher("html/user/polls.jsp").forward(request, response);
         } catch (ServiceException e) {
             logger.info("Error occured while retrieving polls by topicId");
-            response.sendRedirect("/SocialPoll/home");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }
