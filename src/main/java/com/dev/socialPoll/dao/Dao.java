@@ -32,11 +32,4 @@ public interface Dao<T> {
      */
     long save(T item) throws DaoException;
 
-    /**
-     * Method to remove entity from table by ID
-     *
-     * @param id ID of entity to delete
-     * @throws DaoException
-     */
-    void removeById(long id) throws DaoException;
 }

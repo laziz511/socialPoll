@@ -26,10 +26,4 @@ public abstract class AbstractDao<T extends Identifiable> extends AbstractQueryE
         String query = "SELECT * FROM " + tableName + " WHERE id=?";
         return executeQueryForSingleResult(query, id);
     }
-
-    @Override
-    public void removeById(long id) throws DaoException {
-        String deleteQuery = "DELETE FROM " + tableName + " WHERE id=?";
-        executeUpdateQuery(deleteQuery, id);
-    }
 }

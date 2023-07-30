@@ -9,8 +9,6 @@ import java.util.Optional;
 public interface PollResponseDao {
     long save(PollResponse pollResponse) throws DaoException;
 
-    List<PollResponse> findByUserId(long userId) throws DaoException;
-
     boolean isPollResponseExist(long userId, long pollId) throws DaoException;
 
     List<Long> getPollIdsByUserId(long userId) throws DaoException;

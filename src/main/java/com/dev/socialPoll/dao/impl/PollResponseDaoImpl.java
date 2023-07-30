@@ -29,11 +29,6 @@ public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements Po
     }
 
     @Override
-    public List<PollResponse> findByUserId(long userId) throws DaoException {
-        return executeQuery(FIND_POLL_RESPONSES_BY_USER_ID_QUERY, userId);
-    }
-
-    @Override
     public boolean isPollResponseExist(long userId, long pollId) throws DaoException {
         int count = executeCountQuery(CHECK_POLL_RESPONSE_EXISTENCE_QUERY, userId, pollId);
         return count > 0;
