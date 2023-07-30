@@ -13,14 +13,30 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 30px;
     text-align: center;
-    font-weight: 300;
-    letter-spacing: 4px;
+    text-transform: capitalize;
+
+    text-rendering: optimizeSpeed;
+
 }
 
 a {
+    background: #00000000;
+    color: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+
+p {
+    margin: 0 0 20px;
 }
 
 .main-section {

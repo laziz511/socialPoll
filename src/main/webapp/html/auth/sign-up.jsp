@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Sign-Up Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -19,7 +19,7 @@
 <body>
 
     <!-- Include the header -->
-    <jsp:include page="../fragments/header.jsp"/>
+    <jsp:include page="../fragments/header.jsp" />
 
     <!-- main -->
     <section>
@@ -36,7 +36,7 @@
                         <label class="anim">Gender: </label>
                         <label class="radio-inline">
                             <input type="radio" name="gender" value="MALE" required=""> Male
-                        </label>    
+                        </label>
                         <label class="radio-inline">
                             <input type="radio" name="gender" value="FEMALE" required=""> Female
                         </label>
@@ -46,19 +46,22 @@
                     </div>
 
                     <input class="text email" type="email" name="email" placeholder="Email" required="">
-                                    <%-- Check if there is an error message in the request attributes --%>
-                                    <% String error = (String) request.getAttribute("error"); %>
+                    <%-- Check if there is an error message in the request attributes --%>
+                        <% String error=(String) request.getAttribute("error"); %>
 
-                                    <%-- Display the error message if it exists --%>
-                                    <% if (error != null && !error.isEmpty()) { %>
-                                        <p class="error-message"><%= error %></p>
+                            <%-- Display the error message if it exists --%>
+                                <% if (error !=null && !error.isEmpty()) { %>
+                                    <p class="error-message">
+                                        <%= error %>
+                                    </p>
                                     <% } %>
 
-                    <input class="text password" type="password" name="password" placeholder="Password" required="">
+                                        <input class="text password" type="password" name="password"
+                                            placeholder="Password" required="">
 
-                    <input type="checkbox" class="checkbox" required="">
-                    <label for="checkbox" >I Agree To The Terms & Conditions</label>
-                    <button type="submit" class="submit">SUBMIT</button>
+                                        <input type="checkbox" class="checkbox" required="">
+                                        <label for="checkbox">I Agree To The Terms & Conditions</label>
+                                        <button type="submit" class="submit">SUBMIT</button>
 
                 </form>
                 <p>Already have an Account? <a href="log-in"> Log in!</a></p>
@@ -67,9 +70,9 @@
     </section>
     <!-- //main -->
 
-     <!-- footer start -->
-            <jsp:include page="../fragments/footer.jsp"/>
-                <!-- footer end -->
+    <!-- footer start -->
+    <jsp:include page="../fragments/footer.jsp" />
+    <!-- footer end -->
 
 
 </body>

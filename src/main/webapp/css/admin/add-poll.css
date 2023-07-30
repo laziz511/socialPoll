@@ -19,6 +19,7 @@ h2 {
 }
 
 .form-container {
+    background: black;
     width: 60%;
     margin: 0 auto;
     background: rgba(37, 154, 59, 0.351);
@@ -32,17 +33,18 @@ h2 {
 
 @media (max-width: 700px) {
     .form-container {
-    width: auto;
+        width: auto;
     }
 }
 
 @media (max-width: 380px) {
-     body {
+    body {
         padding: 5px;
-     }
+    }
+
     .form-container {
 
-    width: 100%;
+        width: 100%;
     }
 }
 
@@ -112,7 +114,7 @@ button:hover {
 }
 
 
-#questions-container > * {
+#questions-container>* {
     display: flex;
     flex-direction: column;
     justify-content: center;

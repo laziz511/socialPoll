@@ -19,8 +19,8 @@
                     <h1 class="title">My Voice: Empowering Social Polls</h1>
                     <div class="description">
                         <p>Don't stay indifferent - let your opinions shape the future.
-                             Take part in our engaging social polls and make a difference in your
-                             community. Unleash the power of your voice today!</p>
+                            Take part in our engaging social polls and make a difference in your
+                            community. Unleash the power of your voice today!</p>
                     </div>
                     <div class="main-section">
                         <a href="add-poll" class="survey-button">create polls</a>

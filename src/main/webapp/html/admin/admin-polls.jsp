@@ -18,46 +18,46 @@
     <!-- Include the header -->
     <%@ include file="../fragments/header.jsp" %>
 
-    <!-- Admin Polls Cards start -->
-    <section>
-        <div class="topic-section">
-            <h2 class="text-box">Admin Polls</h2>
+        <!-- Admin Polls Cards start -->
+        <section>
+            <div class="topic-section">
+                <h2 class="text-box">Admin Polls</h2>
 
-            <div class="cards">
-            <!-- Loop through admin poll submissions and display poll cards -->
-            <c:forEach items="${adminPolls}" var="poll">
-                <div class="card">
-                    <h3 class="topic">
-                        <i class="fas fa-user-tie icon"></i>
-                        ${poll.pollName}
-                    </h3>
-                    <p class="description">${poll.description}</p>
-                    <div class="info">
-                        <div class="info-text">
-                            <p class="question-count">
-                                <i class="fas fa-question-circle"></i>
-                                Number of questions: <span>${poll.numQuestions}</span>
-                            </p>
-                            <p class="participant-count">
-                                <i class="fas fa-users"></i>
-                                Participants: <span>${poll.numParticipants}</span>
-                            </p>
-                        </div>
-                        <div class="info-button">
-                            <div>
-                                <a href="/SocialPoll/manage-poll?pollId=${poll.id}" class="survey-button">Edit Poll</a>
+                <div class="cards">
+                    <!-- Loop through admin poll submissions and display poll cards -->
+                    <c:forEach items="${adminPolls}" var="poll">
+                        <div class="card">
+                            <h3 class="topic">
+                                <i class="fas fa-user-tie icon"></i>
+                                ${poll.pollName}
+                            </h3>
+                            <p class="description">${poll.description}</p>
+                            <div class="info">
+                                <div class="info-text">
+                                    <p class="question-count">
+                                        <i class="fas fa-question-circle"></i>
+                                        Number of questions: <span>${poll.numQuestions}</span>
+                                    </p>
+                                    <p class="participant-count">
+                                        <i class="fas fa-users"></i>
+                                        Participants: <span>${poll.numParticipants}</span>
+                                    </p>
+                                </div>
+                                <div class="info-button">
+                                    <div>
+                                        <a href="/SocialPoll/manage-poll?pollId=${poll.id}" class="survey-button">Edit
+                                            Poll</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
-            </c:forEach>
             </div>
-        </div>
-    </section>
-    <!-- Admin Polls Cards end -->
+        </section>
+        <!-- Admin Polls Cards end -->
 
-    <!-- Include the footer -->
-    <%@ include file="../fragments/footer.jsp" %>
 
 </body>
+
 </html>

@@ -12,6 +12,7 @@
     <title>My Voice</title>
     <link rel="stylesheet" href="css/user/index.css"> fetchpriority="low" />
     <link rel="stylesheet" href="css/fragments/header.css">
+
 </head>
 
 <body>
@@ -121,9 +122,8 @@
                 </div>
             </section>
 
-            <!-- footer start -->
-                  <jsp:include page="html/fragments/footer.jsp"/>
-                <!-- footer end -->
+            <!-- include footer -->
+            <jsp:include page="html/fragments/footer.jsp" />
 
         </div>
 

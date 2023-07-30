@@ -241,22 +241,7 @@ p {
     top: 0;
 }
 
-.footer-section {
-    background: #000000;
-    height: 150px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #FFFFFF;
-}
 
-
-@media (min-width:1024px) {
-    .footer-section {
-        border-top: none;
-    }
-}
 
 
 .main-section {
@@ -380,12 +365,3 @@ p {
 .participant-count span {
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-

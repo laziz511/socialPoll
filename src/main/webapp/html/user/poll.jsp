@@ -13,16 +13,8 @@
 </head>
 
 <body>
-    <!-- navbar start -->
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <svg fill="none" viewBox="0 0 400 50" width="100"></svg>
-                <h1>My Voice</h1>
-            </div>
-        </div>
-    </div>
-    <!-- navbar end -->
+    <!-- Include the header -->
+    <jsp:include page="../fragments/header.jsp" />
 
     <section>
         <div class="poll-section">
@@ -43,9 +35,11 @@
                                     <c:if test="${not empty entry.value}">
                                         <c:forEach items="${entry.value}" var="option">
                                             <li class="custom-checkbox-container">
-                                                <input type="radio" name="question_${question.id}" id="option${option.id}" value="${option.id}">
+                                                <input type="radio" name="question_${question.id}"
+                                                    id="option${option.id}" value="${option.id}">
                                                 <label for="option${option.id}" class="custom-checkbox"></label>
-                                                <label for="option${option.id}" class="checkbox-text">${option.optionText}</label>
+                                                <label for="option${option.id}"
+                                                    class="checkbox-text">${option.optionText}</label>
                                             </li>
                                         </c:forEach>
                                     </c:if>
@@ -59,10 +53,10 @@
                     <c:choose>
                         <c:when test="${requestScope.poll.userHasTaken}">
 
-                      <div class="button-container">
-                                    <!-- If the poll is taken, show the "Back to home" button -->
-                                    <a href="/SocialPoll/home" class="submit-button">Back to home</a>
-                                </div>
+                            <div class="button-container">
+                                <!-- If the poll is taken, show the "Back to home" button -->
+                                <a href="/SocialPoll/home" class="submit-button">Back to home</a>
+                            </div>
                         </c:when>
                         <c:otherwise>
                             <div class="button-container">
@@ -77,14 +71,7 @@
         </div>
     </section>
 
-    <!-- footer start -->
-    <section>
-        <footer class="footer-section">
-            <span>This is a footer</span>
-            <span>© My Voice</span>
-        </footer>
-    </section>
-    <!-- footer end -->
+
 
 </body>
 

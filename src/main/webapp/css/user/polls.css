@@ -41,31 +41,6 @@ p {
     margin: 0 0 20px;
 }
 
-.navbar {
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    height: 72px;
-}
-
-@media (min-width:1024px) {
-    .navbar {
-        height: 88px;
-    }
-}
-
-.navbar-container {
-    max-width: 1370px;
-    margin: auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    height: inherit;
-    align-items: center;
-}
-
 
 .survey-button {
     display: inline-block;
@@ -88,7 +63,7 @@ p {
 }
 
 .taken-button {
-   background: rgb(174, 41, 41);
+    background: rgb(174, 41, 41);
 }
 
 .taken-button:hover {
@@ -209,24 +184,4 @@ p {
 
 .post-text h2 {
     font-size: 20px;
-}
-
-
-/* footer start */
-.footer-section {
-    background: #000000;
-    height: 150px;
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #FFFFFF;
-}
-
-
-@media (min-width:1024px) {
-    .footer-section {
-        border-top: none;
-    }
 }

@@ -16,22 +16,8 @@
 
 <body>
 
-    <!-- navbar start -->
-    <div class="navbar">
-        <div class="navbar-container">
-
-            <div class="logo-container">
-                <svg fill="none" viewBox="0 0 245 55" width="100"></svg>
-                <h1>My Voice</h1>
-            </div>
-
-            <div>
-                <a href="/SocialPoll/admin-dashboard" class="survey-button"> Create my poll</a>
-            </div>
-
-        </div>
-    </div>
-    <!-- navbar end -->
+    <!-- Include the header -->
+    <jsp:include page="../fragments/header.jsp" />
 
 
     <!-- surveys section start -->
@@ -66,11 +52,13 @@
                                         <c:choose>
                                             <c:when test="${poll.userHasTaken}">
                                                 <!-- Show the button in red with text "Taken" -->
-                                                <a href="#" class="survey-button taken-button"  onclick="return false;" >Taken</a>
+                                                <a href="#" class="survey-button taken-button"
+                                                    onclick="return false;">Taken</a>
                                             </c:when>
                                             <c:otherwise>
                                                 <!-- Show the button in black with text "Take the Poll" -->
-                                                <a href="/SocialPoll/take-poll?pollId=${poll.id}" class="survey-button">Take the Poll</a>
+                                                <a href="/SocialPoll/take-poll?pollId=${poll.id}"
+                                                    class="survey-button">Take the Poll</a>
                                             </c:otherwise>
                                         </c:choose>
                                     </div>
@@ -81,26 +69,11 @@
                 </c:if>
             </div>
 
-            <div class="post-text">
-                <a href="">
-                    <h2>See More Polls...</h2>
-                </a>
-            </div>
         </div>
     </section>
     <!-- surveys section end -->
 
 
-    <!-- footer start -->
-    <section>
-        <footer class="footer-section">
-
-            <span>This is a footer</span>
-
-            <span>© My Voice</span>
-        </footer>
-    </section>
-    <!-- footer end -->
 
 
 </body>

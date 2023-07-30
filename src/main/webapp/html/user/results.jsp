@@ -2,11 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.dev.socialPoll.entity.Question" %>
-<%@ page import="com.dev.socialPoll.entity.Option" %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,25 +13,14 @@
 </head>
 
 <body>
-    <!-- navbar start -->
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <svg fill="none" viewBox="0 0 400 50" width="100"></svg>
-                <h1>My Voice</h1>
-            </div>
-        </div>
-    </div>
-    <!-- navbar end -->
+    <!-- Include the header -->
+    <jsp:include page="../fragments/header.jsp" />
 
     <section>
         <div class="poll-section">
             <div class="container">
                 <h1 class="topic">Results of ${not empty requestScope.poll ? poll.get().pollName : 'Poll'}</h1>
 
-                <p class="participants-text">
-                    Total participants: <span id="total-participants" class="participants-number">${not empty sessionScope.totalParticipants ? requestScope.totalParticipants : '0'}</span>
-                </p>
                 <form class="poll-form">
 
 
@@ -67,15 +51,6 @@
             </div>
         </div>
     </section>
-
-    <!-- footer start -->
-    <section>
-        <footer class="footer-section">
-            <span>This is a footer</span>
-            <span>© My Voice</span>
-        </footer>
-    </section>
-    <!-- footer end -->
 </body>
 
 </html>

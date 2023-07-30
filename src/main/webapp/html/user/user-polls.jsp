@@ -57,7 +57,8 @@
                             </div>
                             <div class="info-button">
                                 <div>
-                                    <a href="/SocialPoll/results?pollId=${poll.id}" class="survey-button">View Results</a>
+                                    <a href="/SocialPoll/results?pollId=${poll.id}" class="survey-button">View
+                                        Results</a>
                                 </div>
                             </div>
                         </div>
@@ -69,15 +70,16 @@
     <!-- User Polls Cards end -->
 
 
-        <!-- footer start -->
-        <section>
-            <footer class="footer-section">
-                <span>This is a footer</span>
-                <span> My Voice</span>
-            </footer>
-        </section>
-        <!-- footer end -->
+    <!-- footer start -->
+    <section>
+        <footer class="footer-section">
+            <span>This is a footer</span>
+            <span> My Voice</span>
+        </footer>
+    </section>
+    <!-- footer end -->
 
     </div>
 </body>
+
 </html>
