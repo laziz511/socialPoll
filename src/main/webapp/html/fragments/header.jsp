@@ -24,7 +24,7 @@
                 <a href="home" class="navbar-menu-element home">Home</a>
 
                 <!-- Show "My polls" link if the user is in session and is an ADMIN -->
-                <c:if test="${not empty sessionScope.user and sessionScope.user.role eq 'ADMIN'}">
+                <c:if test="${not empty sessionScope.user and not empty sessionScope.user.role and sessionScope.user.role eq 'ADMIN'}">
                     <a href="admin-dashboard" class="navbar-menu-element">My polls</a>
                 </c:if>
 

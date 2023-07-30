@@ -15,20 +15,8 @@
 
 <body>
 
-    <!-- navbar start -->
-    <div class="navbar">
-        <div class="navbar-container">
-
-            <div class="logo-container">
-                <svg fill="none" viewBox="0 0 245 55" width="100"></svg>
-                <h1>My Voice</h1>
-            </div>
-
-            <!-- No survey-button for this page -->
-
-        </div>
-    </div>
-    <!-- navbar end -->
+    <!-- Include the header -->
+    <jsp:include page="../fragments/header.jsp" />
 
     <!-- User Polls Cards start -->
     <section>
@@ -68,16 +56,6 @@
         </div>
     </section>
     <!-- User Polls Cards end -->
-
-
-    <!-- footer start -->
-    <section>
-        <footer class="footer-section">
-            <span>This is a footer</span>
-            <span> My Voice</span>
-        </footer>
-    </section>
-    <!-- footer end -->
 
     </div>
 </body>
