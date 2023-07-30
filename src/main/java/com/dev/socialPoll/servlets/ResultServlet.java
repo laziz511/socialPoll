@@ -69,7 +69,7 @@ public class ResultServlet extends HttpServlet {
                 request.getRequestDispatcher("html/user/results.jsp").forward(request, response);
 
             } else {
-                response.sendRedirect("html/error.jsp");
+                response.sendRedirect("/SocialPoll/error");
             }
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while retrieving poll details");

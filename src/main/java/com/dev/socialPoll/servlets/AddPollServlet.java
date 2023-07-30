@@ -78,7 +78,7 @@ public class AddPollServlet extends HttpServlet {
             boolean success = pollService.addNewPoll(topicId, pollName, pollDescription, questionCount, questionOptionsMap, user.getId());
 
             if (!success) {
-                response.sendRedirect("error.jsp");
+                response.sendRedirect("/SocialPoll/error");
                 return;
             }
 
@@ -88,7 +88,7 @@ public class AddPollServlet extends HttpServlet {
 
         } catch (ServiceException e) {
             logger.error("Error occurred while adding a new poll!", e);
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("/SocialPoll/error");
             return;
         }
         logger.info("- - - - - - - - - - - doPost ends  - - - - - - - - - - - - - -  - -");

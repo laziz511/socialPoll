@@ -46,7 +46,7 @@ public class AdminPollsServlet extends HttpServlet {
 
         } catch (ServiceException e) {
             logger.error("Error occurred while retrieving admin polls!", e);
-            response.sendRedirect("html/error.jsp");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }

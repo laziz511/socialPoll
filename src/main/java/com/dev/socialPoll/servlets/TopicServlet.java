@@ -38,9 +38,8 @@ public class TopicServlet extends HttpServlet {
             // Forward the request to the index.jsp page
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (ServiceException e) {
-            // Handle the exception (you can redirect to an error page)
-            response.getWriter().println("Error occurred while retrieving poll topics.");
-            e.printStackTrace();
+            logger.error("Error occurred while retrieving topics!", e);
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }

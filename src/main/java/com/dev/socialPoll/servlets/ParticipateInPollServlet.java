@@ -62,7 +62,7 @@ public class ParticipateInPollServlet extends HttpServlet {
                 request.getRequestDispatcher("html/user/poll.jsp").forward(request, response);
 
             } else {
-                response.sendRedirect("html/error.jsp");
+                response.sendRedirect("/SocialPoll/error");
             }
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while retrieving poll details");
@@ -124,7 +124,7 @@ public class ParticipateInPollServlet extends HttpServlet {
 
                     response.sendRedirect("/SocialPoll/results?pollId=" + pollId);
                 } else {
-                    response.sendRedirect("html/error.jsp");
+                    response.sendRedirect("/SocialPoll/error");
                 }
             } else {
                 response.sendRedirect("index.jsp");
@@ -134,7 +134,7 @@ public class ParticipateInPollServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         } catch (ServiceException e) {
             logger.info("Error occurred while saving poll responses");
-            response.sendRedirect("html/error.jsp");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 

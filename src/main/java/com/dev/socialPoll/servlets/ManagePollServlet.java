@@ -59,14 +59,14 @@ public class ManagePollServlet extends HttpServlet {
                 request.setAttribute("poll", currentPoll);
                 request.getRequestDispatcher("html/admin/manage-poll.jsp").forward(request, response);
             } else {
-                response.sendRedirect("html/error.jsp");
+                response.sendRedirect("/SocialPoll/error");
             }
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while retrieving poll details");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/SocialPoll/error");
         } catch (ServiceException e) {
             logger.info("Error occurred while retrieving poll details");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 
@@ -99,7 +99,7 @@ public class ManagePollServlet extends HttpServlet {
             pollService.decreaseNumQuestions(pollId, removedQuestions.size());
         } catch (ServiceException e) {
             logger.error("Error occurred while decresing number of questions in the poll!", e);
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("/SocialPoll/error");
             return;
         }
 
@@ -141,7 +141,7 @@ public class ManagePollServlet extends HttpServlet {
                 questionService.deleteQuestion(removedQuestionId);
             } catch (ServiceException e) {
                 logger.error("Error occurred while removing question with ID: " + removedQuestionId, e);
-                response.sendRedirect("error.jsp");
+                response.sendRedirect("/SocialPoll/error");
                 return;
             }
         }
@@ -150,12 +150,12 @@ public class ManagePollServlet extends HttpServlet {
         try {
             boolean success = pollService.updatePollInformation(pollId, pollName, description, questionCount, questionOptionsMap);
             if (!success) {
-                response.sendRedirect("error.jsp");
+                response.sendRedirect("/SocialPoll/error");
                 return;
             }
         } catch (ServiceException e) {
             logger.error("Error occurred while updating the poll!", e);
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("/SocialPoll/error");
             return;
         }
 

@@ -59,7 +59,7 @@ public class UserPollsServlet extends HttpServlet {
 
         } catch (ServiceException e) {
             logger.error("Error occurred while retrieving user polls!", e);
-            response.sendRedirect("html/error.jsp");
+            response.sendRedirect("/SocialPoll/error");
         }
     }
 }
