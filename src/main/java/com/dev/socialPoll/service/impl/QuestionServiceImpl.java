@@ -72,7 +72,21 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public boolean deleteQuestion(long questionId) throws ServiceException {
-        return false;
+        try {
+            QuestionDao questionDao = DaoFactory.getInstance().getQuestionDao();
+            Optional<Question> questionToDelete = questionDao.findById(questionId);
+
+            if (questionToDelete.isPresent()) {
+                questionDao.delete(questionId);
+                return true;
+            } else {
+                logger.error("Question with ID " + questionId + " not found.");
+                throw new ServiceException("Question with ID " + questionId + " not found.");
+            }
+        } catch (DaoException e) {
+            logger.error("Unable to delete question!");
+            throw new ServiceException("Error occurred while deleting the question.", e);
+        }
     }
 
 

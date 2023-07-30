@@ -18,6 +18,7 @@ public class OptionDaoImpl extends AbstractDao<Option> implements OptionDao {
     private static final String FIND_OPTIONS_BY_QUESTION_ID_QUERY = "SELECT * FROM " + Table.OPTIONS + " WHERE question_id=?";
 
     private static final String UPDATE_NUM_PARTICIPANTS_QUERY = "UPDATE " + Table.OPTIONS + " SET num_participants = num_participants + 1 WHERE option_id = ?";
+    private static final String DELETE_OPTION_BY_ID_QUERY = "DELETE FROM " + Table.OPTIONS + " WHERE option_id = ?";
     public OptionDaoImpl() {
         super(RowMapperFactory.getInstance().getOptionRowMapper(), Table.OPTIONS);
     }
@@ -41,5 +42,10 @@ public class OptionDaoImpl extends AbstractDao<Option> implements OptionDao {
     @Override
     public void updateNumParticipants(long optionId) throws DaoException {
         executeUpdateQuery(UPDATE_NUM_PARTICIPANTS_QUERY, optionId);
+    }
+
+    @Override
+    public void delete(long optionId) throws DaoException {
+        executeUpdateQuery(DELETE_OPTION_BY_ID_QUERY, optionId);
     }
 }

@@ -124,14 +124,14 @@ public class ManagePollServlet extends HttpServlet {
                 // Remove poll responses for the question
                 pollResponseService.deleteResponsesByQuestion(removedQuestionId);
 
-//                // Retrieve options for the question and remove them
-//                List<Option> options = optionService.retrieveOptionsByQuestion(removedQuestionId);
-//                for (Option option : options) {
-//                    optionService.deleteOption(option.getId());
-//                }
-//
-//                // Finally, remove the question itself
-//                questionService.deleteQuestion(removedQuestionId);
+                // Retrieve options for the question and remove them
+                List<Option> options = optionService.retrieveOptionsByQuestion(removedQuestionId);
+                for (Option option : options) {
+                    optionService.deleteOption(option.getId());
+                }
+
+                // Finally, remove the question itself
+                questionService.deleteQuestion(removedQuestionId);
             } catch (ServiceException e) {
                 logger.error("Error occurred while removing question with ID: " + removedQuestionId, e);
                 response.sendRedirect("error.jsp");

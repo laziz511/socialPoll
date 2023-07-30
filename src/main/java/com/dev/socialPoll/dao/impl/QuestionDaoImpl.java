@@ -17,6 +17,7 @@ public class QuestionDaoImpl extends AbstractDao<Question> implements QuestionDa
     private static final String FIND_QUESTIONS_BY_POLL_ID_QUERY = "SELECT * FROM " + Table.QUESTIONS + " WHERE poll_id=?";
     private static final String UPDATE_QUESTION_QUERY = "UPDATE questions SET question_text = ? WHERE question_id = ?";
 
+    private static final String DELETE_QUESTION_QUERY = "DELETE FROM " + Table.QUESTIONS + " WHERE question_id = ?";
     public QuestionDaoImpl() {
         super(RowMapperFactory.getInstance().getQuestionRowMapper(), Table.QUESTIONS);
     }
@@ -39,5 +40,10 @@ public class QuestionDaoImpl extends AbstractDao<Question> implements QuestionDa
     @Override
     public List<Question> update(Question question) throws DaoException {
         return executeQuery(UPDATE_QUESTION_QUERY, question);
+    }
+
+    @Override
+    public void delete(long questionId) throws DaoException {
+        executeUpdateQuery(DELETE_QUESTION_QUERY, questionId);
     }
 }

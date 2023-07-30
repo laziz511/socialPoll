@@ -16,7 +16,7 @@ public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements Po
     private static final String CHECK_POLL_RESPONSE_EXISTENCE_QUERY = "SELECT COUNT(*) FROM " + Table.POLL_RESPONSES + " WHERE user_id=? AND poll_id=?";
     private static final String FIND_POLL_IDS_BY_USER_ID_QUERY = "SELECT DISTINCT poll_id FROM " + Table.POLL_RESPONSES + " WHERE user_id = ?";
     private static final String FIND_POLL_RESPONSES_BY_QUESTION_ID_QUERY = "SELECT * FROM " + Table.POLL_RESPONSES + " WHERE question_id = ?";
-    private static final String DELETE_POLL_RESPONSE_BY_ID_QUERY = "DELETE FROM " + Table.POLL_RESPONSES + " WHERE id = ?";
+    private static final String DELETE_POLL_RESPONSE_BY_ID_QUERY = "DELETE FROM " + Table.POLL_RESPONSES + " WHERE response_id = ?";
 
     public PollResponseDaoImpl() {
         super(RowMapperFactory.getInstance().getPollResponseRowMapper(), Table.POLL_RESPONSES);

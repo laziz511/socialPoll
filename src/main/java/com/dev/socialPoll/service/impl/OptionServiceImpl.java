@@ -60,8 +60,23 @@ public class OptionServiceImpl implements OptionService {
 
     @Override
     public boolean deleteOption(long optionId) throws ServiceException {
-        return false;
+        try {
+            OptionDao optionDao = DaoFactory.getInstance().getOptionDao();
+            Optional<Option> option = optionDao.findById(optionId);
+
+            if (option.isPresent()) {
+                optionDao.delete(optionId);
+                return true;
+            } else {
+                logger.error("Option with ID: " + optionId + " not found!");
+                throw new ServiceException("Option with ID: " + optionId + " not found!");
+            }
+        } catch (DaoException e) {
+            logger.error("Unable to delete option with ID: " + optionId, e);
+            throw new ServiceException("Failed to delete option with ID: " + optionId, e);
+        }
     }
+
 
     @Override
     public boolean increaseParticipantsCount(long optionId) throws ServiceException {

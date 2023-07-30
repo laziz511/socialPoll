@@ -15,4 +15,5 @@ public interface QuestionDao {
 
     List<Question> update(Question question) throws DaoException;
 
+    void delete(long questionId) throws DaoException;
 }
