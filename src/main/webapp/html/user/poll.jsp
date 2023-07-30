@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poll Webpage</title>
+    <link rel="icon" href="images/poll-icon.png">
+
     <link rel="stylesheet" href="css/user/poll.css">
 </head>
 

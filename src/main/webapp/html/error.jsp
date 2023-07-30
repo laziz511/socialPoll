@@ -7,6 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error</title>
+
+    <link rel="icon" href="images/poll-icon.png">
+
     <link rel="stylesheet" href="css/user/index.css">
     <link rel="stylesheet" href="css/user/polls.css">
 </head>
