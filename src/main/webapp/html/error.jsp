@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="css/user/polls.css">
 </head>
 
+
+
 <body>
     <div class="topic-section">
-        <h1>Error Occured : 404</h1>
-
+        <h1>Error 404 - Page Not Found</h1>
+        <p>The requested page is not available.</p>
         <div class="info-button">
             <div>
                 <a href="/SocialPoll/home" class="button">Go to Home Page</a>
@@ -22,5 +24,6 @@
         </div>
     </div>
 </body>
+
 
 </html>

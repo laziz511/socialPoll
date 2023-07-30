@@ -10,7 +10,8 @@ import java.io.IOException;
 @WebServlet("/error")
 public class ErrorServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("html/error.jsp").forward(request, response);
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/error.jsp").forward(req, resp);
     }
 }

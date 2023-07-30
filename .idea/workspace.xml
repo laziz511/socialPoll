@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="remove unnecessary import from PollResponseDao">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="fix tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ErrorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ErrorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/error.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/error.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +96,7 @@
       <recent name="com.dev.socialPoll.dao.connection" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in SocialPoll">
+  <component name="RunManager" selected="Smart Tomcat.tomcat">
     <configuration name="All in SocialPoll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SocialPoll" />
       <option name="PACKAGE_NAME" value="" />
@@ -393,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690726165405</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix tests">
+      <created>1690726651361</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1690726651361</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,6 +441,7 @@
     <MESSAGE value="add JavaDoc for Validator" />
     <MESSAGE value="add JavaDoc for Dao Interfaces" />
     <MESSAGE value="remove unnecessary import from PollResponseDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary import from PollResponseDao" />
+    <MESSAGE value="fix tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix tests" />
   </component>
 </project>
