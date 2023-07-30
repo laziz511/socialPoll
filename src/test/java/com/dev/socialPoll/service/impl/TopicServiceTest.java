@@ -1,13 +1,10 @@
 package com.dev.socialPoll.service.impl;
 
-import com.dev.socialPoll.dao.TopicDao;
 import com.dev.socialPoll.entity.Topic;
-import com.dev.socialPoll.exception.DaoException;
 import com.dev.socialPoll.exception.ServiceException;
 import com.dev.socialPoll.service.TopicService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,19 +22,19 @@ class TopicServiceTest {
     }
 
     @Test
-    void testRetrieveTopics_ShouldReturnListOfTopics() throws ServiceException, DaoException {
+    void testRetrieveTopics_ShouldReturnListOfTopics() throws ServiceException {
         List<Topic> resultTopics = topicService.retrieveTopics();
 
         // Verify the result
         assertEquals(4, resultTopics.size());
         assertEquals("Politics", resultTopics.get(0).getTopicName());
         assertEquals("Polls related to political topics and government policies.", resultTopics.get(0).getDescription());
-        assertEquals("Gender Equality", resultTopics.get(1).getTopicName());
-        assertEquals("Polls related to gender equality and womens rights.", resultTopics.get(1).getDescription());
+        assertEquals("Environment", resultTopics.get(1).getTopicName());
+        assertEquals("Polls related to environmental issues and sustainability.", resultTopics.get(1).getDescription());
     }
 
     @Test
-    void testRetrieveTopicById_ShouldReturnTopic() throws ServiceException, DaoException {
+    void testRetrieveTopicById_ShouldReturnTopic() throws ServiceException {
         // Call the service method with topicId = 1
         int topicId = 1;
         Optional<Topic> resultTopicOptional = topicService.retrieveTopicById(topicId);

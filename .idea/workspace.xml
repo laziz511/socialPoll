@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="add JavaDoc for Validator">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/Dao.java" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="remove unnecessary import from PollResponseDao">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dev/socialPoll/dao/impl/PollDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +94,26 @@
       <recent name="com.dev.socialPoll.dao.connection" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.tomcat">
+  <component name="RunManager" selected="JUnit.All in SocialPoll">
     <configuration name="All in SocialPoll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SocialPoll" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PollDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SocialPoll" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dev.socialPoll.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.dev.socialPoll.dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.dev.socialPoll.dao.impl.PollDaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -128,22 +144,6 @@
       <option name="PACKAGE_NAME" value="com.dev.socialPoll.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.dev.socialPoll.service.impl.TopicServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TopicServiceImplTest.testRetrieveTopicById_ShouldReturnTopic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SocialPoll" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dev.socialPoll.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.dev.socialPoll.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.dev.socialPoll.service.impl.TopicServiceImplTest" />
-      <option name="METHOD_NAME" value="testRetrieveTopicById_ShouldReturnTopic" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,20 +185,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.PollDaoTest" />
       <item itemvalue="JUnit.All in SocialPoll" />
       <item itemvalue="JUnit.com.dev.socialPoll in SocialPoll" />
       <item itemvalue="JUnit.PollValidatorTest" />
       <item itemvalue="JUnit.TopicServiceImplTest" />
-      <item itemvalue="JUnit.TopicServiceImplTest.testRetrieveTopicById_ShouldReturnTopic" />
       <item itemvalue="Smart Tomcat.tomcat" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in SocialPoll" />
+        <item itemvalue="JUnit.PollDaoTest" />
         <item itemvalue="JUnit.com.dev.socialPoll in SocialPoll" />
         <item itemvalue="JUnit.PollValidatorTest" />
         <item itemvalue="JUnit.TopicServiceImplTest" />
-        <item itemvalue="JUnit.TopicServiceImplTest.testRetrieveTopicById_ShouldReturnTopic" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +379,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690725292924</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add JavaDoc for Dao Interfaces">
+      <created>1690726104335</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1690726104335</updated>
+    </task>
+    <task id="LOCAL-00026" summary="remove unnecessary import from PollResponseDao">
+      <created>1690726165405</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1690726165405</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,6 +430,8 @@
     <MESSAGE value="removes unnecessary dao methods" />
     <MESSAGE value="add JavaDoc for Service Interfaces" />
     <MESSAGE value="add JavaDoc for Validator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add JavaDoc for Validator" />
+    <MESSAGE value="add JavaDoc for Dao Interfaces" />
+    <MESSAGE value="remove unnecessary import from PollResponseDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary import from PollResponseDao" />
   </component>
 </project>

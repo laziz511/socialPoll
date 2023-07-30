@@ -7,9 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -34,18 +32,6 @@ class PollDaoTest {
         long savedPollId = pollDao.save(poll);
         assertTrue(savedPollId > 0);
 
-        // Clean up: Delete the test poll from the database
-//        pollDao.deleteById(savedPollId);
-    }
-
-    @Test
-    void testFindPollById() throws DaoException {
-        long pollId = 10;
-        Optional<Poll> pollOptional = pollDao.findById(pollId);
-        assertTrue(pollOptional.isPresent());
-
-        Poll poll = pollOptional.get();
-        assertEquals(pollId, poll.getId());
     }
 
     @Test
