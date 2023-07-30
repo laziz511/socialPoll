@@ -4,7 +4,6 @@ import com.dev.socialPoll.entity.PollResponse;
 import com.dev.socialPoll.exception.DaoException;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * The PollResponseDao interface provides the methods to interact with the database table for PollResponse entities.
