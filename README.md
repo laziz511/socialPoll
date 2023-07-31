@@ -40,21 +40,20 @@
 </h2>
 <p>The Social Poll application is built using the following technologies:</p>
 
-Backend Technologies:
+Backend:
 - Java
 - Servlets
-- JSP
-- JSTL
-- JDBC
-- PostgreSQL
-- Maven
-- Log4j2
+- JSP (JavaServer Pages)
+- JSTL (JavaServer Pages Standard Tag Library)
+- JDBC (Java Database Connectivity)
+- PostgreSQL (as the database management system)
+- Maven (as the build tool)
+- Log4j2 (for logging)
 
-Frontend Technologies:
+Frontend:
 - HTML
 - CSS
 - JavaScript
-
 
 
 <h2 align="center"> DB Schema: </h2>
