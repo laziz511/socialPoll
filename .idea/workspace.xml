@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="add redirection to error page on random url">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/poll-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -408,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690727369628</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add head icon">
+      <created>1690727687097</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690727687097</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -423,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add frontend" />
     <MESSAGE value="gets topics from DB successfully, but cannot show in jsp" />
     <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
     <MESSAGE value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
@@ -448,6 +453,7 @@
     <MESSAGE value="remove unnecessary import from PollResponseDao" />
     <MESSAGE value="fix tests" />
     <MESSAGE value="add redirection to error page on random url" />
-    <option name="LAST_COMMIT_MESSAGE" value="add redirection to error page on random url" />
+    <MESSAGE value="add head icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="add head icon" />
   </component>
 </project>
