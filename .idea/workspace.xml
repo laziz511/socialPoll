@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="change pom xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,11 +186,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PollDaoTest" />
       <item itemvalue="JUnit.All in SocialPoll" />
-      <item itemvalue="JUnit.com.dev.socialPoll in SocialPoll" />
+      <item itemvalue="JUnit.PollDaoTest" />
       <item itemvalue="JUnit.PollValidatorTest" />
       <item itemvalue="JUnit.TopicServiceImplTest" />
+      <item itemvalue="JUnit.com.dev.socialPoll in SocialPoll" />
       <item itemvalue="Smart Tomcat.tomcat" />
     </list>
     <recent_temporary>
@@ -414,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690727687097</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="change pom xml">
+      <created>1690777785337</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1690777785337</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gets topics from DB successfully, but cannot show in jsp" />
     <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
     <MESSAGE value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
     <MESSAGE value="results page displayed, missing exact percentages" />
@@ -454,6 +461,7 @@
     <MESSAGE value="fix tests" />
     <MESSAGE value="add redirection to error page on random url" />
     <MESSAGE value="add head icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="add head icon" />
+    <MESSAGE value="change pom xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="change pom xml" />
   </component>
 </project>

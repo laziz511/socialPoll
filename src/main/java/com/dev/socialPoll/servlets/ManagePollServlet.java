@@ -89,10 +89,15 @@ public class ManagePollServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
         int questionCount = Integer.parseInt(request.getParameter("questionCount"));
 
+
         String removedQuestionsString = request.getParameter("removedQuestions");
-        List<Long> removedQuestions = Arrays.stream(removedQuestionsString.split(","))
-                .map(Long::parseLong)
-                .collect(Collectors.toList());
+        List<Long> removedQuestions = new ArrayList<>();
+
+        if (removedQuestionsString != null && !removedQuestionsString.isEmpty()) {
+            removedQuestions = Arrays.stream(removedQuestionsString.split(","))
+                    .map(Long::parseLong)
+                    .collect(Collectors.toList());
+        }
 
         logger.info("Removed question IDs: " + removedQuestions);
         try {
