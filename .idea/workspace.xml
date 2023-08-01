@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="change pom xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="fixes ManagePollServlet bug">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690777785337</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixes ManagePollServlet bug">
+      <created>1690851821483</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1690851821483</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adds SignUpServlet, LogInServlet,AdminDashboardServlet." />
     <MESSAGE value="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete." />
     <MESSAGE value="results page displayed, missing exact percentages" />
     <MESSAGE value="adds test, works main parts, manage-poll incomplete!" />
@@ -462,6 +467,7 @@
     <MESSAGE value="add redirection to error page on random url" />
     <MESSAGE value="add head icon" />
     <MESSAGE value="change pom xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="change pom xml" />
+    <MESSAGE value="fixes ManagePollServlet bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes ManagePollServlet bug" />
   </component>
 </project>
