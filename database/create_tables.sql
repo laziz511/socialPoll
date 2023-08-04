@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS polls (
     description         TEXT,
     num_questions       INTEGER DEFAULT 0,
     num_participants    INTEGER DEFAULT 0,
-    status              VARCHAR(10) NOT NULL CHECK (status IN ('NEW', 'EDITED', 'ARCHIVED', 'DELETED'))
+    status              VARCHAR(10) NOT NULL CHECK (status IN ('NEW', 'EDITED'))
 );
 
 -- Table for storing questions
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS users (
     gender             VARCHAR(10) NOT NULL,
     email              VARCHAR(100) NOT NULL UNIQUE,
     password           VARCHAR(100) NOT NULL,
-    role               VARCHAR(10) NOT NULL CHECK (role IN ('ADMIN', 'USER', 'GUEST'))
+    role               VARCHAR(10) NOT NULL CHECK (role IN ('ADMIN', 'USER'))
 );
 
 -- Table for storing poll responses
