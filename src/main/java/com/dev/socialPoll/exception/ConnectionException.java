@@ -8,7 +8,7 @@ public class ConnectionException extends SQLException {
     }
 
     public ConnectionException() {
-        super();
+
     }
 
     public ConnectionException(String message, Throwable cause) {
