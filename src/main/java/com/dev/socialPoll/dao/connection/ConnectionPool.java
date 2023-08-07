@@ -30,7 +30,7 @@ public class ConnectionPool {
             Properties dbProperties = new Properties();
             dbProperties.load(ConnectionFactory.class.getClassLoader().getResourceAsStream(DB_CONNECTION_PATH));
             int poolSize = Integer.parseInt(dbProperties.getProperty(POOL_SIZE));
-                availableConnections = new ArrayBlockingQueue<>(poolSize);
+            availableConnections = new ArrayBlockingQueue<>(poolSize);
             usedConnections = new ArrayBlockingQueue<>(poolSize);
 
             for (int i = 0; i < poolSize; i++) {
@@ -52,7 +52,7 @@ public class ConnectionPool {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 logger.error("Unable to release connection!", e);
-                throw new ConnectionException(e.getMessage(),e);
+                throw new ConnectionException(e.getMessage());
             }
         }
     }
@@ -65,7 +65,7 @@ public class ConnectionPool {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("Unable to get connection!", e);
-            throw new ConnectionException(e.getMessage(), e);
+            throw new ConnectionException(e);
         }
         return connection;
     }

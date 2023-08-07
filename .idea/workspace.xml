@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update PollValidatorImpl">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update UserRowMapper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/connection/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/connection/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/connection/ConnectionPool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,20 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00005" summary="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete.">
-      <created>1690276383149</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1690276383149</updated>
-    </task>
-    <task id="LOCAL-00006" summary="results page displayed, missing exact percentages">
-      <created>1690294323841</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1690294323841</updated>
     </task>
     <task id="LOCAL-00007" summary="adds test, works main parts, manage-poll incomplete!">
       <created>1690303895336</created>
@@ -555,7 +542,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691393134148</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="update AbstractQueryExecutor">
+      <created>1691394586894</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1691394586894</updated>
+    </task>
+    <task id="LOCAL-00055" summary="update UserRowMapper">
+      <created>1691395019733</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1691395019733</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,8 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add head icon" />
-    <MESSAGE value="change pom xml" />
     <MESSAGE value="fixes ManagePollServlet bug" />
     <MESSAGE value="update log4j2 xml" />
     <MESSAGE value="remove unnecessary parts" />
@@ -595,6 +594,8 @@
     <MESSAGE value="update ErrorServlet" />
     <MESSAGE value="update" />
     <MESSAGE value="update PollValidatorImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="update PollValidatorImpl" />
+    <MESSAGE value="update AbstractQueryExecutor" />
+    <MESSAGE value="update UserRowMapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="update UserRowMapper" />
   </component>
 </project>
