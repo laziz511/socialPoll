@@ -9,7 +9,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,16 +25,15 @@ public class ParticipateInPollServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
-        User currentUser = (User) session.getAttribute("user");
+        User currentUser = (User) request.getSession().getAttribute("user");
         if (currentUser == null) {
             request.getRequestDispatcher("/log-in").forward(request, response);
         }
         long userId = currentUser.getId();
 
         PollService pollService = ServiceFactory.getInstance().getPollService();
-        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
         OptionService optionService = ServiceFactory.getInstance().getOptionService();
+        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
 
         try {
             long pollId = Long.parseLong(request.getParameter("pollId"));
@@ -76,11 +74,11 @@ public class ParticipateInPollServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        TopicService topicService = ServiceFactory.getInstance().getTopicService();
         PollService pollService = ServiceFactory.getInstance().getPollService();
+        TopicService topicService = ServiceFactory.getInstance().getTopicService();
+        OptionService optionService = ServiceFactory.getInstance().getOptionService();
         QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
         PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
-        OptionService optionService = ServiceFactory.getInstance().getOptionService();
 
         try {
             String pollIdParam = request.getParameter("pollId");
@@ -88,6 +86,7 @@ public class ParticipateInPollServlet extends HttpServlet {
             // Check if pollIdParam is not null and not empty before parsing it as Long
             if (pollIdParam != null && !pollIdParam.isEmpty()) {
                 long pollId = Long.parseLong(pollIdParam);
+
                 User user = (User) request.getSession().getAttribute("user");
                 long userId = user.getId();
 
@@ -99,36 +98,33 @@ public class ParticipateInPollServlet extends HttpServlet {
                     return;
                 }
 
-                // Increment num_participants for the poll
-                pollService.incrementNumParticipants(pollId);
-
                 Optional<Poll> poll = pollService.retrievePollById(pollId);
 
                 if (poll.isPresent()) {
-
-                    // Increment num_participants for the poll's topic
-                    long topicId = poll.get().getTopicId();
-                    topicService.incrementNumParticipantsForTopic(topicId);
 
                     List<Question> questions = questionService.retrieveQuestionsByPoll(pollId);
 
                     for (Question question : questions) {
                         String parameterName = "question_" + question.getId();
-                        Long selectedOptionId = Long.parseLong(request.getParameter(parameterName));
+                        long selectedOptionId = Long.parseLong(request.getParameter(parameterName));
 
                         optionService.increaseParticipantsCount(selectedOptionId);
-                        // Save the poll response for each question
-                        pollResponseService.addNewPollResponse(pollId, question.getId(), selectedOptionId, userId);
 
+                        pollResponseService.addNewPollResponse(pollId, question.getId(), selectedOptionId, userId);
                     }
 
+                    // Increment num_participants for the poll
+                    pollService.incrementNumParticipants(pollId);
+
+                    // Increment num_participants for the poll's topic
+                    long topicId = poll.get().getTopicId();
+                    topicService.incrementNumParticipantsForTopic(topicId);
+
                     response.sendRedirect("/SocialPoll/results?pollId=" + pollId);
-                } else {
-                    response.sendRedirect("/SocialPoll/error");
                 }
-            } else {
-                response.sendRedirect("/SocialPoll/error");
             }
+            response.sendRedirect("/SocialPoll/error");
+
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while parsing pollId");
             response.sendRedirect("/SocialPoll/error");
