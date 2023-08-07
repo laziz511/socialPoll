@@ -11,7 +11,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,10 +24,7 @@ public class AddPollServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        logger.info("doGet of add-poll is working ");
-
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
 
         if (user != null && user.getRole() == UserRole.ADMIN) {
             request.getRequestDispatcher("html/admin/add-poll.jsp").forward(request, response);
@@ -40,10 +36,8 @@ public class AddPollServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("- - - - - - - - - - - doPost starts  - - - - - - - - - - - - - -  - -");
 
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
 
         if (user == null) {
             response.sendRedirect("log-in");
@@ -58,7 +52,7 @@ public class AddPollServlet extends HttpServlet {
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
         for (int i = 1; i <= questionCount; i++) {
             String questionKey = "question" + i;
-            String questionText = request.getParameter(questionKey); // Get the question text from the request parameter
+            String questionText = request.getParameter(questionKey);
             if (questionText != null && !questionText.isEmpty()) {
                 List<String> options = new ArrayList<>();
                 for (int j = 1; j <= 5; j++) {
@@ -68,7 +62,7 @@ public class AddPollServlet extends HttpServlet {
                         options.add(optionValue);
                     }
                 }
-                questionOptionsMap.put(questionText, options); // Use the extracted question text as the key in the map
+                questionOptionsMap.put(questionText, options);
             }
         }
 
@@ -82,16 +76,14 @@ public class AddPollServlet extends HttpServlet {
                 return;
             }
 
-            // Get the TopicService and update the number of polls for the corresponding topic
+            // Update the number of polls for the corresponding topic
             TopicService topicService = ServiceFactory.getInstance().getTopicService();
             topicService.updateNumPollsForTopic(topicId);
+            response.sendRedirect("/SocialPoll/home");
 
         } catch (ServiceException e) {
             logger.error("Error occurred while adding a new poll!", e);
             response.sendRedirect("/SocialPoll/error");
-            return;
         }
-        logger.info("- - - - - - - - - - - doPost ends  - - - - - - - - - - - - - -  - -");
-        response.sendRedirect("/SocialPoll/home");
     }
 }
