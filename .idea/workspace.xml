@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update log4j2 xml">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="modify polls and users tables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/PollStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/PollStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/exception/ConnectionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/exception/ConnectionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -439,7 +437,28 @@
       <option name="project" value="LOCAL" />
       <updated>1690852134781</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="remove unnecessary parts">
+      <created>1691157190710</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1691157190710</updated>
+    </task>
+    <task id="LOCAL-00034" summary="modify enums">
+      <created>1691157207411</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1691157207411</updated>
+    </task>
+    <task id="LOCAL-00035" summary="modify polls and users tables">
+      <created>1691157296861</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1691157296861</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,9 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="results page displayed, missing exact percentages" />
-    <MESSAGE value="adds test, works main parts, manage-poll incomplete!" />
-    <MESSAGE value="skeleton is ready" />
     <MESSAGE value="ready" />
     <MESSAGE value="bug fixes" />
     <MESSAGE value="fixes poll management" />
@@ -479,6 +495,9 @@
     <MESSAGE value="change pom xml" />
     <MESSAGE value="fixes ManagePollServlet bug" />
     <MESSAGE value="update log4j2 xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update log4j2 xml" />
+    <MESSAGE value="remove unnecessary parts" />
+    <MESSAGE value="modify enums" />
+    <MESSAGE value="modify polls and users tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify polls and users tables" />
   </component>
 </project>

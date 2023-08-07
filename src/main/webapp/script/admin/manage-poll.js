@@ -15,10 +15,6 @@ function removeQuestion(questionId) {
 }
 
 
-
-
-
-
 // Event delegation for dynamically generated data
 const questionsContainer = document.getElementById("questions-container");
 questionsContainer.addEventListener("click", function (event) {
@@ -101,34 +97,19 @@ function addOption(answerOptions) {
 const pollForm = document.getElementById("manage-poll-form");
 pollForm.addEventListener("submit", saveChanges);
 
-// Update the createPoll function to populate the hidden input fields with question and option counts
+
 function saveChanges(event) {
   console.log("saveChanges is working");
   event.preventDefault();
 
-  // Gather the poll data and submit it to the server or store it in the database
-  // You can access the data using form elements and their values
   const pollForm = event.target;
   const questionCountInput = pollForm.querySelector("#questionCount");
-  const optionCountInput = pollForm.querySelector("#optionCount");
   const questionsContainer = document.getElementById("questions-container");
   const removedQuestionsInput = document.getElementById("removedQuestionsInput");
 
-  // Set the question and option counts in the hidden input fields
   questionCountInput.value = questionCounter;
-
-  // Calculate the total option count
-  let totalOptionCount = 0;
-  const questionDivs = questionsContainer.querySelectorAll(".question");
-  questionDivs.forEach((questionDiv) => {
-    const options = questionDiv.querySelectorAll(".answer-options input");
-    totalOptionCount += options.length;
-  });
-  optionCountInput.value = totalOptionCount;
-
-
   removedQuestionsInput.value = removedQuestions.join(","); // Convert the array to a comma-separated string
-  console.log("Removed question IDs:", removedQuestions); // Log the removed question IDs for debugging
+  console.log("Removed question IDs:", removedQuestions);
 
   // Submit the form
   pollForm.submit();
