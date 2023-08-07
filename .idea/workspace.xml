@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update ParticipateInPollServlet">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AdminDashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AdminDashboardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AdminPollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AdminPollsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ErrorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ErrorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/LogInServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/PollsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/TopicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/TopicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/UserPollsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/UserPollsServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,27 +210,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit">
-      <created>1690100892676</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1690100892676</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add frontend">
-      <created>1690100963309</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1690100963309</updated>
-    </task>
-    <task id="LOCAL-00003" summary="gets topics from DB successfully, but cannot show in jsp">
-      <created>1690122398204</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1690122398204</updated>
     </task>
     <task id="LOCAL-00004" summary="adds SignUpServlet, LogInServlet,AdminDashboardServlet.">
       <created>1690193432022</created>
@@ -495,7 +463,98 @@
       <option name="project" value="LOCAL" />
       <updated>1691387786556</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update AddPollServlet">
+      <created>1691392031193</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392031193</updated>
+    </task>
+    <task id="LOCAL-00041" summary="update AdminPollsServlet">
+      <created>1691392046771</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392046771</updated>
+    </task>
+    <task id="LOCAL-00042" summary="update AdminDashboardServlet">
+      <created>1691392069815</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392069815</updated>
+    </task>
+    <task id="LOCAL-00043" summary="update TopicServiceImpl">
+      <created>1691392113079</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392113079</updated>
+    </task>
+    <task id="LOCAL-00044" summary="update TopicServlet">
+      <created>1691392210492</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392210492</updated>
+    </task>
+    <task id="LOCAL-00045" summary="update UserPollsServlet">
+      <created>1691392235118</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392235118</updated>
+    </task>
+    <task id="LOCAL-00046" summary="update SignUpServlet">
+      <created>1691392270828</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392270828</updated>
+    </task>
+    <task id="LOCAL-00047" summary="update ManagePollServlet">
+      <created>1691392283166</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392283166</updated>
+    </task>
+    <task id="LOCAL-00048" summary="update LogInServlet">
+      <created>1691392295712</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392295712</updated>
+    </task>
+    <task id="LOCAL-00049" summary="update ResultServlet">
+      <created>1691392305733</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392305733</updated>
+    </task>
+    <task id="LOCAL-00050" summary="update PollsServlet">
+      <created>1691392316114</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392316114</updated>
+    </task>
+    <task id="LOCAL-00051" summary="update ErrorServlet">
+      <created>1691392325114</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392325114</updated>
+    </task>
+    <task id="LOCAL-00052" summary="update">
+      <created>1691392331010</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1691392331010</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -510,19 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixes removing questions &amp; options from DB" />
-    <MESSAGE value="fixes HTML and CSS positioning" />
-    <MESSAGE value="fixes the change of num_questions in polls" />
-    <MESSAGE value="adds error page" />
-    <MESSAGE value="modifies servlets to reflect error page" />
-    <MESSAGE value="removes unnecessary service methods" />
-    <MESSAGE value="fixes jsp bugs" />
-    <MESSAGE value="removes unnecessary dao methods" />
-    <MESSAGE value="add JavaDoc for Service Interfaces" />
-    <MESSAGE value="add JavaDoc for Validator" />
-    <MESSAGE value="add JavaDoc for Dao Interfaces" />
-    <MESSAGE value="remove unnecessary import from PollResponseDao" />
-    <MESSAGE value="fix tests" />
     <MESSAGE value="add redirection to error page on random url" />
     <MESSAGE value="add head icon" />
     <MESSAGE value="change pom xml" />
@@ -535,6 +581,19 @@
     <MESSAGE value="optimize manage-poll.js" />
     <MESSAGE value="optimize ParticipateInPollServlet" />
     <MESSAGE value="update ParticipateInPollServlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ParticipateInPollServlet" />
+    <MESSAGE value="update AddPollServlet" />
+    <MESSAGE value="update AdminPollsServlet" />
+    <MESSAGE value="update AdminDashboardServlet" />
+    <MESSAGE value="update TopicServiceImpl" />
+    <MESSAGE value="update TopicServlet" />
+    <MESSAGE value="update UserPollsServlet" />
+    <MESSAGE value="update SignUpServlet" />
+    <MESSAGE value="update ManagePollServlet" />
+    <MESSAGE value="update LogInServlet" />
+    <MESSAGE value="update ResultServlet" />
+    <MESSAGE value="update PollsServlet" />
+    <MESSAGE value="update ErrorServlet" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
