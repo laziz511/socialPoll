@@ -30,8 +30,6 @@ public class LogInServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        logger.info(email, password);
-
         UserService userService = ServiceFactory.getInstance().getUserService();
         try {
             Optional<User> userOptional = userService.login(email, password);
