@@ -24,19 +24,14 @@ public class TopicServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            logger.info("TopicServlet is working");
 
             // Retrieve the list of poll topics from the TopicService
             TopicService topicService = ServiceFactory.getInstance().getTopicService();
             List<Topic> pollTopics = topicService.retrieveTopics();
 
-            logger.info("pollTopics : " + pollTopics);
-
-            // Store the list of poll topics in a request attribute
             request.setAttribute("pollTopics", pollTopics);
-
-            // Forward the request to the index.jsp page
             request.getRequestDispatcher("index.jsp").forward(request, response);
+
         } catch (ServiceException e) {
             logger.error("Error occurred while retrieving topics!", e);
             response.sendRedirect("/SocialPoll/error");
