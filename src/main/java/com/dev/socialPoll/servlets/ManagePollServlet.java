@@ -11,7 +11,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,8 +24,8 @@ public class ManagePollServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+
+        User user = (User) request.getSession().getAttribute("user");
 
         if (user == null) {
             response.sendRedirect("log-in");
@@ -37,8 +36,8 @@ public class ManagePollServlet extends HttpServlet {
             long pollId = Long.parseLong(request.getParameter("pollId"));
 
             PollService pollService = ServiceFactory.getInstance().getPollService();
-            QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
             OptionService optionService = ServiceFactory.getInstance().getOptionService();
+            QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
 
             Optional<Poll> poll = pollService.retrievePollById(pollId);
 
@@ -73,10 +72,8 @@ public class ManagePollServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("doPost of ManagePollServlet is working");
 
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
 
         if (user == null) {
             response.sendRedirect("log-in");
@@ -86,7 +83,6 @@ public class ManagePollServlet extends HttpServlet {
         long pollId = Long.parseLong(request.getParameter("pollId"));
         String pollName = request.getParameter("pollName");
         String description = request.getParameter("description");
-        PollService pollService = ServiceFactory.getInstance().getPollService();
         int questionCount = Integer.parseInt(request.getParameter("questionCount"));
 
 
@@ -99,7 +95,11 @@ public class ManagePollServlet extends HttpServlet {
                     .collect(Collectors.toList());
         }
 
-        logger.info("Removed question IDs: " + removedQuestions);
+        PollService pollService = ServiceFactory.getInstance().getPollService();
+        OptionService optionService = ServiceFactory.getInstance().getOptionService();
+        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
+        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
+
         try {
             pollService.decreaseNumQuestions(pollId, removedQuestions.size());
         } catch (ServiceException e) {
@@ -111,7 +111,7 @@ public class ManagePollServlet extends HttpServlet {
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
         for (int i = 1; i <= questionCount; i++) {
             String questionKey = "question" + i;
-            String questionText = request.getParameter(questionKey); // Get the question text from the request parameter
+            String questionText = request.getParameter(questionKey);
             if (questionText != null && !questionText.isEmpty()) {
                 List<String> options = new ArrayList<>();
                 for (int j = 1; j <= 5; j++) {
@@ -124,12 +124,8 @@ public class ManagePollServlet extends HttpServlet {
                 questionOptionsMap.put(questionText, options);
             }
         }
-        logger.info("questionOptionsMap: " + questionOptionsMap);
 
         // Remove poll responses, options, and questions from the database for each removed question ID
-        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
-        OptionService optionService = ServiceFactory.getInstance().getOptionService();
-        QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
 
         for (Long removedQuestionId : removedQuestions) {
             try {
@@ -142,7 +138,7 @@ public class ManagePollServlet extends HttpServlet {
                     optionService.deleteOption(option.getId());
                 }
 
-                // Finally, remove the question itself
+                // Remove the question itself
                 questionService.deleteQuestion(removedQuestionId);
             } catch (ServiceException e) {
                 logger.error("Error occurred while removing question with ID: " + removedQuestionId, e);
