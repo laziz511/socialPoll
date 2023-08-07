@@ -122,8 +122,9 @@ public class ParticipateInPollServlet extends HttpServlet {
 
                     response.sendRedirect("/SocialPoll/results?pollId=" + pollId);
                 }
+            } else {
+                response.sendRedirect("/SocialPoll/error");
             }
-            response.sendRedirect("/SocialPoll/error");
 
         } catch (NumberFormatException e) {
             logger.info("NumberFormatException occurred while parsing pollId");
