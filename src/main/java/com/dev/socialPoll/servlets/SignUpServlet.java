@@ -2,7 +2,6 @@ package com.dev.socialPoll.servlets;
 
 import com.dev.socialPoll.entity.User;
 import com.dev.socialPoll.entity.UserRole;
-import com.dev.socialPoll.exception.DaoException;
 import com.dev.socialPoll.exception.ServiceException;
 import com.dev.socialPoll.service.ServiceFactory;
 import com.dev.socialPoll.service.UserService;
@@ -42,8 +41,6 @@ public class SignUpServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         UserRole userRole = UserRole.valueOf("USER");
-
-        logger.info(firstName, lastName, birthday, gender, email, password, userRole);
 
         UserService userService = ServiceFactory.getInstance().getUserService();
         try {
