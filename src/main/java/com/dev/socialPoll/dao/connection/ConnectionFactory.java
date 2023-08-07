@@ -16,7 +16,7 @@ public class ConnectionFactory {
     private static final String DB_DRIVER = "driver";
 
     static ProxyConnection createConnection(Properties dbProperties) throws ConnectionException {
-        ProxyConnection proxyConnection = null;
+        ProxyConnection proxyConnection;
         try {
             String dbUrl = dbProperties.getProperty(DB_URL);
             String dbUser = dbProperties.getProperty(DB_USER);
