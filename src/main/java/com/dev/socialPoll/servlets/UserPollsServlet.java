@@ -11,7 +11,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,10 +23,8 @@ public class UserPollsServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        logger.info("doGet of UserPollsServlet is working");
 
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
 
         // Check if the user is logged in
         if (user == null) {
@@ -35,8 +32,8 @@ public class UserPollsServlet extends HttpServlet {
             return;
         }
 
-        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
         PollService pollService = ServiceFactory.getInstance().getPollService();
+        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
 
         try {
             long userId = user.getId();
@@ -53,7 +50,6 @@ public class UserPollsServlet extends HttpServlet {
                 }
             }
 
-            // Set the user polls in the request attribute to be displayed in the JSP
             request.setAttribute("userPolls", userPolls);
             request.getRequestDispatcher("html/user/user-polls.jsp").forward(request, response);
 
