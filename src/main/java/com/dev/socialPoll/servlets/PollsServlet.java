@@ -12,7 +12,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,12 +30,11 @@ public class PollsServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
         TopicService topicService = ServiceFactory.getInstance().getTopicService();
 
-
-        HttpSession session = request.getSession();
-        User currentUser = (User) session.getAttribute("user");
+        User currentUser = (User) request.getSession().getAttribute("user");
         if (currentUser == null) {
             request.getRequestDispatcher("/log-in").forward(request, response);
         }
+
         long userId = currentUser.getId();
 
         try {
@@ -49,10 +47,11 @@ public class PollsServlet extends HttpServlet {
                 poll.setUserHasTaken(userHasTakenPoll);
             }
 
-            request.setAttribute("topic", topic.get().getTopicName());
             request.setAttribute("polls", polls);
+            request.setAttribute("topic", topic.get().getTopicName());
 
             request.getRequestDispatcher("html/user/polls.jsp").forward(request, response);
+
         } catch (ServiceException e) {
             logger.info("Error occured while retrieving polls by topicId");
             response.sendRedirect("/SocialPoll/error");
