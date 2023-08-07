@@ -26,7 +26,7 @@ public class AbstractQueryExecutor<T extends Identifiable> {
     }
 
     protected List<T> executeQuery(String query, Object... params) throws DaoException {
-        List<T> entities = new ArrayList<>();
+        List<T> entities;
         try (PreparedStatement statement = createStatement(query, params);
              ResultSet resultSet = statement.executeQuery()) {
             entities = createEntitiesList(resultSet);
@@ -80,7 +80,7 @@ public class AbstractQueryExecutor<T extends Identifiable> {
     }
 
     protected int executeUpdateQuery(String query, Object... params) throws DaoException {
-        int rowsAffected = 0;
+        int rowsAffected;
         try (PreparedStatement statement = createStatement(query, params)) {
             rowsAffected = statement.executeUpdate();
         } catch (SQLException e) {

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update PollValidatorImpl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/AbstractQueryExecutor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,13 +211,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00004" summary="adds SignUpServlet, LogInServlet,AdminDashboardServlet.">
-      <created>1690193432022</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1690193432022</updated>
     </task>
     <task id="LOCAL-00005" summary="LogInServlet, SignUpServlet, AdminDashboardServlet, TopicServlet, PollsServlet are working! ParticipateInPollServlet is incomplete.">
       <created>1690276383149</created>
@@ -554,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691392331010</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="update PollValidatorImpl">
+      <created>1691393134148</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1691393134148</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add redirection to error page on random url" />
     <MESSAGE value="add head icon" />
     <MESSAGE value="change pom xml" />
     <MESSAGE value="fixes ManagePollServlet bug" />
@@ -594,6 +594,7 @@
     <MESSAGE value="update PollsServlet" />
     <MESSAGE value="update ErrorServlet" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update PollValidatorImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="update PollValidatorImpl" />
   </component>
 </project>
