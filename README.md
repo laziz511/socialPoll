@@ -1,1 +1,1 @@
-# look at master branch
+# Take a look at `master' branch
