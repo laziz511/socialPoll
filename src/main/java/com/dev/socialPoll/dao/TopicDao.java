@@ -52,4 +52,21 @@ public interface TopicDao extends Dao<Topic> {
      * @throws DaoException If an error occurs while incrementing the number of participants in the database.
      */
     void incrementNumParticipants(long topicId) throws DaoException;
+
+    /**
+     * Decreases the number of participants for a Topic entity in the database table.
+     *
+     * @param topicId        ID of the Topic for which the number of participants will be decreased.
+     * @param numParticipants The number of participants to be decreased.
+     * @throws DaoException If an error occurs while decreasing the number of participants in the database.
+     */
+    void decreaseNumParticipants(long topicId, int numParticipants) throws DaoException;
+
+    /**
+     * Decreases the number of polls for a Topic entity in the database table.
+     *
+     * @param topicId ID of the Topic for which the number of polls will be decreased.
+     * @throws DaoException If an error occurs while decreasing the number of polls in the database.
+     */
+    void decreaseNumPolls(long topicId) throws DaoException;
 }

@@ -40,13 +40,13 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public void updateNumPollsForTopic(long topicId) throws ServiceException {
+        public void updateNumPollsForTopic(long topicId) throws ServiceException {
         try {
-            TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
+                TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
 
-            Optional<Topic> optionalTopic = topicDao.findById(topicId);
-            if (optionalTopic.isPresent()) {
-                Topic topic = optionalTopic.get();
+                Optional<Topic> optionalTopic = topicDao.findById(topicId);
+                if (optionalTopic.isPresent()) {
+                    Topic topic = optionalTopic.get();
 
                 int currentNumPolls = topic.getNumPolls();
                 topic.setNumPolls(currentNumPolls + 1);
@@ -69,4 +69,27 @@ public class TopicServiceImpl implements TopicService {
             throw new ServiceException(e.getMessage(), e);
         }
     }
+
+    @Override
+    public void decreaseNumParticipants(long topicId, int numParticipants) throws ServiceException {
+        try {
+            TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
+            topicDao.decreaseNumParticipants(topicId, numParticipants);
+        } catch (DaoException e) {
+            logger.error("Error occurred while decreasing the number of participants for topic with ID: " + topicId, e);
+            throw new ServiceException("Failed to decrease the number of participants for topic with ID: " + topicId, e);
+        }
+    }
+
+    @Override
+    public void decreaseNumPolls(long topicId) throws ServiceException {
+        try {
+            TopicDao topicDao = DaoFactory.getInstance().getTopicDao();
+            topicDao.decreaseNumPolls(topicId);
+        } catch (DaoException e) {
+            logger.error("Error occurred while decreasing the number of polls for topic with ID: " + topicId, e);
+            throw new ServiceException("Failed to decrease the number of polls for topic with ID: " + topicId, e);
+        }
+    }
+
 }

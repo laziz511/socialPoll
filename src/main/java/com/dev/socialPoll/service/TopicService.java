@@ -46,4 +46,20 @@ public interface TopicService {
      */
     void incrementNumParticipantsForTopic(long topicId) throws ServiceException;
 
+    /**
+     * Decreases the number of participants for a topic.
+     *
+     * @param topicId        The ID of the topic for which the number of participants needs to be decreased.
+     * @param numParticipants The number of participants to be decreased.
+     * @throws ServiceException If an error occurs while decreasing the number of participants for the topic.
+     */
+    void decreaseNumParticipants(long topicId, int numParticipants) throws ServiceException;
+
+    /**
+     * Decreases the number of polls for a topic.
+     *
+     * @param topicId The ID of the topic for which the number of polls needs to be decreased.
+     * @throws ServiceException If an error occurs while decreasing the number of polls for the topic.
+     */
+    void decreaseNumPolls(long topicId) throws ServiceException;
 }
