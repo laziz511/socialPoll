@@ -121,5 +121,12 @@ button:hover {
     align-content: space-between;
     padding: 20px;
     gap: 10px;
+}
 
+.red {
+   background-color: #CD5C5C;
+}
+
+.red:hover {
+    background-color: #ED2939;
 }
