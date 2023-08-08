@@ -44,6 +44,13 @@ public class SignUpServlet extends HttpServlet {
 
         UserService userService = ServiceFactory.getInstance().getUserService();
         try {
+            // Check if user with given email already exists
+            if (userService.userExistsWithCurrentEmail(email)) {
+                request.setAttribute("error", "This email has already been used for registration.");
+                request.getRequestDispatcher("html/auth/sign-up.jsp").forward(request, response);
+                return;
+            }
+
             userService.register(firstName,lastName,birthday, gender, email, password, userRole);
             Optional<User> userOptional = userService.login(email, password);
 
