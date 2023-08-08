@@ -38,4 +38,14 @@ public interface UserService {
      */
     boolean register(String firstName, String lastName, LocalDate birthday, String gender,
                      String email, String password, UserRole role) throws ServiceException;
+
+    /**
+     * Checks if a user with the given email already exists.
+     *
+     * @param email The email to check for existence.
+     * @return True if a user with the specified email exists, false otherwise.
+     * @throws ServiceException If an error occurs while checking for user existence.
+     */
+    boolean userExistsWithCurrentEmail(String email) throws ServiceException;
+
 }

@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="update ConnectionPool">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="add userExistsWithCurrentEmail method">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/SignUpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/auth/sign-up.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/auth/sign-up.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,13 +211,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00009" summary="skeleton is ready">
-      <created>1690308363889</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1690308363889</updated>
     </task>
     <task id="LOCAL-00010" summary="skeleton is ready">
       <created>1690308764152</created>
@@ -558,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691399397286</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="add userExistsWithCurrentEmail method">
+      <created>1691493752758</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1691493752758</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove unnecessary parts" />
     <MESSAGE value="modify enums" />
     <MESSAGE value="modify polls and users tables" />
     <MESSAGE value="optimize add-poll.js" />
@@ -598,6 +594,7 @@
     <MESSAGE value="update UserRowMapper" />
     <MESSAGE value="update ConnectionFactory" />
     <MESSAGE value="update ConnectionPool" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ConnectionPool" />
+    <MESSAGE value="add userExistsWithCurrentEmail method" />
+    <option name="LAST_COMMIT_MESSAGE" value="add userExistsWithCurrentEmail method" />
   </component>
 </project>
