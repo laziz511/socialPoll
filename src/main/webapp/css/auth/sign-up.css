@@ -225,6 +225,9 @@ input.checkbox {
     }
 }
 
+.error-message {
+    padding-top: 15px;
+}
 
 .footer-section {
     background: #272928;

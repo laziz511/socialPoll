@@ -21,8 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> login(String email, String password) throws ServiceException {
         try {
-            Optional<User> user = userDao.findByEmailAndPassword(email, password);
-            return user;
+            return userDao.findByEmailAndPassword(email, password);
         } catch (Exception e) {
             throw new ServiceException("Error occurred during login.", e);
         }
@@ -37,6 +36,16 @@ public class UserServiceImpl implements UserService {
             return true;
         } catch (Exception e) {
             throw new ServiceException("Error occurred during user registration.", e);
+        }
+    }
+
+    @Override
+    public boolean userExistsWithCurrentEmail(String email) throws ServiceException {
+        try {
+            Optional<User> user = userDao.findByEmail(email);
+            return user.isPresent();
+        } catch (Exception e) {
+            throw new ServiceException("Error occurred while checking user availability with email", e);
         }
     }
 }
