@@ -71,7 +71,17 @@
 
                     <input type="hidden" id="removedQuestionsInput" name="removedQuestions" value="" />
 
+                    <!-- Save Changes button -->
                     <button type="submit" class="submit">Save Changes</button>
+
+
+                    <!-- Delete Poll button -->
+                    <form id="delete-poll-form" method="post" action="/SocialPoll/manage-poll">
+                        <input type="hidden" name="action" id="action" value="">
+                        <input type="hidden" name="pollId" value="${poll.id}">
+                        <button type="submit" class="submit red" id="delete-poll-button">Delete Poll</button>
+                    </form>
+
                 </form>
             </div>
         </section>

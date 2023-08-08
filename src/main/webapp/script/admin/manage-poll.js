@@ -114,3 +114,13 @@ function saveChanges(event) {
   // Submit the form
   pollForm.submit();
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var deletePollButton = document.getElementById("delete-poll-button");
+    var actionInput = document.getElementById("action");
+
+    deletePollButton.addEventListener("click", function () {
+        actionInput.value = "deletePoll";
+    });
+});
