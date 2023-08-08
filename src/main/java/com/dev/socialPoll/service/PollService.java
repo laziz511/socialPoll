@@ -99,4 +99,13 @@ public interface PollService {
      * @throws ServiceException If an error occurs while retrieving the polls.
      */
     List<Poll> getPollsByCreatorId(long creatorId) throws ServiceException;
+
+    /**
+     * Deletes a poll along with its associated poll responses.
+     *
+     * @param pollId The ID of the poll to be deleted.
+     * @throws ServiceException If an error occurs while deleting the poll and its associated data.
+     */
+    void deletePoll(long pollId) throws ServiceException;
+
 }

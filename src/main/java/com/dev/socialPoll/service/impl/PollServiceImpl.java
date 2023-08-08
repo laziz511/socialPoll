@@ -24,8 +24,7 @@ public class PollServiceImpl implements PollService {
     public List<Poll> retrievePollsByTopic(long topicId) throws ServiceException {
         try {
             PollDao pollDao = DaoFactory.getInstance().getPollDao();
-            List<Poll> result = pollDao.findByTopicId(topicId);
-            return result;
+            return pollDao.findByTopicId(topicId);
         } catch (DaoException e) {
             logger.error("Unable to retrieve polls by topic id!");
             throw new ServiceException(e.getMessage(), e);
@@ -36,8 +35,7 @@ public class PollServiceImpl implements PollService {
     public Optional<Poll> retrievePollById(long pollId) throws ServiceException {
         try {
             PollDao pollDao = DaoFactory.getInstance().getPollDao();
-            Optional<Poll> result = pollDao.findById(pollId);
-            return result;
+            return pollDao.findById(pollId);
         } catch (DaoException e) {
             logger.error("Unable to retrieve poll by id!");
             throw new ServiceException(e.getMessage(), e);
@@ -200,4 +198,14 @@ public class PollServiceImpl implements PollService {
         }
     }
 
+    @Override
+    public void deletePoll(long pollId) throws ServiceException {
+        try {
+            PollDao pollDao = DaoFactory.getInstance().getPollDao();
+            pollDao.delete(pollId);
+        } catch (DaoException e) {
+            logger.error("Error occurred while deleting poll.", e);
+            throw new ServiceException("Failed to delete poll.", e);
+        }
+    }
 }

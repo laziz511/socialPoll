@@ -92,4 +92,12 @@ public interface PollDao {
      * @throws DaoException If an error occurs while updating the data in the database.
      */
     boolean decreaseNumberOfQuestions(long pollId, int decreaseNum) throws DaoException;
+
+    /**
+     * Deletes a Poll entity from the database table based on the provided Poll ID.
+     *
+     * @param pollId The ID of the Poll to delete.
+     * @throws DaoException If an error occurs while deleting the Poll from the database.
+     */
+    void delete(long pollId) throws DaoException;
 }

@@ -22,6 +22,7 @@ public class PollDaoImpl extends AbstractDao<Poll> implements PollDao {
     private static final String FIND_POLLS_BY_CREATOR_ID_QUERY = "SELECT * FROM " + Table.POLLS + " WHERE creator_id=?";
     private static final String UPDATE_POLL_QUERY = "UPDATE " + Table.POLLS + " SET poll_name=?, description=?, status=?, num_questions=num_questions+? WHERE poll_id=?";
     private static final String DECREASE_NUM_QUESTIONS_QUERY = "UPDATE " + Table.POLLS + " SET num_questions = num_questions - ? WHERE poll_id=?";
+    private static final String DELETE_POLL_QUERY = "DELETE FROM " + Table.POLLS + " WHERE poll_id = ?";
     public PollDaoImpl() {
         super(RowMapperFactory.getInstance().getPollRowMapper(), Table.POLLS);
     }
@@ -74,5 +75,10 @@ public class PollDaoImpl extends AbstractDao<Poll> implements PollDao {
     public boolean decreaseNumberOfQuestions(long pollId, int decreaseNum) throws DaoException {
         int updatedRows = executeUpdateQuery(DECREASE_NUM_QUESTIONS_QUERY,decreaseNum, pollId);
         return updatedRows > 0;
+    }
+
+    @Override
+    public void delete(long pollId) throws DaoException {
+        executeUpdateQuery(DELETE_POLL_QUERY, pollId);
     }
 }
