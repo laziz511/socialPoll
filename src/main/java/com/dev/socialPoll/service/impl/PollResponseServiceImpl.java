@@ -63,4 +63,15 @@ public class PollResponseServiceImpl implements PollResponseService {
             throw new ServiceException("Failed to delete poll responses for question with ID: " + removedQuestionId, e);
         }
     }
+
+    @Override
+    public List<Long> getUserResponses(long pollId, long userId) throws ServiceException {
+        try {
+            PollResponseDao pollResponseDao = DaoFactory.getInstance().getPollResponseDao();
+            return pollResponseDao.getUserResponses(pollId, userId);
+        }  catch (DaoException e) {
+            logger.error("Unable to get user responses for poll with ID: " + pollId, e);
+            throw new ServiceException("Failed to get user responses for poll with ID: " + pollId, e);
+        }
+    }
 }

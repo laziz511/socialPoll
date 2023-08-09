@@ -1,8 +1,6 @@
 package com.dev.socialPoll.servlets;
 
-import com.dev.socialPoll.entity.Option;
-import com.dev.socialPoll.entity.Poll;
-import com.dev.socialPoll.entity.Question;
+import com.dev.socialPoll.entity.*;
 import com.dev.socialPoll.exception.ServiceException;
 import com.dev.socialPoll.service.*;
 import jakarta.servlet.ServletException;
@@ -33,6 +31,7 @@ public class ResultServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
         OptionService optionService = ServiceFactory.getInstance().getOptionService();
         QuestionService questionService = ServiceFactory.getInstance().getQuestionService();
+        PollResponseService pollResponseService = ServiceFactory.getInstance().getPollResponseService();
 
         try {
             long pollId = Long.parseLong(request.getParameter("pollId"));
@@ -60,7 +59,11 @@ public class ResultServlet extends HttpServlet {
                     }
                 }
 
+                User user = (User) request.getSession().getAttribute("user");
+                List<Long> userResponses = pollResponseService.getUserResponses(pollId, user.getId());
+
                 request.setAttribute("questionOptionsMap", questionOptionsMap);
+                request.setAttribute("userResponses", userResponses);
                 request.getRequestDispatcher("html/user/results.jsp").forward(request, response);
 
             } else {
