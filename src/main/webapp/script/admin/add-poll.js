@@ -29,7 +29,7 @@ function addQuestion() {
     const answerOptions = document.createElement("div");
     answerOptions.classList.add("answer-options");
 
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 2; i++) {
         const optionInput = document.createElement("input");
         optionInput.type = "text";
         optionInput.name = `question${questionCounter}-option${i}`;
