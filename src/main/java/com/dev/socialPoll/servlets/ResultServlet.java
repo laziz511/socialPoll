@@ -62,6 +62,7 @@ public class ResultServlet extends HttpServlet {
                 User user = (User) request.getSession().getAttribute("user");
                 List<Long> userResponses = pollResponseService.getUserResponses(pollId, user.getId());
 
+                request.setAttribute("poll", poll);
                 request.setAttribute("questionOptionsMap", questionOptionsMap);
                 request.setAttribute("userResponses", userResponses);
                 request.getRequestDispatcher("html/user/results.jsp").forward(request, response);

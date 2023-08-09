@@ -76,7 +76,7 @@ p {
 .topic {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .participants-text {
@@ -120,6 +120,7 @@ p {
 
 .question {
     margin-bottom: 30px;
+    font-size: 20px;
 }
 
 @media (max-width: 650px) {
