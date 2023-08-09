@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds Poll deletion functionality">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds method for getting responses by pollId and userId">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollResponseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollResponseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/user/results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/user/results.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,20 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fixes HTML and CSS positioning">
-      <created>1690717457927</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1690717457927</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fixes the change of num_questions in polls">
-      <created>1690718700111</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1690718700111</updated>
     </task>
     <task id="LOCAL-00018" summary="adds error page">
       <created>1690719665219</created>
@@ -554,7 +545,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691504796431</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="updates poll_size">
+      <created>1691560593222</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1691560593223</updated>
+    </task>
+    <task id="LOCAL-00066" summary="adds method for getting responses by pollId and userId">
+      <created>1691563112500</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1691563112500</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,8 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update ParticipateInPollServlet" />
-    <MESSAGE value="update AddPollServlet" />
     <MESSAGE value="update AdminPollsServlet" />
     <MESSAGE value="update AdminDashboardServlet" />
     <MESSAGE value="update TopicServiceImpl" />
@@ -594,6 +597,8 @@
     <MESSAGE value="add deletePoll functionality" />
     <MESSAGE value="adds update topic info while deleting Poll" />
     <MESSAGE value="adds Poll deletion functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds Poll deletion functionality" />
+    <MESSAGE value="updates poll_size" />
+    <MESSAGE value="adds method for getting responses by pollId and userId" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds method for getting responses by pollId and userId" />
   </component>
 </project>

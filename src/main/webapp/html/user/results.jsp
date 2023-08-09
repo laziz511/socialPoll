@@ -35,7 +35,14 @@
                                         <c:forEach items="${entry.value}" var="option">
                                             <li class="answer-option">
                                                 <span class="answer-text">${option.optionText}</span>
-                                                <span class="percentage">${option.numParticipants}%</span>
+                                                <c:choose>
+                                                    <c:when test="${userResponses.contains(option.id)}">
+                                                        <span class="percentage red">${option.numParticipants}%</span>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <span class="percentage">${option.numParticipants}%</span>
+                                                    </c:otherwise>
+                                                </c:choose>
                                             </li>
                                         </c:forEach>
                                     </c:if>

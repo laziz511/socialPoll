@@ -187,3 +187,8 @@ p {
 .survey-button:hover {
     background-color: rgba(44, 39, 39, 0.877);
 }
+
+.red {
+     color: #CD5C5C;
+     font-weight: bold;
+}
