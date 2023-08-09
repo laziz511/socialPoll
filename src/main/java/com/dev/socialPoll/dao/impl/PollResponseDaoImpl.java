@@ -12,12 +12,11 @@ import java.util.List;
 public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements PollResponseDao {
     private static final String SAVE_POLL_RESPONSE_QUERY = "INSERT INTO " + Table.POLL_RESPONSES +
             " (poll_id, question_id, option_id, user_id) VALUES (?, ?, ?, ?)";
-    private static final String FIND_POLL_RESPONSES_BY_USER_ID_QUERY = "SELECT * FROM " + Table.POLL_RESPONSES + " WHERE user_id=?";
     private static final String CHECK_POLL_RESPONSE_EXISTENCE_QUERY = "SELECT COUNT(*) FROM " + Table.POLL_RESPONSES + " WHERE user_id=? AND poll_id=?";
     private static final String FIND_POLL_IDS_BY_USER_ID_QUERY = "SELECT DISTINCT poll_id FROM " + Table.POLL_RESPONSES + " WHERE user_id = ?";
     private static final String FIND_POLL_RESPONSES_BY_QUESTION_ID_QUERY = "SELECT * FROM " + Table.POLL_RESPONSES + " WHERE question_id = ?";
     private static final String DELETE_POLL_RESPONSE_BY_ID_QUERY = "DELETE FROM " + Table.POLL_RESPONSES + " WHERE response_id = ?";
-
+    private static final String FIND_USER_RESPONSES_BY_POLL_ID_QUERY = "SELECT option_id FROM " + Table.POLL_RESPONSES + " WHERE poll_id = ? AND user_id = ?";
     public PollResponseDaoImpl() {
         super(RowMapperFactory.getInstance().getPollResponseRowMapper(), Table.POLL_RESPONSES);
     }
@@ -47,5 +46,10 @@ public class PollResponseDaoImpl extends AbstractDao<PollResponse> implements Po
     @Override
     public void delete(long id) throws DaoException {
         executeUpdateQuery(DELETE_POLL_RESPONSE_BY_ID_QUERY, id);
+    }
+
+    @Override
+    public List<Long> getUserResponses(long pollId, long userId) throws DaoException {
+        return executeQueryForList(FIND_USER_RESPONSES_BY_POLL_ID_QUERY, pollId, userId);
     }
 }

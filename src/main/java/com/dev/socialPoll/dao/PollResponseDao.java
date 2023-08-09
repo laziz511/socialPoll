@@ -54,4 +54,15 @@ public interface PollResponseDao {
      * @throws DaoException If an error occurs while deleting the PollResponse from the database.
      */
     void delete(long id) throws DaoException;
+
+    /**
+     * Retrieves a list of IDs representing the options selected by a specific user in a given poll.
+     *
+     * @param pollId The ID of the poll for which user responses are to be retrieved.
+     * @param userId The ID of the user for whom the responses are to be retrieved.
+     * @return A list of option IDs representing the user's selected responses in the specified poll.
+     * @throws DaoException If an error occurs while retrieving the user's responses from the database.
+     */
+    List<Long> getUserResponses(long pollId, long userId) throws DaoException;
+
 }
