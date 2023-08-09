@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds differentiation for chosen options">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="remove unnecessary logging info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ResultServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/user/results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/AddPollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/add-poll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,20 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00020" summary="removes unnecessary service methods">
-      <created>1690724300327</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1690724300327</updated>
-    </task>
-    <task id="LOCAL-00021" summary="fixes jsp bugs">
-      <created>1690724315799</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1690724315799</updated>
     </task>
     <task id="LOCAL-00022" summary="removes unnecessary dao methods">
       <created>1690724658613</created>
@@ -556,7 +542,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691563228721</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="fixes poll name displaying">
+      <created>1691564133445</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1691564133445</updated>
+    </task>
+    <task id="LOCAL-00070" summary="remove unnecessary logging info">
+      <created>1691565623006</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1691565623006</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,8 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update AdminDashboardServlet" />
-    <MESSAGE value="update TopicServiceImpl" />
     <MESSAGE value="update TopicServlet" />
     <MESSAGE value="update UserPollsServlet" />
     <MESSAGE value="update SignUpServlet" />
@@ -596,6 +594,8 @@
     <MESSAGE value="updates poll_size" />
     <MESSAGE value="adds method for getting responses by pollId and userId" />
     <MESSAGE value="adds differentiation for chosen options" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds differentiation for chosen options" />
+    <MESSAGE value="fixes poll name displaying" />
+    <MESSAGE value="remove unnecessary logging info" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove unnecessary logging info" />
   </component>
 </project>

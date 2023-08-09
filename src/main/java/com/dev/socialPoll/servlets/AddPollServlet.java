@@ -50,10 +50,12 @@ public class AddPollServlet extends HttpServlet {
         int questionCount = Integer.parseInt(request.getParameter("questionCount"));
 
         Map<String, List<String>> questionOptionsMap = new HashMap<>();
+        int actualNumberOfQuestions = 0;
         for (int i = 1; i <= questionCount; i++) {
             String questionKey = "question" + i;
             String questionText = request.getParameter(questionKey);
             if (questionText != null && !questionText.isEmpty()) {
+                actualNumberOfQuestions++;
                 List<String> options = new ArrayList<>();
                 for (int j = 1; j <= 5; j++) {
                     String optionKey = questionKey + "-option" + j;
@@ -69,7 +71,7 @@ public class AddPollServlet extends HttpServlet {
         PollService pollService = ServiceFactory.getInstance().getPollService();
 
         try {
-            boolean success = pollService.addNewPoll(topicId, pollName, pollDescription, questionCount, questionOptionsMap, user.getId());
+            boolean success = pollService.addNewPoll(topicId, pollName, pollDescription, actualNumberOfQuestions, questionOptionsMap, user.getId());
 
             if (!success) {
                 response.sendRedirect("/SocialPoll/error");

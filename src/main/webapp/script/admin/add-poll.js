@@ -45,13 +45,25 @@ function addQuestion() {
         addOption(answerOptions);
     };
 
+    const removeQuestionButton = document.createElement("button");
+    removeQuestionButton.textContent = "Remove Question";
+    removeQuestionButton.type = "button";
+    removeQuestionButton.onclick = function () {
+        removeQuestion(questionsContainer, questionDiv);
+    };
+
     questionDiv.appendChild(questionLabel);
     questionDiv.appendChild(questionInput);
     questionDiv.appendChild(answerOptionsLabel);
     questionDiv.appendChild(answerOptions);
     questionDiv.appendChild(addOptionButton);
+    questionDiv.appendChild(removeQuestionButton);
 
     questionsContainer.appendChild(questionDiv);
+}
+
+function removeQuestion(questionsContainer, questionDiv) {
+    questionsContainer.removeChild(questionDiv);
 }
 
 function addOption(answerOptions) {
