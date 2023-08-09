@@ -51,6 +51,8 @@
                                 </div>
                                 <div class="info-button">
                                     <div>
+                                    <a href="#" class="survey-button status" onclick="return false;">${poll.status}</a>
+
                                         <c:choose>
                                             <c:when test="${poll.userHasTaken}">
                                                 <!-- Show the button in red with text "Taken" -->
@@ -63,6 +65,7 @@
                                                     class="survey-button">Take the Poll</a>
                                             </c:otherwise>
                                         </c:choose>
+
                                     </div>
                                 </div>
                             </div>

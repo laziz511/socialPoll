@@ -43,11 +43,13 @@ public class PollsServlet extends HttpServlet {
 
             // Iterate through each poll and check if the current user has taken it
             for (Poll poll : polls) {
+                logger.info(poll.getStatus());
                 boolean userHasTakenPoll = pollService.hasPollResponse(userId, poll.getId());
                 poll.setUserHasTaken(userHasTakenPoll);
             }
 
             request.setAttribute("polls", polls);
+            
             request.setAttribute("topic", topic.get().getTopicName());
 
             request.getRequestDispatcher("html/user/polls.jsp").forward(request, response);
