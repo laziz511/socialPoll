@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="add email availability checking">
+    <list default="true" id="36f8a544-9fa2-4183-9706-e2c860d6a314" name="Changes" comment="adds Poll deletion functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/PollDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/TopicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/TopicDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/PollDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/TopicDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/dao/impl/TopicDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/PollService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/TopicService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/PollServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/TopicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/service/impl/TopicServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/socialPoll/servlets/ManagePollServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/admin/add-poll.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/manage-poll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/script/admin/manage-poll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,34 +210,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689589176954</updated>
-    </task>
-    <task id="LOCAL-00012" summary="bug fixes">
-      <created>1690553059739</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1690553059739</updated>
-    </task>
-    <task id="LOCAL-00013" summary="fixes poll management">
-      <created>1690701384301</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1690701384301</updated>
-    </task>
-    <task id="LOCAL-00014" summary="fixes poll submission">
-      <created>1690712139027</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1690712139027</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fixes removing questions &amp; options from DB">
-      <created>1690713661403</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1690713661403</updated>
     </task>
     <task id="LOCAL-00016" summary="fixes HTML and CSS positioning">
       <created>1690717457927</created>
@@ -566,7 +526,35 @@
       <option name="project" value="LOCAL" />
       <updated>1691494060696</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="add styling for 'red' class">
+      <created>1691504449701</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1691504449701</updated>
+    </task>
+    <task id="LOCAL-00062" summary="add deletePoll functionality">
+      <created>1691504647308</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1691504647308</updated>
+    </task>
+    <task id="LOCAL-00063" summary="adds update topic info while deleting Poll">
+      <created>1691504755434</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1691504755434</updated>
+    </task>
+    <task id="LOCAL-00064" summary="adds Poll deletion functionality">
+      <created>1691504796431</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1691504796431</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -581,10 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modify polls and users tables" />
-    <MESSAGE value="optimize add-poll.js" />
-    <MESSAGE value="optimize manage-poll.js" />
-    <MESSAGE value="optimize ParticipateInPollServlet" />
     <MESSAGE value="update ParticipateInPollServlet" />
     <MESSAGE value="update AddPollServlet" />
     <MESSAGE value="update AdminPollsServlet" />
@@ -606,6 +590,10 @@
     <MESSAGE value="update ConnectionPool" />
     <MESSAGE value="add userExistsWithCurrentEmail method" />
     <MESSAGE value="add email availability checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="add email availability checking" />
+    <MESSAGE value="add styling for 'red' class" />
+    <MESSAGE value="add deletePoll functionality" />
+    <MESSAGE value="adds update topic info while deleting Poll" />
+    <MESSAGE value="adds Poll deletion functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds Poll deletion functionality" />
   </component>
 </project>
