@@ -84,7 +84,6 @@ public class ManagePollServlet extends HttpServlet {
 
         if (action.equals("deletePoll")) {
             long pollId = Long.parseLong(request.getParameter("pollId"));
-            logger.info("Delete poll is working");
 
             try {
                 deletePollAndRelatedData(pollId);
@@ -94,7 +93,6 @@ public class ManagePollServlet extends HttpServlet {
                 return;
             }
         } else {
-            logger.info("Delete poll is not working");
             long pollId = Long.parseLong(request.getParameter("pollId"));
             String pollName = request.getParameter("pollName");
             String description = request.getParameter("description");
